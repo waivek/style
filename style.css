@@ -1,7 +1,7 @@
 
 #content {
     margin: 1em auto;
-    font-family: "Equity Text A";
+    font-family: "Fairplay Text A";
     line-height: 1.35;
     max-width: 40em;
     padding: 0 1em;
@@ -10,7 +10,7 @@
 
 h1, h2, h3, h4 {
     text-transform: uppercase;
-    font-family: "Concourse C2";
+    font-family: "Confluence C2";
 }
 ul {
     list-style-type: square;
@@ -80,7 +80,7 @@ div.todo {
 #pdf {
     float: right;
     padding: 1.5px;
-    font-family: "Concourse C4";
+    font-family: "Confluence C4";
     color: #ccc;
 }
 #pdf:hover {
