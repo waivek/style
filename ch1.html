@@ -1,0 +1,881 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Elementary rules of usage</title>
+        <link href="style.css" type="text/css" rel="stylesheet" />
+    </head>
+
+<style>
+
+.hovercard {
+    /* border: solid 1px; */
+    box-shadow: 2px 2px 8px 0px;
+    border-radius: 4px;
+    position: fixed;
+    padding: .5em 1em;
+    max-width: 20em;
+
+    /* https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
+    /* background: #B71C1C; */
+    background: brown;
+
+    font-family: "Concourse T3";
+    font-size: 20px;
+
+    text-align: center;
+
+
+}
+.hovercard * {
+    color: white;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+.hidden, .hovercard {
+
+    transition:visibility 0.15s linear,opacity 0.15s linear;
+}
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+@media screen and (max-width: 720px) {
+    body, #content, .hovercard {
+        font-size: 12px;
+    }
+}
+
+
+.mobile_hovercard {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0 0 40px;
+    padding: 1em 1em;
+    width: -moz-available;          
+    width: -webkit-fill-available; 
+    font-family: "Concourse T4";
+    background-color: brown;
+    font-size: 16px;
+}
+.mobile_hovercard span {
+    color: white;
+}
+.mobile_hovercard a {
+    color: #ffffff;
+    display: block;
+    max-width: 25%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.8em;
+    border-radius: 1em;
+    border: solid;
+}
+.mobile_hidden {
+    transform: translateY(110%);
+    box-shadow: none;
+}
+.mobile_hovercard {
+    transition: transform 0.3s ease-out;
+    -webkit-transform 0.3s ease-out;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+.right {
+    position: relative;
+    right: auto;
+    float: right;
+    color: #ccc;
+    padding: 6px;
+}
+.right:hover {
+    cursor: pointer;
+    background: #df8787;
+    color: white;
+    border-radius: 8px;
+}
+
+.span_hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+
+</style>
+
+<!--     <script> -->
+<!--  -->
+<!--         function hide_hovercards_without_transition () { -->
+<!--             var hovercards = document.querySelectorAll(".hovercard"); -->
+<!--             for (var i = 0; i < hovercards.length; i++) { -->
+<!--                 hovercards[i].classList.add("hidden"); -->
+<!--                 hovercards[i].classList.add("notransition"); -->
+<!--             } -->
+<!--             setTimeout(function() { -->
+<!--                 var notransition_elements = document.querySelectorAll(".notransition"); -->
+<!--                 for (var i =0 ; i < notransition_elements.length; i++) { -->
+<!--                     notransition_elements[i].classList.remove("notransition"); -->
+<!--                 } -->
+<!--             }, 10); -->
+<!--         } -->
+<!--         function toggle_hovercards(button) { -->
+<!--             var selector = 'a[href^="#"]'; -->
+<!--             var anchor_links = document.querySelectorAll(selector); -->
+<!--             var hovercards = []; -->
+<!--             for (var i = 0; i < anchor_links.length; i++) { -->
+<!--                 hovercards[i] = document.querySelector(anchor_links[i].getAttribute("href")); -->
+<!--             } -->
+<!--             var footnotes = hovercards; -->
+<!--  -->
+<!--             if (button.innerText.indexOf("OFF") === &#45;1) { -->
+<!--                 button.innerText = button.innerText.replace("ON", "OFF"); -->
+<!--  -->
+<!--                 for (var i = 0; i < hovercards.length; i++) { -->
+<!--                     hovercards[i].classList.remove("hovercard"); -->
+<!--                     hovercards[i].classList.remove("hidden"); -->
+<!--                     var f1 = global_mouseover_event_listeners[i]; -->
+<!--                     var f2 = global_mouseout_event_listeners[i]; -->
+<!--                     anchor_links[i].removeEventListener("mouseover", f1); -->
+<!--                     anchor_links[i].removeEventListener("mouseout", f2); -->
+<!--                 } -->
+<!--             } else { -->
+<!--                 button.innerText = button.innerText.replace("OFF", "ON"); -->
+<!--  -->
+<!--                 for (var i = 0; i < footnotes.length; i++) { -->
+<!--                     footnotes[i].classList.add("hovercard"); -->
+<!--                     var f1 = global_mouseover_event_listeners[i]; -->
+<!--                     var f2 = global_mouseout_event_listeners[i]; -->
+<!--                     anchor_links[i].addEventListener("mouseover", f1); -->
+<!--                     anchor_links[i].addEventListener("mouseout", f2); -->
+<!--                 } -->
+<!--                 hide_hovercards_without_transition(); -->
+<!--  -->
+<!--             } -->
+<!--         } -->
+<!--  -->
+<!--         var global_mouseover_event_listeners; -->
+<!--         var global_mouseout_event_listeners; -->
+<!--         window.addEventListener("load", function () { -->
+<!--             var selector = 'a[href^="#"]'; -->
+<!--             var anchor_links = document.querySelectorAll(selector); -->
+<!--             var mouseover_event_listeners = []; -->
+<!--             var mouseout_event_listeners = []; -->
+<!--  -->
+<!--             for (var i = 0; i < anchor_links.length; i++) { -->
+<!--                 var reference_selector = anchor_links[i].getAttribute("href"); -->
+<!--                 var card_id = "#footnote_" + reference_selector.slice(1); -->
+<!--                 var card_id_without_hash = card_id.slice(1); -->
+<!--                 var content_span = document.createElement("span"); -->
+<!--                 var hovercard = document.createElement("div"); -->
+<!--                 hovercard.setAttribute("id", card_id_without_hash); -->
+<!--                 hovercard.classList.add("hovercard"); -->
+<!--                 hovercard.classList.add("hidden"); -->
+<!--                 content_span.innerText = document.querySelector(reference_selector).textContent; -->
+<!--                 hovercard.appendChild(content_span); -->
+<!--  -->
+<!--                 var content_div = document.querySelector("#content"); -->
+<!--                 content_div.appendChild(hovercard); -->
+<!--  -->
+<!--                 (function f3(a, card_id) { -->
+<!--                     function f1 (event) { showcard(event, card_id, a) }; -->
+<!--                     function f2 () { hidecard(card_id) }; -->
+<!--                     a.addEventListener("mouseover", f1); -->
+<!--                     a.addEventListener("mouseout", f2); -->
+<!--                     mouseover_event_listeners[i] = f1; -->
+<!--                     mouseout_event_listeners[i] = f2; -->
+<!--                 })(anchor_links[i], card_id); -->
+<!--             } -->
+<!--             global_mouseover_event_listeners = mouseover_event_listeners; -->
+<!--             global_mouseout_event_listeners = mouseout_event_listeners; -->
+<!--  -->
+<!--         }); -->
+<!-- function showcard(event, identifier, element) { -->
+<!--     var card = document.querySelector(identifier); -->
+<!--     card.classList.remove("hidden"); -->
+<!--  -->
+<!--     var fontSize = parseInt(window.getComputedStyle(element).getPropertyValue("font&#45;size")); -->
+<!--     card.style.top = element.offsetTop + fontSize &#45; window.pageYOffset + 16; -->
+<!--  -->
+<!--     var mid_point = document.body.offsetWidth / 2; -->
+<!--     card.style.right = ""; -->
+<!--     card.style.left = ""; -->
+<!--     if (mid_point >= element.offsetLeft) { -->
+<!--         card.style.left = element.offsetLeft; -->
+<!--     } else { -->
+<!--         var left_offset = element.offsetLeft + element.offsetWidth; -->
+<!--         var right_offset = document.body.offsetWidth &#45; left_offset; -->
+<!--         card.style.right = right_offset; -->
+<!--     } -->
+<!-- } -->
+<!-- function hidecard(identifier) { -->
+<!--     var card = document.querySelector(identifier); -->
+<!--     card.classList.add("hidden"); -->
+<!-- } -->
+<!--     </script> -->
+
+<!-- mobile hovercards starts here -->
+
+<script>
+
+// function toggle_hovercards(button) {
+//     if (button.innerText.indexOf("OFF") === -1) {
+//         button.innerText = button.innerText.replace("ON", "OFF");
+//
+//         var hovercards = document.querySelectorAll(".mobile_hovercard");
+//         for (var i = 0; i < hovercards.length; i++) {
+//             hovercards[i].classList.remove("mobile_hovercard");
+//             hovercards[i].classList.remove("mobile_hidden");
+//             hovercards[i].querySelector("span.right").classList.add("span_hidden");
+//         }
+//     } else {
+//         button.innerText = button.innerText.replace("OFF", "ON");
+//
+//         var selector = 'a[href^="#"]';
+//         var anchor_links = document.querySelectorAll(selector);
+//         for (var i = 0; i < anchor_links.length; i++) {
+//             var card_id = anchor_links[i].getAttribute("href");
+//             var hovercard = document.querySelector(card_id);
+//             hovercard.classList.add("mobile_hovercard");
+//             hovercard.classList.add("mobile_hidden");
+//             hovercard.classList.add("notransition"); 
+//             hovercard.querySelector("span.right.span_hidden").classList.remove("span_hidden");
+//         }
+//         setTimeout(function() {
+//             var notransition_elements = document.querySelectorAll(".notransition");
+//             for (var i =0 ; i < notransition_elements.length; i++) {
+//                 notransition_elements[i].classList.remove("notransition");
+//             }
+//         }, 10);
+//
+//     }
+//
+// }
+window.addEventListener("load", function () {
+    var selector = 'a[href^="#"]';
+    var anchor_links = document.querySelectorAll(selector);
+    var span_node = document.createElement("span");
+    span_node.classList.add("right");
+    span_node.innerText = "X";
+    for (var i = 0; i < anchor_links.length; i++) {
+        var anchor_href = anchor_links[i].getAttribute("href");
+        anchor_links[i].removeAttribute("href");
+        var referenced_node = document.querySelector(anchor_href);
+        var anchor_href_without_hash = anchor_href.slice(1);
+        var card_id = "#footnote_" + anchor_href_without_hash;
+        var card_id_without_hash = card_id.slice(1);
+
+        var hovercard = document.createElement("div");
+
+        var span_clone = span_node.cloneNode(1);
+        hovercard.appendChild(span_clone);
+
+        var content_span = document.createElement("span");
+        content_span.innerText = referenced_node.textContent;
+        hovercard.appendChild(content_span);
+
+        var link_to_reference = document.createElement("a");
+        link_to_reference.setAttribute("href", anchor_href);
+        link_to_reference.innerText = "Go to Rule";
+
+        // TODO: Breaks BACK Button
+        (function (a) {
+            function hide_this_card() {
+                var hovercard = a.parentElement;
+                hovercard.classList.add("mobile_hidden");
+            }
+            a.addEventListener("click", hide_this_card);
+        })(link_to_reference);
+
+        hovercard.appendChild(link_to_reference);
+
+        hovercard.setAttribute("id", card_id_without_hash);
+        hovercard.classList.add("mobile_hovercard");
+        hovercard.classList.add("mobile_hidden");
+        hovercard.classList.add("notransition");
+
+        var content_div = document.querySelector("#content");
+        content_div.appendChild(hovercard);
+        (function (hovercard) {
+
+            span_clone.addEventListener("click", function () {
+                hovercard.classList.add("mobile_hidden");
+            });
+
+        })(hovercard);
+
+        (function (a, card_id) {
+            a.addEventListener("click", function () {
+                toggle_hovercard(card_id);
+            });
+        })(anchor_links[i], card_id);
+
+    }
+    setTimeout(function() {
+        var notransition_elements = document.querySelectorAll(".notransition");
+        for (var i =0 ; i < notransition_elements.length; i++) {
+            notransition_elements[i].classList.remove("notransition");
+        }
+    }, 10);
+});
+function toggle_hovercard(identifier) {
+    var visible_card = document.querySelector(".mobile_hovercard:not(.mobile_hidden)");
+    var clicked_card = document.querySelector(identifier);
+
+    if (visible_card === null) {
+        clicked_card.classList.remove("mobile_hidden");
+    } else if (clicked_card === visible_card) {
+        clicked_card.classList.add("mobile_hidden");
+    } else if (clicked_card !== visible_card) {
+        visible_card.classList.add("mobile_hidden");
+        clicked_card.classList.remove("mobile_hidden");
+    }
+
+}
+window.addEventListener("touchstart", function (event) {
+    var visible_card = document.querySelector(".mobile_hovercard:not(.mobile_hidden)");
+    if (!visible_card) {
+        return;
+    }
+    var [x, y] = [event.touches[0].clientX, event.touches[0].clientY];
+    var element = document.elementFromPoint(x, y);
+    if (element.tagName === "A" || element === visible_card || element.parentNode === visible_card) {
+        return;
+    }
+
+    visible_card.classList.add("mobile_hidden");
+
+});
+
+    </script>
+
+    <body>
+        <div id="content">
+
+<h1>Elementary rules of usage</h1>
+<a id="pdf" class="underline black" href="file:///C:/Users/vivek/Desktop/The%20Elements%20of%20Style/The%20Elements%20of%20Style.pdf">PDF</a>
+<div class="path">
+    <a href="style.html">The Elements of Style</a> → 
+    <a href="ch1.html">Elementary rules of usage</a>
+</div>
+
+<div class="todo">
+        <strong>Define:</strong>
+        <ul>
+        <li>Conjunctions</li>
+        <li>Adverbs</li>
+        <li>Independent clause</li>
+        <li>Particulars</li>
+        <li>Appositive</li>
+        <li>Preposition</li>
+        </ul>
+</div>
+
+            <div class="toc">
+                <ol>
+<li><a href="#rule-1">Form the possessive singular of nouns by adding ’s</a></li>
+<li><a href="#rule-2">In a series of three or more terms with a single conjunction, use a comma after each term except the last.</a></li>
+<li><a href="#rule-3">Enclose parenthetic expressions between commas</a></li>
+<li><a href="#rule-4">Place a comma before a conjunction introducing an independent clause.</a></li>
+<li><a href="#rule-5">Do not join independent clauses with a comma.</a></li>
+<li><a href="#rule-6">Do not break sentences in two.</a></li>
+<li><a href="#rule-7">Use a colon after an independent clause to introduce a list of particulars, an appositive, an amplification, or an illustrative quotation.</a></li>
+<li><a href="#rule-8">Use a dash to set off an abrupt break or interruption and to announce a long appositve or summary.</a></li>
+<li><a href="#rule-9">The number of the subject determines the number of the verb.</a></li>
+                </ol>
+            </div>
+
+
+<h4 id="rule-1">Form the possessive singular of nouns by adding ’s</h4>
+<p>
+Follow this rule whatever the final consonant. Thus write,</p>
+
+
+    <ul>
+        <li>Charles’s friend</li>
+        <li>Burns’s poems</li>
+        <li>the witch’s malice</li>
+    </ul>
+<p>
+Exceptions are the possessives of ancient proper names ending in -es and -is,
+the possessive of <em>Jesus’</em>, and such forms as for <em>conscience’ sake,
+for righteousness’ sake</em>. But such forms as <em>Moses’ Laws, Isis’
+temple</em> are commonly replaced by</p>
+    <ul>
+        <li>the law of Moses</li>
+        <li>the temple of Isis</li>
+    </ul>
+<p>
+The pronominal possessives of <em>hers, its, theirs, yours,</em> and
+<em>ours</em> have no apostrophe. Indefinite pronoun, however, use the
+apostrophe to show possesssion.</p>
+    <ul>
+        <li>one’s rights</li>
+        <li>somebody else’s umbrella</li>
+    </ul>
+<p>
+A common error is to write <em>it’s</em> for <em>its</em>, or vice versa. The
+first is a contraction, meaning ‘it is’. The second is a possessive.</p>
+    <ul>
+        <li>It’s a wise dog that scratches its own fleas.</li>
+    </ul>
+
+<h4 id="rule-2">In a series of three or more terms with a single conjunction, use a comma after each term except the last.</h4>
+<p>
+Thus write,</p>
+    <ul>
+        <li>red, white, and blue</li>
+        <li>gold, silver, or copper</li>
+        <li>He opened the letter, read it, and made a note of its contents</li>
+    </ul>
+<p>
+This comma is often referred to as the ‘serial’ comma.</p>
+<p>
+In the names of business firms the last comma is usually omitted. Follow the
+usage of the individual firm.</p>
+    <ul>
+        <li>Little, Brown and Company</li>
+        <li>Donaldson, Lufkin and Jenrette</li>
+    </ul>
+<h4 id="rule-3">Enclose parenthetic expressions between commas</h4>
+    <ul> 
+        <li>The best way to see a country, unless you are pressed for time, is
+            to travel on foot.</li> 
+    </ul>
+<p>
+This rule is difficult to apply; it is frequently hard to decide whether a
+single word, such as <em>however</em>, or a brief phrase is or is not
+parenthetic. If the interruption to the flow of the sentence is but slight, the
+commas may be safely omitted. But whether the interruption is slight or
+considerable, never omit one comma and leave the other. There is no defence for
+such punctuation as</p>
+    <ul>
+        <li>Marjorie’s husband, Colonel Nelson paid us a visit yesterday</li>
+        <li>My brother you will be pleased to hear, is now in perfect
+            health</li>
+    </ul>
+<p>
+Dates usually contain parenthetic words or figures. Punctuate as follows:</p>
+    <ul>
+        <li>February to July, 1992</li>
+        <li>April 6, 1986</li>
+        <li>Wednesday, November 14, 1990</li>
+    </ul>
+<p>
+Note that it is customary to omit the comma in</p>
+    <ul>
+        <li>6 April 1988</li>
+    </ul>
+<p>
+The last form is an excellent way to write a date; the figures are separated by
+a word and are, for that reason, quickly grasped.</p>
+<p>
+A name or title in direct address is parenthetic</p>
+    <ul>
+        <li>If, Sir, you refuse, I cannot predict what will happen.</li>
+        <li>Well, Susan, this is a fine mess you are in.</li>
+    </ul>
+<p>
+The abbreviations <em>etc., i.e.,</em> and <em>e.g.</em>, the abbreviations for
+academic degrees, and titles that follow a name are parenthetic and should be
+punctuated accordingly.</p>
+    <ul>
+        <li>Letters, packages, etc., should go here.</li>
+        <li>Horace Fulsome, Ph.D., presided</li>
+        <li>The Reverend Harry Lang, S.J.</li>
+    </ul>
+<p>
+No comma, however, should separate a noun from a restrictive term of
+identification</p>
+    <ul>
+        <li>Billy the Kid</li>
+        <li>The novelist Jane Austen</li>
+        <li>The poet Sappho</li>
+    </ul>
+<p>
+Although <em>Junior</em>, with it’s abbreviation <em>Jr.,</em> has commonly been
+regarded as parenthetic, logic suggests that it is, in fact, restrictive and
+therefore not in need of a comma.</p>
+    <ul> 
+        <li>James Wright Jr.</li> 
+    </ul> 
+<p>
+Nonrestrictive relative clauses are parenthetic, as are similar clauses
+introduced by conjunction indicating time or place. Commas are therefore needed.
+A nonrestrictive clause is one that does not serve to identify or define the
+antecedent noun.</p>
+    <ul>
+        <li>The audience, which had at first been indifferent, became more and
+            more interested.</li>
+        <li>In 1769, when Napoleon was born, Corsica had but recently been
+            acquired by France.</li>
+        <li>Nether Stowey, where Coleridge wrote <em>The Rime of the Ancient
+            Martner,</em> is a few miles from Bridgewater</li>
+    </ul>
+<p>
+In these sentences, the clauses introduced by <em>which, when,</em> and
+<em>where</em> are nonrestrictive; they do not limit or define, they merely add
+something. In the first example, the clause introduced by <em>which</em> does
+not serve to tell which of the several possible audiences is meant; the reader
+presumably knows that already. The clauses add, parenthetically, a statement
+supplementing that in the main clause. Each of the three sentences is a
+combination of two statements that might have been made independently.</p>
+    <ul>
+        <li>The audience was at first indifferent. Later it became more and more
+            interested.</li>
+        <li>Napoleon was born in 1769. At that time Corsica had but recently
+            been acquired by France.</li>
+        <li>Coleridge wrote <em>The Rime of the Ancient Mariner</em> at Nether
+            Stowey. Nether Stowey is a few miles from Bridgewater</li>
+    </ul>
+<p>
+Restrictive clauses, by contrast, are not parenthetic are not set off by commas.
+Thus,</p>
+    <ul>
+        <li>People who live in glass houses shouldn’t throw stones</li>
+    </ul>
+<p>
+Here the clause introduced by <em>who</em> does serve to tell which people are
+meant; the sentence, unlike the sentences above, cannot be split into two
+independent statements. The same principle of comma use applies to particular
+phrases and appositives.</p>
+    <ul> 
+        <li>People sitting in the rear couldn’t hear.
+            (<em>restrictive</em>)</li> 
+        <li>Uncle Bert, being slightly deaf, moved forward.
+            (<em>non-restrictive</em>)</li> 
+        <li>My cousin Bob is a talented harpist. (<em>restrictive</em>)</li> 
+        <li>Our oldest cousin, Mary, sings. (<em>non-restrictive</em>)</li> 
+    </ul> 
+<p>
+When the main clause of a sentence is preceded by a phrase or a subordinate
+clause, use a comma to set off these elements.</p>
+    <ul>
+        <li>Partly by hard fighting, partly by diplomatic skill, they enlarged
+            their dominions to the east and rose to royal rank with the
+            possession of Sicily.</li>
+    </ul>
+
+<h4 id="rule-4">Place a comma before a conjunction introducing an independent clause.</h4>
+    <ul>
+        <li>The early records of the city have disappeard, and the story of its
+            first years can  no longer be reconstructed</li>
+        <li>The situation is perilous, but there is still one chance of
+            escape.</li>
+    </ul>
+<p>
+Two-part sentences of which the second member is introduced by <em>as</em> (in
+the usual sense of “because”), <em>for, or, nor,</em> or <em>while</em> (in the
+sense of “and at the same time”) likewise require a comma before the
+conjunction.</p>
+    <ul>
+        <li>The situation is perilous, but if we are prepared to act promptly,
+            there is still one chance of escape.</li>
+    </ul>
+<p>
+When the subject is the same for both clauses and is expressed only once, a
+comma is useful if the connective is <em>but</em>. When the connective is
+<em>and</em>, the comma should be omitted if the relation between the two
+statements is close or immediate.</p>
+    <ul> 
+        <li>I have heard the arguments, but I am still unconvinced.</li> 
+        <li>He has had several years’ experience and is thoroughly
+            competent.</li> 
+    </ul>
+
+<h4 id="rule-5">Do not join independent clauses with a comma.</h4> 
+<p>
+If two or more clauses gramatically complete and not joined by a conjunction are
+to form a single compound sentence, the proper mark of punctuation is a
+semicolon.</p>
+    <ul>
+        <li>Mary Shelley’s works are entertaining; they are full of engaging
+            ideas.</li>
+        <li>It is nearly half past five; we cannot reach town before dark.</li>
+    </ul>
+<p>
+It is of course, equally correct to write each of these two sentences, replacing
+the semicolons with periods.</p>
+    <ul>
+        <li>Mary Shelley’s works are entertaining. They are full of engaging
+            ideas.</li>
+        <li>It is nearly half past five. We cannot reach the town before
+            dark.</li>
+    </ul>
+<p>
+If a conjunction is inserted, the proper mark is a comma. (<a href="#rule-4"
+class="black underline">Rule 4.</a>) </p>
+    <ul> 
+        <li>Mary Shelley’s works are entertaining, for they are full of engaging
+            ideas.</li> 
+        <li>It is nearly half past five, and we cannot reach town before
+            dark.</li> 
+    </ul>
+
+<p>
+A comparison of the three forms given above will show clearly the advantage of
+the first. It is, at least in the examples given, better than the second form
+because it suggests the close relationship between the two statements in a way
+that the second does not, and better than the third becuase it is briefer and
+therefore more forcible. Indeed, this simple method of indicating relationship
+between statements is one of the most useful devices of composition. The
+relationship, as above, is commonly one of cause and consequence.</p>
+<p>
+Note that if the second clause is preceded by an adverb, such as
+<em>accordingly, besides, then, therefore,</em> or <em>thus,</em> and not by a
+conjunction, the semicolon is still required.</p>
+    <ul> 
+        <li>I had never been in the place before; besides, it was dark as a
+            tomb.</li> 
+    </ul>
+<p> 
+An exception to the semicolon rule is worth noting here. A comma is preferable
+when the clauses are very short and alike in form, or when the tone of the
+sentence is easy and conversational.</p>
+    <ul>
+        <li>Man proposes, God disposes.</li>
+        <li>The gates swung apart, the bridges fell, the portcullis was drawn
+            up.</li>
+        <li>I hardly knew him, he was so changed.</li>
+        <li>Here today, gone tomorrow.</li>
+    </ul>
+
+<h4 id="rule-6">Do not break sentences in two.</h4>
+<p>
+In other words, do not use periods for commas.</p>
+    <ul>
+        <li>I met them on a Cunard liner many years ago. Coming home from
+            Liverpool to New York.</li>
+        <li>She was an interesting talker. A woman who had travelled all over
+            the world and lived in half a dozen countries.</li>
+    </ul>
+<p>
+In both these examples, the first period should be replaced by a comma and the
+following word begun with a smaller letter.</p>
+<p>
+It is permissible to make an empahtic word or expression serve the purpose of a
+sentence and to punctuate it accordingly:</p>
+    <ul>
+        <li>Again and again he called out. No reply.</li>
+    </ul>
+<p>
+The writer must, however, be certain that the emphasis is warranted, lest a
+clipped sentence seem merely a blunder in syntax or in punctuation. Generally
+speaking, the place for broken sentences is in dialogue, when a character
+happens to speak in a clipped or fragmentary way.</p>
+<p> 
+Rule <a href="#rule-3" class="black underline">3</a>, <a href="#rule-4"
+class="black underline">4</a>, <a href="#rule-5" class="black underline">5</a>,
+and <a href="#rule-6" class="black underline">6</a> cover the most important
+principles that govern punctuation.  They should be so thoroughly mastered that
+their application becomes second nature.</p> 
+
+<h4 id="rule-7">Use a colon after an independent clause to introduce a list of particulars, an appositive, an amplification, or an illustrative
+    quotation.</h4>
+<p>
+A colon tells the reader that what follows is closely related to the preceding
+clause. The colon has more effect than the comma, less power to separate than
+the semicolon, and more formality than the dash. It usually follows and
+independent clause and should not separate a verb from its complement or a
+preposition from its object. The examples in the lefthand column, below, are
+wrong; they should be rewritten as the righthand column.</p>
+<table><tbody>
+        <tr>
+            <td><ul><li>Your dedicated whittler requires: a knife, a piece of
+                        wood, and a back porch.</li></ul></td>
+            <td><ul><li>Your dedicated whittler requires three props: a knife, a
+                        piece of wood, and a back porch.</li></ul></td>
+        </tr>
+        <tr>
+            <td><ul><li>Understanding is the penetrating quality of knowledge
+                        that grows from: theory, practice, conviction,
+                        assertion, error, and humiliation.</li></ul></td>
+            <td><ul><li>Understanding is the penetrating quality of knowledge
+                        that grows from theory, practice, conviction, assertion,
+                        error, and humiliation.</li></ul></td>
+        </tr>
+</tbody></table>
+<p>
+Join two independent clauses with a colon if the second interprets or amplifies
+the first.</p>
+    <ul>
+        <li>But even so, there was a directness and dispatch about animal
+            burial: there was no stopover in the undertaker’s foul parlor, no
+            wreath or spray.</li>
+    </ul>
+<p>
+A colon may introduce a quotation that supports or contributes to the preceding
+clause.</p>
+    <ul>
+        <li>The squalor of the streets reminded her of a line from Oscar Wilde:
+            “We are all in the gutter, but some of us are looking at the
+            stars.”</li>
+    </ul>
+<p>
+The colon also has certain functions of form: to follow the salutation of a
+formal letter, to separate hour from minute in a notation of time, and to
+separate the title of a work from its subtitle or a Bible chapter from a
+verse.</p>
+    <ul>
+        <li>Dear Mr. Montague:</li>
+        <li>departs at 10:48 P.M.</li>
+        <li><em>Practical Calligraphy: An Introduction to Italic
+                Script</em></li>
+        <li>Nehemiah 11:7</li>
+    </ul>
+<h4 id="rule-8">Use a dash to set off an abrupt break or interruption and to announce a long appositve or summary.</h4>
+<p>
+A dash is a mark of separation stronger than a comma, less formal than a colon,
+and more relaxed than a parentheses.</p>
+    <ul>
+        <li>His final thought on getting out of bed—if he had any thought at
+            all—was to get back in again.</li>
+        <li>The rear axle began to make a noise—a grinding, chattering,
+            teeth-gripping rasp.</li>
+        <li>The increasing reluctance of the sun to rise, the extra nip in the
+            breeze, the patter of shed leaves dropping—all the evidence of fall
+            drifting into winter were clearer each day.</li>
+    </ul>
+<p>
+Use a dash only when a more common mark of punctuation seems inadequate.</p>
+<table><tbody>
+    <tr>
+        <td><ul><li>Her father’s suspicions proved well-founded—it was not
+                    Edward she cared for—it was San Francisco.</li></ul></td>
+        <td><ul><li>Her father’s suspicions proved well-founded. It was not
+                    Edward she cared for, it was San Francisco.</li></ul></td>
+    </tr>
+    <tr>
+        <td><ul><li>Violence—the kind you see on television—is not honestly
+                    violent—there lies its harm.</li></ul></td>
+        <td><ul><li>Violence, the kind you see on television, is not honestly
+                    violent. There lies its harm.</li></ul></td>
+    </tr>
+    </tr>
+</tbody></table>
+<h4 id="rule-9">The number of the subject determines the number of the verb.</h4>
+<p>
+Words that intervene between subject and verb do not affect the number of the
+verb.</p>
+<table><tbody>
+    <tr>
+        <td><ul><li>The bittersweet flavor of youth—its trials, its joys, its
+                    adventures, its challenges—are not soon
+                    forgotten.</li></ul></td>
+        <td><ul><li>The bittersweet flavor of youth—its trials, its joys, its
+                    adventures, its challenges—is soon not
+                    forgotten.</li></ul></td>
+</tbody></table>
+<p>
+A common blunder is the use of a singular form in a relative clause following
+“one of…” or a similar expression when the relative is the subject.</p>
+<table><tbody>
+        <tr>
+            <td><ul><li>One of the ablest scientists who has attacked this
+                        problem.</li></ul></td>
+            <td><ul><li>One of the ablest scientists who have attacked this
+                        problem.</li></ul></td>
+        </tr>
+        <tr>
+            <td><ul><li>One of those people who is never ready on time.</li></ul></td>
+            <td><ul><li>One of those people who are never ready on time.</li></ul></td>
+        </tr>
+</tbody></table>
+<p>
+Use a singular form after <em>each, either, everyone, everybody, neither,
+nobody, someone.</em></p>
+    <ul>
+        <li>Everybody thinks he has a unique sense of humor.</li>
+        <li>Although both clocks strike cheerfully, neither keeps good
+            time.</li>
+    </ul>
+<p>
+With <em>none,</em> use the singular verb when the word means “no one” or “not
+one.”</p>
+
+<table><tbody>
+        <tr class="misbehave">
+            <td><ul><li>None of us are perfect.</li></ul></td>
+            <td><ul><li>None of us is perfect.</li></ul></td>
+        </tr>
+</tbody></table>
+<p>
+A plural verb is commonly used when <em>none</em> suggests more than one thing
+or person.</p>
+    <ul>
+        <li>None of us are so fallible as those who are sure they’re
+            right.</li>
+    </ul>
+<p>
+A compound subject formed of two or more nouns joined by <em>and</em> almost
+always requires a plural verb.</p>
+    <ul>
+        <li>The walrus and the carpenter were walking close at hand.</li>
+    </ul>
+<p>
+But certain compounds, often clichés, are so inseparable they are considered a
+unit and so take a singular verb, as do compound subjects qualified by
+<em>each</em> or <em>every.</em></p>
+    <ul>
+        <li>The long and the short of it is …</li>
+        <li>Bread and butter was all she served.</li>
+        <li>Give and take is essential to a happy household.</li>
+        <li>Every window, picture and mirror was smashed.</li>
+    </ul>
+<p>
+A singular subject remains even if other nouns are connected to it by <em>with,
+as well as, in addition to, except, together with,</em> and <em>no less
+than.</em></p>
+    <ul>
+        <li>His speech as well as his manner is objectionable.</li>
+    </ul>
+<p>
+A linking verb agrees with the number of it’s subject.</p>
+    <ul>
+        <li>What is wanted is a few more pairs of hands.</li>
+        <li>The trouble with truth is its many varieties.</li>
+    </ul>
+<p>
+Some nouns that appear to be plurarl are usually construed as singular and given
+a singular verb.</p>
+    <ul>
+        <li>Politics is an art, not a science.</li>
+        <li>The Republican Headquarters is on this side of the tracks.</li>
+    </ul>
+<p>
+But</p>
+    <ul>
+        <li>The general’s quarters are across the river.</li>
+    </ul>
+<p>
+In these cases the writers must simply learn the idioms. The contents of a book
+is singular. The contents of a jar may be singular or plural, depending on
+what’s in the jar—jam or marbles.</p>
+
+<h4 id="rule-10">Use the proper case of pronoun</h4>
+
+<p>
+Required Reading: <a class="black underline" href="http://grammar.yourdictionary.com/parts-of-speech/pronouns/types-of-pronouns.html">
+Types of Pronouns</a></p>
+<p>
+The personal pronouns, as well as the pronoun <em>who</em>, change form as they
+function as subject or object.</p>
+    <ul>
+        <li>
+        </div>
+    </body>
+</html>

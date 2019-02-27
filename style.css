@@ -1,0 +1,88 @@
+
+#content {
+    margin: 1em auto;
+    font-family: "Equity Text A";
+    line-height: 1.35;
+    max-width: 40em;
+    padding: 0 1em;
+    font-size: 20px;
+}
+
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+    font-family: "Concourse C2";
+}
+ul {
+    list-style-type: square;
+}
+a {
+    text-decoration: none;
+    color: #36c;
+    padding: 2px;
+}
+a:hover {
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
+    border-bottom: solid 2px;
+}
+table {
+    width: 100%;
+}
+table, td {
+    font-size: inherit;
+}
+td {
+    vertical-align: top;
+    width: 50%;
+}
+  
+td ul {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.path a, .path  {
+    color: inherit;
+    font-family: serif;
+    font-style: italic;
+}
+.path a {
+    border-bottom: dotted;
+}
+.path a:hover {
+    border-bottom: solid 3px;
+}
+a.black.underline {
+    color: inherit;
+    border-bottom: dotted 2px;
+}
+a.black.underline:hover {
+    border-bottom: solid 5px;
+}
+a[href^="http"]:after {
+    background-position: center right;
+    background-repeat: no-repeat;
+    content: "";
+    background-image: url("external_link.svg");
+    padding: 0 10px;
+    margin-left: 10px;
+}
+
+div.todo ul {
+    column-width: 10em;
+    list-style-type: none;
+    margin: 0;
+}
+div.todo {
+    margin: 2em 0;
+    color: #ccc;
+}
+#pdf {
+    float: right;
+    padding: 1.5px;
+    font-family: "Concourse C4";
+    color: #ccc;
+}
+#pdf:hover {
+    color: black;
+}
