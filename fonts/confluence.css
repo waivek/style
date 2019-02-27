@@ -1,0 +1,36 @@
+@font-face { font-family: "Confluence C2" ; src: url("confluence_c2_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C2" ; src: url("confluence_c2_bold.ttf") format("truetype")        ; font-weight:bold   ; }
+
+@font-face { font-family: "Confluence C3" ; src: url("confluence_c3_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C3" ; src: url("confluence_c3_bold.ttf") format("truetype")        ; font-weight:bold   ; }
+
+@font-face { font-family: "Confluence C4" ; src: url("confluence_c4_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C4" ; src: url("confluence_c4_bold.ttf") format("truetype")        ; font-weight:bold   ; }
+
+@font-face { font-family: "Confluence C6" ; src: url("confluence_c6_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C7" ; src: url("confluence_c7_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C8" ; src: url("confluence_c8_regular.ttf") format("truetype")     ; font-weight:normal ; }
+
+@font-face { font-family: "Confluence T2" ; src: url("confluence_t2_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T2" ; src: url("confluence_t2_italic.ttf") format("truetype")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Confluence T2" ; src: url("confluence_t2_bold.ttf") format("truetype")        ; font-weight:bold   ; }
+@font-face { font-family: "Confluence T2" ; src: url("confluence_t2_bold_italic.ttf") format("truetype") ; font-weight:bold   ; font-style:italic ; }
+
+@font-face { font-family: "Confluence T3" ; src: url("confluence_t3_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T3" ; src: url("confluence_t3_italic.ttf") format("truetype")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Confluence T3" ; src: url("confluence_t3_bold.ttf") format("truetype")        ; font-weight:bold   ; }
+@font-face { font-family: "Confluence T3" ; src: url("confluence_t3_bold_italic.ttf") format("truetype") ; font-weight:bold   ; font-style:italic ; }
+
+@font-face { font-family: "Confluence T4" ; src: url("confluence_t4_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T4" ; src: url("confluence_t4_italic.ttf") format("truetype")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Confluence T4" ; src: url("confluence_t4_bold.ttf") format("truetype")        ; font-weight:bold   ; }
+@font-face { font-family: "Confluence T4" ; src: url("confluence_t4_bold_italic.ttf") format("truetype") ; font-weight:bold   ; font-style:italic ; }
+
+@font-face { font-family: "Confluence T6" ; src: url("confluence_t6_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T6" ; src: url("confluence_t6_italic.ttf") format("truetype")      ; font-weight:normal ; font-style:italic ; }
+
+@font-face { font-family: "Confluence T7" ; src: url("confluence_t7_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T7" ; src: url("confluence_t7_italic.ttf") format("truetype")      ; font-weight:normal ; font-style:italic ; }
+
+@font-face { font-family: "Confluence T8" ; src: url("confluence_t8_regular.ttf") format("truetype")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T8" ; src: url("confluence_t8_italic.ttf") format("truetype")      ; font-weight:normal ; font-style:italic ; }
