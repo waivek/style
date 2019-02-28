@@ -117,168 +117,167 @@
 }
 
 
-
 </style>
 
-<!--     <script> -->
-<!--  -->
-<!--         function hide_hovercards_without_transition () { -->
-<!--             var hovercards = document.querySelectorAll(".hovercard"); -->
-<!--             for (var i = 0; i < hovercards.length; i++) { -->
-<!--                 hovercards[i].classList.add("hidden"); -->
-<!--                 hovercards[i].classList.add("notransition"); -->
-<!--             } -->
-<!--             setTimeout(function() { -->
-<!--                 var notransition_elements = document.querySelectorAll(".notransition"); -->
-<!--                 for (var i =0 ; i < notransition_elements.length; i++) { -->
-<!--                     notransition_elements[i].classList.remove("notransition"); -->
-<!--                 } -->
-<!--             }, 10); -->
-<!--         } -->
-<!--         function toggle_hovercards(button) { -->
-<!--             var selector = 'a[href^="#"]'; -->
-<!--             var anchor_links = document.querySelectorAll(selector); -->
-<!--             var hovercards = []; -->
-<!--             for (var i = 0; i < anchor_links.length; i++) { -->
-<!--                 hovercards[i] = document.querySelector(anchor_links[i].getAttribute("href")); -->
-<!--             } -->
-<!--             var footnotes = hovercards; -->
-<!--  -->
-<!--             if (button.innerText.indexOf("OFF") === &#45;1) { -->
-<!--                 button.innerText = button.innerText.replace("ON", "OFF"); -->
-<!--  -->
-<!--                 for (var i = 0; i < hovercards.length; i++) { -->
-<!--                     hovercards[i].classList.remove("hovercard"); -->
-<!--                     hovercards[i].classList.remove("hidden"); -->
-<!--                     var f1 = global_mouseover_event_listeners[i]; -->
-<!--                     var f2 = global_mouseout_event_listeners[i]; -->
-<!--                     anchor_links[i].removeEventListener("mouseover", f1); -->
-<!--                     anchor_links[i].removeEventListener("mouseout", f2); -->
-<!--                 } -->
-<!--             } else { -->
-<!--                 button.innerText = button.innerText.replace("OFF", "ON"); -->
-<!--  -->
-<!--                 for (var i = 0; i < footnotes.length; i++) { -->
-<!--                     footnotes[i].classList.add("hovercard"); -->
-<!--                     var f1 = global_mouseover_event_listeners[i]; -->
-<!--                     var f2 = global_mouseout_event_listeners[i]; -->
-<!--                     anchor_links[i].addEventListener("mouseover", f1); -->
-<!--                     anchor_links[i].addEventListener("mouseout", f2); -->
-<!--                 } -->
-<!--                 hide_hovercards_without_transition(); -->
-<!--  -->
-<!--             } -->
-<!--         } -->
-<!--  -->
-<!--         var global_mouseover_event_listeners; -->
-<!--         var global_mouseout_event_listeners; -->
-<!--         window.addEventListener("load", function () { -->
-<!--             var selector = 'a[href^="#"]'; -->
-<!--             var anchor_links = document.querySelectorAll(selector); -->
-<!--             var mouseover_event_listeners = []; -->
-<!--             var mouseout_event_listeners = []; -->
-<!--  -->
-<!--             for (var i = 0; i < anchor_links.length; i++) { -->
-<!--                 var reference_selector = anchor_links[i].getAttribute("href"); -->
-<!--                 var card_id = "#footnote_" + reference_selector.slice(1); -->
-<!--                 var card_id_without_hash = card_id.slice(1); -->
-<!--                 var content_span = document.createElement("span"); -->
-<!--                 var hovercard = document.createElement("div"); -->
-<!--                 hovercard.setAttribute("id", card_id_without_hash); -->
-<!--                 hovercard.classList.add("hovercard"); -->
-<!--                 hovercard.classList.add("hidden"); -->
-<!--                 content_span.innerText = document.querySelector(reference_selector).textContent; -->
-<!--                 hovercard.appendChild(content_span); -->
-<!--  -->
-<!--                 var content_div = document.querySelector("#content"); -->
-<!--                 content_div.appendChild(hovercard); -->
-<!--  -->
-<!--                 (function f3(a, card_id) { -->
-<!--                     function f1 (event) { showcard(event, card_id, a) }; -->
-<!--                     function f2 () { hidecard(card_id) }; -->
-<!--                     a.addEventListener("mouseover", f1); -->
-<!--                     a.addEventListener("mouseout", f2); -->
-<!--                     mouseover_event_listeners[i] = f1; -->
-<!--                     mouseout_event_listeners[i] = f2; -->
-<!--                 })(anchor_links[i], card_id); -->
-<!--             } -->
-<!--             global_mouseover_event_listeners = mouseover_event_listeners; -->
-<!--             global_mouseout_event_listeners = mouseout_event_listeners; -->
-<!--  -->
-<!--         }); -->
-<!-- function showcard(event, identifier, element) { -->
-<!--     var card = document.querySelector(identifier); -->
-<!--     card.classList.remove("hidden"); -->
-<!--  -->
-<!--     var fontSize = parseInt(window.getComputedStyle(element).getPropertyValue("font&#45;size")); -->
-<!--     card.style.top = element.offsetTop + fontSize &#45; window.pageYOffset + 16; -->
-<!--  -->
-<!--     var mid_point = document.body.offsetWidth / 2; -->
-<!--     card.style.right = ""; -->
-<!--     card.style.left = ""; -->
-<!--     if (mid_point >= element.offsetLeft) { -->
-<!--         card.style.left = element.offsetLeft; -->
-<!--     } else { -->
-<!--         var left_offset = element.offsetLeft + element.offsetWidth; -->
-<!--         var right_offset = document.body.offsetWidth &#45; left_offset; -->
-<!--         card.style.right = right_offset; -->
-<!--     } -->
-<!-- } -->
-<!-- function hidecard(identifier) { -->
-<!--     var card = document.querySelector(identifier); -->
-<!--     card.classList.add("hidden"); -->
-<!-- } -->
-<!--     </script> -->
+    <script>
 
-<!-- mobile hovercards starts here -->
+function remove_mouse_event_listeners() {
+    console.log("removed mouse event listeners");
+    var elements = global_elements_with_mouse_event_listeners;
+    var mouseover_fns = global_mouseover_event_listeners;
+    var mouseout_fns = global_mouseout_event_listeners;
 
-<script>
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var mouseover_fn = mouseover_fns[i];
+        var mouseout_fn = mouseout_fns[i];
+        element.removeEventListener("mouseover", mouseover_fn);
+        element.removeEventListener("mouseout", mouseout_fn);
+    }
+    window.removeEventListener("touchstart", remove_mouse_event_listeners); 
+}
 
-// function toggle_hovercards(button) {
-//     if (button.innerText.indexOf("OFF") === -1) {
-//         button.innerText = button.innerText.replace("ON", "OFF");
-//
-//         var hovercards = document.querySelectorAll(".mobile_hovercard");
-//         for (var i = 0; i < hovercards.length; i++) {
-//             hovercards[i].classList.remove("mobile_hovercard");
-//             hovercards[i].classList.remove("mobile_hidden");
-//             hovercards[i].querySelector("span.right").classList.add("span_hidden");
-//         }
-//     } else {
-//         button.innerText = button.innerText.replace("OFF", "ON");
-//
-//         var selector = 'a[href^="#"]';
-//         var anchor_links = document.querySelectorAll(selector);
-//         for (var i = 0; i < anchor_links.length; i++) {
-//             var card_id = anchor_links[i].getAttribute("href");
-//             var hovercard = document.querySelector(card_id);
-//             hovercard.classList.add("mobile_hovercard");
-//             hovercard.classList.add("mobile_hidden");
-//             hovercard.classList.add("notransition"); 
-//             hovercard.querySelector("span.right.span_hidden").classList.remove("span_hidden");
-//         }
-//         setTimeout(function() {
-//             var notransition_elements = document.querySelectorAll(".notransition");
-//             for (var i =0 ; i < notransition_elements.length; i++) {
-//                 notransition_elements[i].classList.remove("notransition");
-//             }
-//         }, 10);
-//
-//     }
-//
-// }
+
+var global_mouseover_event_listeners;
+var global_mouseout_event_listeners;
+var global_elements_with_mouse_event_listeners;
+window.addEventListener("load", function () {
+    console.log("attached mouse listeners");
+    var selector = 'a[href^="#"]';
+
+    var anchor_links = [];
+    var filter_out_selector = '.toc a[href^="#"]';
+    var nodes_to_filter = document.querySelectorAll(filter_out_selector);
+    var all_nodes = document.querySelectorAll(selector);
+    for (var i = 0; i < all_nodes.length; i++) {
+        var candidate = all_nodes[i];
+        var valid_candidate = true;
+        for (var j = 0; j < nodes_to_filter.length; j++) {
+            var filter_node = nodes_to_filter[j];
+            if (filter_node === candidate) {
+                valid_candidate = false;
+            }
+        }
+        if (!valid_candidate) {
+            continue;
+        }
+        anchor_links.push(candidate);
+        console.log(candidate);
+    }
+
+    var mouseover_event_listeners = [];
+    var mouseout_event_listeners = [];
+    var elements_with_mouse_event_listeners = [];
+
+    for (var i = 0; i < anchor_links.length; i++) {
+        var reference_selector = anchor_links[i].getAttribute("href");
+        var card_id = "#footnote_" + reference_selector.slice(1);
+        var card_id_without_hash = card_id.slice(1);
+        var content_span = document.createElement("span");
+        var hovercard = document.createElement("div");
+        hovercard.setAttribute("id", card_id_without_hash);
+        hovercard.classList.add("hovercard");
+        hovercard.classList.add("hidden");
+        content_span.innerText = document.querySelector(reference_selector).textContent;
+        hovercard.appendChild(content_span);
+
+        var content_div = document.querySelector("#content");
+        content_div.appendChild(hovercard);
+
+        (function f3(a, card_id) {
+            function f1 (event) { showcard(event, card_id, a) };
+            function f2 () { hidecard(card_id) };
+            a.addEventListener("mouseover", f1);
+            a.addEventListener("mouseout", f2);
+            mouseover_event_listeners[i] = f1;
+            mouseout_event_listeners[i] = f2;
+            elements_with_mouse_event_listeners[i] = a;
+
+        })(anchor_links[i], card_id);
+    }
+    global_mouseover_event_listeners = mouseover_event_listeners;
+    global_mouseout_event_listeners = mouseout_event_listeners;
+    global_elements_with_mouse_event_listeners = elements_with_mouse_event_listeners;
+
+    window.addEventListener("touchstart", remove_mouse_event_listeners);
+
+    function hide_card_if_shown() {
+        var visible_card = document.querySelector(".hovercard:not(.hidden)");
+        if (visible_card) {
+            var identifier = "#" + visible_card.getAttribute("id");
+            hidecard(identifier);
+
+        }
+    }
+    window.addEventListener("scroll", hide_card_if_shown);
+
+});
+
+function showcard(event, identifier, element) {
+    var card = document.querySelector(identifier);
+    card.classList.remove("hidden");
+
+    var fontSize = parseInt(window.getComputedStyle(element).getPropertyValue("font-size"));
+    card.style.top = element.offsetTop + fontSize - window.pageYOffset + 16;
+
+    var mid_point = document.body.offsetWidth / 2;
+    card.style.right = "";
+    card.style.left = "";
+    if (mid_point >= element.offsetLeft) {
+        card.style.left = element.offsetLeft;
+    } else {
+        var left_offset = element.offsetLeft + element.offsetWidth;
+        var right_offset = document.body.offsetWidth - left_offset;
+        card.style.right = right_offset;
+    }
+}
+function hidecard(identifier) {
+    var card = document.querySelector(identifier);
+    card.classList.add("hidden");
+}
+
 window.addEventListener("load", function () {
     var selector = 'a[href^="#"]';
-    var anchor_links = document.querySelectorAll(selector);
+
+    var anchor_links = [];
+    var filter_out_selector = '.toc a[href^="#"]';
+    var nodes_to_filter = document.querySelectorAll(filter_out_selector);
+    var all_nodes = document.querySelectorAll(selector);
+    for (var i = 0; i < all_nodes.length; i++) {
+        var candidate = all_nodes[i];
+        var valid_candidate = true;
+        for (var j = 0; j < nodes_to_filter.length; j++) {
+            var filter_node = nodes_to_filter[j];
+            if (filter_node === candidate) {
+                valid_candidate = false;
+            }
+        }
+        if (!valid_candidate) {
+            continue;
+        }
+        anchor_links.push(candidate);
+        console.log(candidate);
+    }
+
     var span_node = document.createElement("span");
     span_node.classList.add("right");
     span_node.innerText = "X";
     for (var i = 0; i < anchor_links.length; i++) {
         var anchor_href = anchor_links[i].getAttribute("href");
-        anchor_links[i].removeAttribute("href");
+        (function (anchor_with_href) {
+
+            function remove_href_and_listener() {
+                anchor_with_href.removeAttribute("href");
+                window.removeEventListener("touchstart", remove_href_and_listener);
+                console.log("removed href");
+            }
+            window.addEventListener("touchstart", remove_href_and_listener);
+
+        })(anchor_links[i]);
+        // anchor_links[i].removeAttribute("href");
         var referenced_node = document.querySelector(anchor_href);
         var anchor_href_without_hash = anchor_href.slice(1);
-        var card_id = "#footnote_" + anchor_href_without_hash;
+        var card_id = "#mobile_footnote_" + anchor_href_without_hash;
         var card_id_without_hash = card_id.slice(1);
 
         var hovercard = document.createElement("div");
@@ -293,14 +292,11 @@ window.addEventListener("load", function () {
         var link_to_reference = document.createElement("a");
         link_to_reference.setAttribute("href", anchor_href);
         link_to_reference.innerText = "Go to Rule";
-
-        // TODO: Breaks BACK Button
         (function (a) {
-            function hide_this_card() {
+            a.addEventListener("click", function () {
                 var hovercard = a.parentElement;
                 hovercard.classList.add("mobile_hidden");
-            }
-            a.addEventListener("click", hide_this_card);
+            });
         })(link_to_reference);
 
         hovercard.appendChild(link_to_reference);
@@ -321,7 +317,7 @@ window.addEventListener("load", function () {
         })(hovercard);
 
         (function (a, card_id) {
-            a.addEventListener("click", function () {
+            a.addEventListener("touchstart", function () {
                 toggle_hovercard(card_id);
             });
         })(anchor_links[i], card_id);
@@ -363,6 +359,18 @@ window.addEventListener("touchstart", function (event) {
 
 });
 
+    </script>
+
+    <script>
+// window.addEventListener("click", event => console.log(event.type));
+// window.addEventListener("mousedown", event => console.log(event.type));
+// window.addEventListener("mousemove", event => console.log(event.type));
+// window.addEventListener("mouseout", event => console.log(event.type));
+// window.addEventListener("mouseover", event => console.log(event.type));
+// window.addEventListener("mouseup", event => console.log(event.type));
+// window.addEventListener("touchstart", event => console.log(event.type));
+// window.addEventListener("touchmove", event => console.log(event.type));
+// window.addEventListener("touchend", event => console.log(event.type));
     </script>
 
     <body>
