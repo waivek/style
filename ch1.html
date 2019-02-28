@@ -50,7 +50,7 @@
 }
 @media screen and (max-width: 720px) {
     body, #content, .hovercard {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
@@ -114,6 +114,9 @@
 .span_hidden {
     visibility: hidden;
     opacity: 0;
+}
+.no_user_select {
+    user-select: none;
 }
 
 
@@ -318,6 +321,7 @@ window.addEventListener("load", function () {
 
         (function (a, card_id) {
             a.addEventListener("touchstart", function () {
+                a.classList.add("no_user_select");
                 toggle_hovercard(card_id);
             });
         })(anchor_links[i], card_id);
