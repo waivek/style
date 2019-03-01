@@ -5,28 +5,28 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Elementary rules of usage</title>
         <link href="style.css" type="text/css" rel="stylesheet" />
-        <link href="fonts\confluence.css" type="text/css" rel="stylesheet" />
-        <link href="fonts\fairplay.css" type="text/css" rel="stylesheet" />
+        <link href="fonts/confluence.css" type="text/css" rel="stylesheet" />
+        <link href="fonts/fairplay.css" type="text/css" rel="stylesheet" />
     </head>
 
 <style>
 
 .hovercard {
-    /* border: solid 1px; */
+
     box-shadow: 2px 2px 8px 0px;
     border-radius: 4px;
     position: fixed;
     padding: .5em 1em;
     max-width: 20em;
 
-    /* https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
-    /* background: #B71C1C; */
     background: brown;
 
     font-family: "Confluence T3";
     font-size: 20px;
 
     text-align: center;
+
+    margin-top: 2em;
 
 
 }
@@ -135,16 +135,16 @@ function load_desktop_hovercards(anchor_links) {
 
                 card.classList.remove("hidden");
 
-                var fontSize = parseInt(window.getComputedStyle(element).getPropertyValue("font-size"));
-                card.style.top = element.offsetTop + fontSize - window.pageYOffset + 16;
+                card.style.top = element.offsetTop  - window.pageYOffset ;
 
                 var mid_point = document.body.offsetWidth / 2;
                 card.style.right = "";
                 card.style.left = "";
+                var element_left = element.getBoundingClientRect().x;
                 if (mid_point >= element.offsetLeft) {
-                    card.style.left = element.offsetLeft;
+                    card.style.left = element_left;
                 } else {
-                    var left_offset = element.offsetLeft + element.offsetWidth;
+                    var left_offset = element_left + element.offsetWidth;
                     var right_offset = document.body.offsetWidth - left_offset;
                     card.style.right = right_offset;
                 }
@@ -358,7 +358,7 @@ function load_mobile_hovercards(anchor_links) {
         <div id="content">
 
 <h1>Elementary rules of usage</h1>
-<a id="pdf" class="underline black" href="file:///C:/Users/vivek/Desktop/The%20Elements%20of%20Style/The%20Elements%20of%20Style.pdf">PDF</a>
+<a id="pdf" class="underline black" href="The%20Elements%20of%20Style.pdf">PDF</a>
 <div class="path">
     <a href="index.html">The Elements of Style</a> → 
     <a href="ch1.html">Elementary rules of usage</a>
