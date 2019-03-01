@@ -115,38 +115,14 @@
     visibility: hidden;
     opacity: 0;
 }
-.no_user_select {
-    user-select: none;
-    -webkit-user-select: none;
-}
 
-    a[href^="#"] {
-        -webkit-user-select: none;
-    }
 </style>
 
     <script>
 
-function remove_mouse_event_listeners() {
-    console.log("removed mouse event listeners");
-    var elements = global_elements_with_mouse_event_listeners;
-    var mouseover_fns = global_mouseover_event_listeners;
-    var mouseout_fns = global_mouseout_event_listeners;
 
-    for (var i = 0; i < elements.length; i++) {
-        var element = elements[i];
-        var mouseover_fn = mouseover_fns[i];
-        var mouseout_fn = mouseout_fns[i];
-        element.removeEventListener("mouseover", mouseover_fn);
-        element.removeEventListener("mouseout", mouseout_fn);
-    }
-    window.removeEventListener("touchstart", remove_mouse_event_listeners); 
-}
-
-
-var global_mouseover_event_listeners;
-var global_mouseout_event_listeners;
-var global_elements_with_mouse_event_listeners;
+var remove_mobile_hovercards;
+var remove_desktop_hovercards;
 window.addEventListener("load", function () {
     console.log("attached mouse listeners");
     var selector = 'a[href^="#"]';
@@ -168,81 +144,88 @@ window.addEventListener("load", function () {
             continue;
         }
         anchor_links.push(candidate);
-        console.log(candidate);
     }
 
-    var mouseover_event_listeners = [];
-    var mouseout_event_listeners = [];
+    var mouseover_fns = [];
+    var mouseout_fns = [];
     var elements_with_mouse_event_listeners = [];
 
     for (var i = 0; i < anchor_links.length; i++) {
         var reference_selector = anchor_links[i].getAttribute("href");
-        var card_id = "#footnote_" + reference_selector.slice(1);
-        var card_id_without_hash = card_id.slice(1);
-        var content_span = document.createElement("span");
+        var card_id_without_hash = "footnote_" + reference_selector.slice(1);;
+
         var hovercard = document.createElement("div");
         hovercard.setAttribute("id", card_id_without_hash);
         hovercard.classList.add("hovercard");
         hovercard.classList.add("hidden");
+
+        var content_span = document.createElement("span");
         content_span.innerText = document.querySelector(reference_selector).textContent;
         hovercard.appendChild(content_span);
 
         var content_div = document.querySelector("#content");
         content_div.appendChild(hovercard);
 
-        (function f3(a, card_id) {
-            function f1 (event) { showcard(event, card_id, a) };
-            function f2 () { hidecard(card_id) };
-            a.addEventListener("mouseover", f1);
-            a.addEventListener("mouseout", f2);
-            mouseover_event_listeners[i] = f1;
-            mouseout_event_listeners[i] = f2;
+        (function (a, hovercard) {
+
+            function show_desktop_card(card, element) {
+
+                card.classList.remove("hidden");
+
+                var fontSize = parseInt(window.getComputedStyle(element).getPropertyValue("font-size"));
+                card.style.top = element.offsetTop + fontSize - window.pageYOffset + 16;
+
+                var mid_point = document.body.offsetWidth / 2;
+                card.style.right = "";
+                card.style.left = "";
+                if (mid_point >= element.offsetLeft) {
+                    card.style.left = element.offsetLeft;
+                } else {
+                    var left_offset = element.offsetLeft + element.offsetWidth;
+                    var right_offset = document.body.offsetWidth - left_offset;
+                    card.style.right = right_offset;
+                }
+            }
+            function mouseover_fn () { show_desktop_card(hovercard, a) };
+            function mouseout_fn () { hovercard.classList.add("hidden") };
+
+            a.addEventListener("mouseover", mouseover_fn);
+            a.addEventListener("mouseout", mouseout_fn);
+            mouseover_fns[i] = mouseover_fn;
+            mouseout_fns[i] = mouseout_fn;
             elements_with_mouse_event_listeners[i] = a;
 
-        })(anchor_links[i], card_id);
+        })(anchor_links[i], hovercard);
     }
-    global_mouseover_event_listeners = mouseover_event_listeners;
-    global_mouseout_event_listeners = mouseout_event_listeners;
-    global_elements_with_mouse_event_listeners = elements_with_mouse_event_listeners;
 
-    window.addEventListener("touchstart", remove_mouse_event_listeners);
+    function remove_mouse_event_listeners() {
+        console.log("removed mouse event listeners");
+        var elements = elements_with_mouse_event_listeners;
+
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var mouseover_fn = mouseover_fns[i];
+            var mouseout_fn = mouseout_fns[i];
+            element.removeEventListener("mouseover", mouseover_fn);
+            element.removeEventListener("mouseout", mouseout_fn);
+        }
+        window.removeEventListener("touchstart", remove_mouse_event_listeners); 
+    }
+
+    remove_desktop_hovercards = remove_mouse_event_listeners;
 
     function hide_card_if_shown() {
         var visible_card = document.querySelector(".hovercard:not(.hidden)");
         if (visible_card) {
-            var identifier = "#" + visible_card.getAttribute("id");
-            hidecard(identifier);
-
+            visible_card.classList.add("hidden")
         }
     }
     window.addEventListener("scroll", hide_card_if_shown);
 
 });
 
-function showcard(event, identifier, element) {
-    var card = document.querySelector(identifier);
-    card.classList.remove("hidden");
-
-    var fontSize = parseInt(window.getComputedStyle(element).getPropertyValue("font-size"));
-    card.style.top = element.offsetTop + fontSize - window.pageYOffset + 16;
-
-    var mid_point = document.body.offsetWidth / 2;
-    card.style.right = "";
-    card.style.left = "";
-    if (mid_point >= element.offsetLeft) {
-        card.style.left = element.offsetLeft;
-    } else {
-        var left_offset = element.offsetLeft + element.offsetWidth;
-        var right_offset = document.body.offsetWidth - left_offset;
-        card.style.right = right_offset;
-    }
-}
-function hidecard(identifier) {
-    var card = document.querySelector(identifier);
-    card.classList.add("hidden");
-}
-
 window.addEventListener("load", function () {
+    console.log("attached click listeners");
     var selector = 'a[href^="#"]';
 
     var anchor_links = [];
@@ -262,29 +245,32 @@ window.addEventListener("load", function () {
             continue;
         }
         anchor_links.push(candidate);
-        console.log(candidate);
     }
 
     var span_node = document.createElement("span");
     span_node.classList.add("right");
     span_node.innerText = "X";
+
+
+    var click_fns = [];
+    var elements_with_click_listeners = [];
     for (var i = 0; i < anchor_links.length; i++) {
         var anchor_href = anchor_links[i].getAttribute("href");
+
+        // remove reference link hrefs if touch events exist
         (function (anchor_with_href) {
 
             function remove_href_and_listener() {
                 anchor_with_href.removeAttribute("href");
                 window.removeEventListener("touchstart", remove_href_and_listener);
-                console.log("removed href");
             }
             window.addEventListener("touchstart", remove_href_and_listener);
 
         })(anchor_links[i]);
-        // anchor_links[i].removeAttribute("href");
+
         var referenced_node = document.querySelector(anchor_href);
         var anchor_href_without_hash = anchor_href.slice(1);
-        var card_id = "#mobile_footnote_" + anchor_href_without_hash;
-        var card_id_without_hash = card_id.slice(1);
+        var card_id_without_hash = "mobile_footnote_" + anchor_href_without_hash;
 
         var hovercard = document.createElement("div");
 
@@ -298,6 +284,8 @@ window.addEventListener("load", function () {
         var link_to_reference = document.createElement("a");
         link_to_reference.setAttribute("href", anchor_href);
         link_to_reference.innerText = "Go to Rule";
+        
+        // When you go to the rule, hide the mobile hovercard
         (function (a) {
             a.addEventListener("click", function () {
                 var hovercard = a.parentElement;
@@ -314,22 +302,47 @@ window.addEventListener("load", function () {
 
         var content_div = document.querySelector("#content");
         content_div.appendChild(hovercard);
-        (function (hovercard) {
 
+        // when you press 'X', hide the mobile hovercard
+        (function (hovercard) {
             span_clone.addEventListener("click", function () {
                 hovercard.classList.add("mobile_hidden");
             });
 
         })(hovercard);
 
-        (function (a, card_id) {
-            a.addEventListener("touchstart", function () {
-                a.classList.add("no_user_select");
-                toggle_hovercard(card_id);
-            });
-        })(anchor_links[i], card_id);
+        // when you press a reference link, show the mobile hovercard
+        (function (a, touched_card) {
+
+            function show_mobile_card () {
+                var visible_card = document.querySelector(".mobile_hovercard:not(.mobile_hidden)");
+                if (visible_card) {
+                    visible_card.classList.add("mobile_hidden");
+                }
+                touched_card.classList.remove("mobile_hidden");
+            }
+
+            a.addEventListener("click", show_mobile_card);
+
+            click_fns[i] = show_mobile_card;
+            elements_with_click_listeners[i] = a;
+
+        })(anchor_links[i], hovercard);
 
     }
+
+    function remove_click_listeners () {
+        console.log("removed click listeners");
+        for (var i = 0; i < elements_with_click_listeners.length; i++) {
+            var element = elements_with_click_listeners[i];
+            var click_fn = click_fns[i];
+            element.removeEventListener("click", click_fn);
+        }
+        window.removeEventListener("mousemove", remove_click_listeners);
+    }
+
+    remove_mobile_hovercards = remove_click_listeners;
+
     setTimeout(function() {
         var notransition_elements = document.querySelectorAll(".notransition");
         for (var i =0 ; i < notransition_elements.length; i++) {
@@ -337,20 +350,6 @@ window.addEventListener("load", function () {
         }
     }, 10);
 });
-function toggle_hovercard(identifier) {
-    var visible_card = document.querySelector(".mobile_hovercard:not(.mobile_hidden)");
-    var clicked_card = document.querySelector(identifier);
-
-    if (visible_card === null) {
-        clicked_card.classList.remove("mobile_hidden");
-    } else if (clicked_card === visible_card) {
-        clicked_card.classList.add("mobile_hidden");
-    } else if (clicked_card !== visible_card) {
-        visible_card.classList.add("mobile_hidden");
-        clicked_card.classList.remove("mobile_hidden");
-    }
-
-}
 window.addEventListener("touchstart", function (event) {
     var visible_card = document.querySelector(".mobile_hovercard:not(.mobile_hidden)");
     if (!visible_card) {
@@ -369,15 +368,72 @@ window.addEventListener("touchstart", function (event) {
     </script>
 
     <script>
-// window.addEventListener("click", event => console.log(event.type));
-// window.addEventListener("mousedown", event => console.log(event.type));
-// window.addEventListener("mousemove", event => console.log(event.type));
-// window.addEventListener("mouseout", event => console.log(event.type));
-// window.addEventListener("mouseover", event => console.log(event.type));
-// window.addEventListener("mouseup", event => console.log(event.type));
-// window.addEventListener("touchstart", event => console.log(event.type));
-// window.addEventListener("touchmove", event => console.log(event.type));
-// window.addEventListener("touchend", event => console.log(event.type));
+
+        window.addEventListener("load", function () {
+
+            var last_event;
+            function check_if_last_event_was_mouse_event(event) {
+                setTimeout(function () {
+                    if (last_event === event.type) {
+                        if (last_event.startsWith("mouse")) {
+                            // "Desktop";
+                            load_desktop_hovercards();
+                            // remove_mobile_hovercards();
+
+                            window.removeEventListener("click"       , register_event);
+                            window.removeEventListener("mousedown"   , register_event);
+                            window.removeEventListener("mousemove"   , register_event);
+                            window.removeEventListener("mouseout"    , register_event);
+                            window.removeEventListener("mouseover"   , register_event);
+                            window.removeEventListener("mouseup"     , register_event);
+                            window.removeEventListener("touchstart"  , register_event);
+                            window.removeEventListener("touchmove"   , register_event);
+                            window.removeEventListener("touchend"    , register_event);
+                            window.removeEventListener("touchcancel" , register_event);
+
+                        } 
+                    }
+
+                }, 200);
+            }
+            function register_event (event) {
+                if (event.type.startsWith("touch")) {
+                    // Mobile;
+                    load_mobile_hovercards();
+                    // remove_desktop_hovercards();
+
+                    window.removeEventListener("click"       , register_event);
+                    window.removeEventListener("mousedown"   , register_event);
+                    window.removeEventListener("mousemove"   , register_event);
+                    window.removeEventListener("mouseout"    , register_event);
+                    window.removeEventListener("mouseover"   , register_event);
+                    window.removeEventListener("mouseup"     , register_event);
+                    window.removeEventListener("touchstart"  , register_event);
+                    window.removeEventListener("touchmove"   , register_event);
+                    window.removeEventListener("touchend"    , register_event);
+                    window.removeEventListener("touchcancel" , register_event);
+
+                    return;
+                }
+
+                last_event = event.type;
+                check_if_last_event_was_mouse_event(event);
+            }
+
+            window.addEventListener("click"       , register_event);
+            window.addEventListener("mousedown"   , register_event);
+            window.addEventListener("mousemove"   , register_event);
+            window.addEventListener("mouseout"    , register_event);
+            window.addEventListener("mouseover"   , register_event);
+            window.addEventListener("mouseup"     , register_event);
+            window.addEventListener("touchstart"  , register_event);
+            window.addEventListener("touchmove"   , register_event);
+            window.addEventListener("touchend"    , register_event);
+            window.addEventListener("touchcancel" , register_event);
+
+        });
+
+
     </script>
 
     <body tabindex=-1>
