@@ -7,7 +7,7 @@
         <link href="fonts/confluence.css" type="text/css" rel="stylesheet" />
         <link href="fonts/fairplay.css" type="text/css" rel="stylesheet" />
         <link href="style.css" type="text/css" rel="stylesheet" />
-    </head>
+   </head>
 
     <script>
 
@@ -264,20 +264,119 @@ function load_mobile_hovercards(anchor_links) {
     font-weight: 400;
 }
 </style>
-    <script>
-        function modify_headers() {
-            var headers = document.querySelectorAll("h4");
-            for (var i = 0; i < headers.length; i++) {
-                var header = headers[i];
-                var span = document.createElement("span");
-                span.classList.add("rule_text");
-                header_id = header.getAttribute("id");
-                header_numstr = header_id.replace("rule-", "");
-                span.innerText = "" + header_numstr + ".   ";
-                header.insertAdjacentElement('afterBegin', span);
+<script>
+    function modify_headers() {
+        var headers = document.querySelectorAll("h4");
+        for (var i = 0; i < headers.length; i++) {
+            var header = headers[i];
+            var span = document.createElement("span");
+            span.classList.add("rule_text");
+            header_id = header.getAttribute("id");
+            header_numstr = header_id.replace("rule-", "");
+            span.innerText = "" + header_numstr + ".   ";
+            header.insertAdjacentElement('afterBegin', span);
+        }
+    }
+    window.addEventListener("load" , modify_headers);
+</script>
+
+ <style>
+.required_reading {
+    box-shadow: 0px 0px 4px 0px #cca;
+    border-radius: 8px;
+    display: inline-block;
+    padding: .5em;
+}
+</style>
+<script>
+    function add_required_reading_class_to_paragraphs() {
+        var L = document.querySelectorAll("p");
+
+        for (var i = 0; i < L.length; i++) {
+            var p = L[i]
+            if (p.innerText.startsWith("Required Reading")) {
+                p.classList.add("required_reading");
             }
         }
-        window.addEventListener("load" , modify_headers);
+    }
+    window.addEventListener("load" , add_required_reading_class_to_paragraphs);
+</script>
+
+<style>
+table.bordered ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+table.bordered {
+    border-collapse: collapse;
+}
+.bordered th {
+    font-family: "Concourse C3";
+    text-transform: uppercase;
+    color: #aaa;
+    padding: 8px;
+    border: solid 2px #eee;
+    background: floralwhite;
+    border-bottom: solid 4px;
+}
+
+.bordered td {
+    border: solid 2px #eee;
+    padding: 16px;
+}
+.bordered .wrong {
+    color: brown;
+    border-bottom-color: brown;
+}
+.bordered .correct {
+    color: darkgreen;
+    border-bottom-color: darkgreen;
+}
+/* no-outer-borders: START */
+
+/* .bordered th { */
+/*     border-top: none; */
+/*     border-left: none; */
+/*     border-right: none; */
+/* } */
+/* .bordered td + td, .bordered th + th { */
+/*     border-right: none; */
+/* } */
+/* .bordered tr > td, .bordered thead  th  { */
+/*     border-left: none; */
+/* } */
+/* .bordered tr + tr td { */
+/*     border-bottom: none; */
+/* } */
+/* .bordered td { */
+/*     border-left: none; */
+/*     border-right: none; */
+/* } */
+
+/* no-outer-borders: END */
+
+</style>
+    <script>
+        function add_table_headers() {
+            var L = document.querySelectorAll("table");
+
+            for (var i = 0; i < L.length; i++) {
+                var table = L[i]
+                var thead = document.createElement("thead");
+                var th1 = document.createElement("th");
+                th1.innerText = "Wrong";
+                th1.classList.add("wrong");
+                var th2 = document.createElement("th");
+                th2.innerText = "Right";
+                th2.classList.add("correct");
+                thead.appendChild(th1);
+                thead.appendChild(th2);
+                table.insertAdjacentElement('afterBegin', thead);
+                table.classList.add("bordered");
+            }
+        }
+        window.addEventListener("load" , add_table_headers);
     </script>
 
     <body tabindex=-1>
@@ -288,18 +387,6 @@ function load_mobile_hovercards(anchor_links) {
     <a href="index.html">The Elements of Style</a> → 
     <a href="ch1.html">Elementary rules of usage</a>
 </div>
-
-<!-- <div class="todo"> -->
-<!--         <strong>Define:</strong> -->
-<!--         <ul> -->
-<!--         <li>Conjunctions</li> -->
-<!--         <li>Adverbs</li> -->
-<!--         <li>Independent clause</li> -->
-<!--         <li>Particulars</li> -->
-<!--         <li>Appositive</li> -->
-<!--         <li>Preposition</li> -->
-<!--         </ul> -->
-<!-- </div> -->
 
             <div class="toc">
                 <ol>
@@ -669,7 +756,8 @@ and more relaxed than a parentheses.</p>
     </ul>
 <p>
 Use a dash only when a more common mark of punctuation seems inadequate.</p>
-<table><tbody>
+<table>
+    <tbody>
     <tr>
         <td><ul><li>Her father’s suspicions proved well-founded—it was not
                     Edward she cared for—it was San Francisco.</li></ul></td>
@@ -725,7 +813,7 @@ With <em>none,</em> use the singular verb when the word means “no one” or �
 one.”</p>
 
 <table><tbody>
-        <tr class="misbehave">
+        <tr>
             <td><ul><li>None of us are perfect.</li></ul></td>
             <td><ul><li>None of us is perfect.</li></ul></td>
         </tr>
@@ -843,16 +931,7 @@ The objective case is correct in the following examples.</p>
         <li>A group of us taxpayers protested.</li>
     </ul>
 
-<style>
-.req {
-    /* border: solid 1px #ccc; */
-    box-shadow: 0px 0px 4px 0px #cca;
-    border-radius: 8px;
-    display: inline-block;
-    padding: .5em;
-}
-</style>
-<p class="req">
+<p>
 Required Reading: <a href="https://dictionary.cambridge.org/grammar/british-grammar/about-words-clauses-and-sentences/apposition">Apposition</a></p>
 
 <p>
