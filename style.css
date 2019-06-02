@@ -1,29 +1,18 @@
+body {
+    line-height: 1.35;
+    font-size: 20px;
+    font-family: "Fairplay Text A";
+}
+@media screen and (max-width: 720px) { body { font-size: 16px; } }
 
 #content {
     margin: 1em auto;
-    font-family: "Fairplay Text A";
-    line-height: 1.35;
     max-width: 40em;
     padding: 0 1em;
-    font-size: 20px;
 }
 
-h1, h2, h3, h4 {
-    text-transform: uppercase;
-    font-family: "Confluence C2";
-}
 ul {
     list-style-type: square;
-}
-a {
-    text-decoration: none;
-    color: #36c;
-    padding: 2px;
-}
-a:hover {
-    padding-top: 1.5px;
-    padding-bottom: 1.5px;
-    border-bottom: solid 2px;
 }
 table {
     width: 100%;
@@ -41,48 +30,128 @@ td ul {
     padding-right: 0.5em;
 }
 
-.path a, .path  {
-    color: inherit;
-    font-family: serif;
-    font-style: italic;
-}
-.path a {
+a[href^="#"] {
+    color: black;
     border-bottom: dotted;
 }
-.path a:hover {
-    border-bottom: solid 3px;
+.toc a {
+    color: #36c;
+    border-bottom: none;
 }
-a.black.underline {
-    color: inherit;
-    border-bottom: dotted 2px;
+a {
+    text-decoration: none;
+    color: #36c;
+    padding-bottom: 1px;
 }
-a.black.underline:hover {
-    border-bottom: solid 5px;
+a:hover {
+    border-bottom: solid 2px;
 }
+
 a[href^="http"]:after {
     background-position: center right;
     background-repeat: no-repeat;
     content: "";
     background-image: url("external_link.svg");
-    padding: 0 10px;
-    margin-left: 10px;
+    padding: 0 1em;
 }
 
-div.todo ul {
-    column-width: 10em;
-    list-style-type: none;
-    margin: 0;
-}
-div.todo {
-    margin: 2em 0;
+
+.path a, .path  {
     color: #ccc;
+    font-style: italic;
 }
-#pdf {
-    float: right;
-    padding: 1.5px;
-    font-family: "Confluence C4";
-    color: #ccc;
-}
-#pdf:hover {
+.path a:hover {
     color: black;
 }
+
+
+h2 {
+    margin: 1.5em auto;
+    text-align: center;
+}
+h4 {
+    font-family: "Confluence T3";
+}
+
+
+.hovercard {
+
+    box-shadow: 2px 2px 8px 0px ;
+    border-radius: 4px;
+    position: fixed;
+    max-width: 20em;
+
+    background: brown;
+    font-family: "Confluence T3";
+    text-align: center;
+
+    padding: .5em 1em;
+    margin-top: 2em;
+}
+.hovercard * {
+    color: white;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+.hidden, .hovercard {
+    transition:visibility 0.15s linear,opacity 0.15s linear;
+}
+
+.mobile_hovercard {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0 0 40px;
+    padding: 1em 1em;
+    width: -moz-available;          
+    width: -webkit-fill-available; 
+    font-family: "Confluence T4";
+    background-color: brown;
+    font-size: 16px;
+}
+.mobile_hovercard span {
+    color: white;
+}
+.mobile_hovercard a {
+    color: #ffffff;
+    display: block;
+    max-width: 25%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.8em;
+    border-radius: 1em;
+    border: solid;
+}
+.mobile_hidden {
+    transform: translateY(110%);
+    box-shadow: none;
+}
+.mobile_hovercard {
+    transition: transform 0.3s ease-out;
+    -webkit-transform 0.3s ease-out;
+}
+
+.right {
+    position: relative;
+    right: auto;
+    float: right;
+    color: #ccc;
+    padding: 6px;
+}
+.right:hover {
+    cursor: pointer;
+    background: #df8787;
+    color: white;
+    border-radius: 8px;
+}
+/* tr > td { */
+/*     background: lightpink; */
+/* } */
+/* td + td { */
+/*     background: lightgreen; */
+/* } */

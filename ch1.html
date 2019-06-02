@@ -4,120 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Elementary rules of usage</title>
-        <link href="style.css" type="text/css" rel="stylesheet" />
         <link href="fonts/confluence.css" type="text/css" rel="stylesheet" />
         <link href="fonts/fairplay.css" type="text/css" rel="stylesheet" />
+        <link href="style.css" type="text/css" rel="stylesheet" />
     </head>
-
-<style>
-
-.hovercard {
-
-    box-shadow: 2px 2px 8px 0px;
-    border-radius: 4px;
-    position: fixed;
-    padding: .5em 1em;
-    max-width: 20em;
-
-    background: brown;
-
-    font-family: "Confluence T3";
-    font-size: 20px;
-
-    text-align: center;
-
-    margin-top: 2em;
-
-
-}
-.hovercard * {
-    color: white;
-}
-
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-}
-.hidden, .hovercard {
-
-    transition:visibility 0.15s linear,opacity 0.15s linear;
-}
-@media screen and (max-width: 720px) {
-    body, #content, .hovercard {
-        font-size: 16px;
-    }
-    .path a, .path {
-        color: #ccc;
-        font-size: 14px;
-    }
-    .path a {
-        border-bottom: dotted 1px;
-    }
-    h2, h3, h4 {
-        text-transform: none;
-        font-family: "Confluence T3";
-    }
-
-}
-
-
-
-.mobile_hovercard {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background-color: white;
-    box-shadow: 0 0 40px;
-    padding: 1em 1em;
-    width: -moz-available;          
-    width: -webkit-fill-available; 
-    font-family: "Confluence T4";
-    background-color: brown;
-    font-size: 16px;
-}
-.mobile_hovercard span {
-    color: white;
-}
-.mobile_hovercard a {
-    color: #ffffff;
-    display: block;
-    max-width: 25%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0.8em;
-    border-radius: 1em;
-    border: solid;
-}
-.mobile_hidden {
-    transform: translateY(110%);
-    box-shadow: none;
-}
-.mobile_hovercard {
-    transition: transform 0.3s ease-out;
-    -webkit-transform 0.3s ease-out;
-}
-
-.right {
-    position: relative;
-    right: auto;
-    float: right;
-    color: #ccc;
-    padding: 6px;
-}
-.right:hover {
-    cursor: pointer;
-    background: #df8787;
-    color: white;
-    border-radius: 8px;
-}
-
-.span_hidden {
-    visibility: hidden;
-    opacity: 0;
-}
-
-</style>
 
     <script>
 
@@ -367,10 +257,33 @@ function load_mobile_hovercards(anchor_links) {
 
     </script>
 
+<style>
+.rule_text {
+    color: #ccc;
+    padding-right: 12px;
+    font-weight: 400;
+}
+</style>
+    <script>
+        function modify_headers() {
+            var headers = document.querySelectorAll("h4");
+            for (var i = 0; i < headers.length; i++) {
+                var header = headers[i];
+                var span = document.createElement("span");
+                span.classList.add("rule_text");
+                header_id = header.getAttribute("id");
+                header_numstr = header_id.replace("rule-", "");
+                span.innerText = "" + header_numstr + ".   ";
+                header.insertAdjacentElement('afterBegin', span);
+            }
+        }
+        window.addEventListener("load" , modify_headers);
+    </script>
+
     <body tabindex=-1>
         <div id="content">
 
-<h1>Elementary rules of usage</h1>
+            <h2>Elementary rules of usage</h2>
 <div class="path">
     <a href="index.html">The Elements of Style</a> → 
     <a href="ch1.html">Elementary rules of usage</a>
@@ -399,6 +312,8 @@ function load_mobile_hovercards(anchor_links) {
 <li><a href="#rule-7">Use a colon after an independent clause to introduce a list of particulars, an appositive, an amplification, or an illustrative quotation.</a></li>
 <li><a href="#rule-8">Use a dash to set off an abrupt break or interruption and to announce a long appositve or summary.</a></li>
 <li><a href="#rule-9">The number of the subject determines the number of the verb.</a></li>
+<li><a href="#rule-10">Use the proper case of pronoun</a></li>
+<li><a href="#rule-11">A participal phrase at the beginning of a sentence must refer to the grammatical subject.</a></li>
                 </ol>
             </div>
 
@@ -621,7 +536,7 @@ the semicolons with periods.</p>
     </ul>
 <p>
 If a conjunction is inserted, the proper mark is a comma. (<a href="#rule-4"
-class="black underline">Rule 4.</a>) </p>
+>Rule 4.</a>) </p>
     <ul> 
         <li>Mary Shelley’s works are entertaining, for they are full of engaging
             ideas.</li> 
@@ -681,11 +596,10 @@ clipped sentence seem merely a blunder in syntax or in punctuation. Generally
 speaking, the place for broken sentences is in dialogue, when a character
 happens to speak in a clipped or fragmentary way.</p>
 <p> 
-Rule <a href="#rule-3" class="black underline">3</a>, <a href="#rule-4"
-class="black underline">4</a>, <a href="#rule-5" class="black underline">5</a>,
-and <a href="#rule-6" class="black underline">6</a> cover the most important
-principles that govern punctuation.  They should be so thoroughly mastered that
-their application becomes second nature.</p> 
+Rule <a href="#rule-3">3</a>, <a href="#rule-4">4</a>, <a href="#rule-5">5</a>,
+and <a href="#rule-6">6</a> cover the most important principles that govern
+punctuation.  They should be so thoroughly mastered that their application
+becomes second nature.</p> 
 
 <h4 id="rule-7">Use a colon after an independent clause to introduce a list of particulars, an appositive, an amplification, or an illustrative
     quotation.</h4>
@@ -872,13 +786,157 @@ what’s in the jar—jam or marbles.</p>
 <h4 id="rule-10">Use the proper case of pronoun</h4>
 
 <p>
-Required Reading: <a class="black underline" href="http://grammar.yourdictionary.com/parts-of-speech/pronouns/types-of-pronouns.html">
-Types of Pronouns</a></p>
+Required Reading: <a href="http://grammar.yourdictionary.com/parts-of-speech/pronouns/types-of-pronouns.html"> Types of Pronouns</a></p>
+
 <p>
 The personal pronouns, as well as the pronoun <em>who</em>, change form as they
 function as subject or object.</p>
     <ul>
-        <li>
-        </div>
+        <li>Will Jane or he be hired, do you think?</li>
+        <li>The culprit, it turned out, was he.</li>
+        <li>Who knocks?</li>
+        <li>Give this work to whoever looks idle.</li>
+    </ul>
+<p>
+In the last example, <em>whoever</em> is the subject of <em>looks idle</em>; the object of the preposition <em>to</em>
+is the entire clause <em>whoever looks idle</em>. When <em>who</em> introduces a subordinate clause, its case depends on
+its function in that clause.</p>
+<table><tbody>
+        <tr>
+            <td><ul><li>Virgil Soames is the candidate whom we think will win.</li></ul></td>
+            <td><ul><li>Virgil Soames is the candidate who will will. [We think <em>he</em> will win.]</li></ul></td>
+        </tr>
+        <tr>
+            <td><ul><li>Virgil Soames is the candidate who we hope to elect.</li></ul></td>
+            <td><ul><li>Virgil Soames is the candidate whom we hope to elect. [We hope to elect <em>him</em>.]</li></ul></td>
+        </tr>
+</tbody></table>
+
+<p>
+Required Reading: <a href="https://www.grammar-monster.com/glossary/nominative_case.htm">What Is the Nominative Case?</a></p>
+
+<p>
+A pronoun in a comparison is nonminative if it is the subject of a stated or understood verb.</p>
+    <ul>
+        <li>Sandy writes better than I. (Than I write.)</li>
+    </ul>
+<p>
+In general, avoid “understood” verbs by supplying them.</p>
+<table><tbody>
+        <tr>
+            <td><ul><li>I think Horace admires Jessica more than I.</li></ul></td>
+            <td><ul><li>I think Horace admires Jessica more than I do.</li></ul></td>
+        </tr>
+        <tr>
+            <td><ul><li>Polly loves cake more than me.</li></ul></td>
+            <td><ul><li>Polly loves cake more than she loves me.</li></ul></td>
+        </tr>
+</tbody></table>
+
+<p>
+The objective case is correct in the following examples.</p>
+    <ul>
+        <li>The ranger offered Shirley and him some advice on campsites.</li>
+        <li>They came to meet the Baldwins and us.</li>
+        <li>Let’s talk it over between us, then, you and me.</li>
+        <li>Whom should I ask?</li>
+        <li>A group of us taxpayers protested.</li>
+    </ul>
+
+<style>
+.req {
+    /* border: solid 1px #ccc; */
+    box-shadow: 0px 0px 4px 0px #cca;
+    border-radius: 8px;
+    display: inline-block;
+    padding: .5em;
+}
+</style>
+<p class="req">
+Required Reading: <a href="https://dictionary.cambridge.org/grammar/british-grammar/about-words-clauses-and-sentences/apposition">Apposition</a></p>
+
+<p>
+<em>Us</em> in the last example is in apposition to taxpayers, the object of the preposition <em>of</em>. The wording,
+although gramatically defensible, is rarely apt. “A group of us protested as taxpeyers” is better, if not exactly
+equivalent.</p>
+<p>
+Use the simple personal pronoun as a subject.</p>
+<table><tbody>
+        <tr>
+            <td><ul><li>Blake and myself stayed home.</li></ul></td>
+            <td><ul><li>Blake and I stayed home.</li></ul></td>
+        </tr>
+        <tr>
+            <td><ul><li>Howard and yourself brought the lunch, I thought.</li></ul></td>
+            <td><ul><li>Howard and you brought the lunch, I thought.</li></ul></td>
+        </tr>
+</tbody></table>
+<p>
+The possessive case of pronouns is used to show ownership. It has two forms: the adjectival modifier, <em>your</em> hat,
+and the noun form, a hat of <em>yours</em>.</p>
+    <ul>
+        <li>The dog has buried on of your gloves and one of mine in the flower bed.</li>
+    </ul>
+<p>
+Gerunds usually require the possessive case.</p>
+    <ul>
+        <li>Mother objected to our driving on the icy roads.</li>
+    </ul>
+<p>
+A present participle as a verbal, on the other hand, takes the objective case.</p>
+    <ul>
+        <li>They heard him singing in the shower.</li>
+    </ul>
+<p>
+The difference between a verbal participle and a gerund is not always obvious, but note what is really said in each of
+the following.</p>
+    <ul>
+        <li>Do you mind me asking you a question?</li>
+        <li>Do you mind my asking you a question?</li>
+    </ul>
+<p>
+In the first question, the queried objection is to <em>me</em>, as opposed to the other members of the group, asking a
+question. In the second example, the issue is whether a question may be asked at all.</p>
+
+<h4 id="rule-11">A participial phrase at the beginning of a sentence must refer to the grammatical subject.</h4>
+    <ul>
+        <li>Walking slowly down the road, he saw a woman accompanied by two children.</li>
+    </ul>
+<p>
+The word <em>walking</em> refers to the subject of the sentence, not to the woman. To make it refer to the woman, the
+writer must recast the sentence.</p>
+    <ul>
+        <li>He saw a woman, accompanied by two children, walking down the road.</li>
+    </ul>
+<p>
+Participial phrases preceded by a conjunction or by a preposition, nouns in apposition, adjectives, and ajective phrases
+come under the same rule if they begin the sentence.</p>
+<table><tbody>
+        <tr>
+            <td><ul><li>On arriving in Chicago, his friends met him at the station.</li></ul></td>
+            <td><ul><li>On arriving in Chicago, he was met at the station by his friends.</li></ul></td>
+        </tr>
+        <tr>
+            <td><ul><li>A soldier of proved valor, they entrusted him with the defense of the city.</li></ul></td>
+            <td><ul><li>A soldier of proved valor, he was entrusted with the defense of the city.</li></ul></td>
+        </tr>
+        <tr>
+            <td><ul><li>Young and inexperienced, the task seemed easy to me.</li></ul></td>
+            <td><ul><li>Young and inexperienced, I thought the task was easy.</li></ul></td>
+        </tr>
+        <tr>
+            <td><ul><li>Without a friend to counsel him, the temptation proved irresistible.</li></ul></td>
+            <td><ul><li>Without a friend to counsel him, he found the temptation irresistible.</li></ul></td>
+        </tr>
+</tbody></table>
+<p>
+Sentences violating Rule 11 are often ludicrous:</p>
+    <ul>
+        <li>Being in a dilapidated condition, I was able to buy the house very cheap.</li>
+        <li>Wondering irresolutely what to do next, the clock struck twelve.</li>
+    </ul>
+
+
+        </div> <!-- id="content" -->
     </body>
 </html>
