@@ -11,23 +11,91 @@
    </head>
 
 
+
+<style>
+    body {
+        background: rgb(82, 86, 89);
+    }
+    #content, h2 {
+        padding: 0;
+        margin: 0;
+    }
+    #content {
+        background: white;
+        margin: 2em auto;
+        padding: 1.5em 4em;
+        box-shadow: 2px 2px 4px 0px black;
+    }
+    h1 {
+        text-align: center;
+        font-size: 3em;
+        margin-top: 0;
+        font-family: "Fairplay Caps A subset", "Georgia", serif;
+    }
+    h2 {
+        padding-bottom: 1.5em;
+    }
+
+    @media screen and (max-width: 900px) {
+        #content, body { 
+            margin: 0;
+        }
+        #content {
+            padding: 1.5em;
+        }
+    }
+
+    @media screen and (max-width: 900px) { body { font-size: 20px; } }
+    @media screen and (max-width: 850px) { body { font-size: 19px; } }
+    @media screen and (max-width: 800px) { body { font-size: 18px; } }
+    @media screen and (max-width: 750px) { body { font-size: 17px; } }
+    @media screen and (max-width: 700px) { body { font-size: 16px; } }
+
+</style>
+
+
+    <script>
+        function add_table_headers() {
+            var L = document.querySelectorAll("table");
+
+            for (var i = 0; i < L.length; i++) {
+                var table = L[i]
+                var thead = document.createElement("thead");
+                var th1 = document.createElement("th");
+                th1.innerText = "Wrong";
+                var th2 = document.createElement("th");
+                th2.innerText = "Right";
+                thead.appendChild(th1);
+                thead.appendChild(th2);
+                table.insertAdjacentElement('afterBegin', thead);
+                table.classList.add("bordered");
+            }
+        }
+        // window.addEventListener("load" , add_table_headers);
+    </script>
+
     <body tabindex=-1>
         <div id="content">
 
+                            <h1>II</h1>
+
             <h2>Elementary Principles of Composition</h2>
+
 <div class="path">
     <a href="index.html">The Elements of Style</a> → 
     <a href="ch2.html">Elementary Principles of Composition</a>
 </div>
 
             <div class="toc">
-                <ol>
+                <ol start="12">
 <li><a href="#rule-12">Choose a suitable design and hold to it.</a></li>
-<li><a href="#rule-13">Make the paragraph the unit of composition</a></li>
+<li><a href="#rule-13">Make the paragraph the unit of composition.</a></li>
+<li><a href="#rule-14">Use the active voice.</a></li>
+<li><a href="#rule-15">Put statements in positive form.</a></li>
                 </ol>
             </div>
 
-<h4 id="rule-12">Choose a suitable design and hold to it.</h4>
+<h4 id="rule-12">12. Choose a suitable design and hold to it.</h4>
 
 <p>
     A basic structural design underlies every kind of writing. Writers will in part follow this design, in part deviate
@@ -46,7 +114,7 @@
     writer perceives the shape, the better are the chances of success.
 </p>
 
-<h4 id="rule-13">Make the paragraph the unit of composition</h4>
+<h4 id="rule-13">13. Make the paragraph the unit of composition.</h4>
 
 <p>
     The paragraph is a convenient unit; it serves all forms of literary work. As long as it holds together, a paragraph
@@ -72,7 +140,7 @@
 </p>
 
 <p>
-    In dialogue, each speech, even if only a single word, is usually a paragraph by itself; that is a new paragraph
+    In dialogue, each speech, even if only a single word, is usually a paragraph by itself; that is, a new paragraph
     begins with each change of speaker. The application of this rule when dialogue and narrative are combined is best
     learned from examples in well-edited works of fiction. Sometimes a writer, seeking to create an effect of rapid talk
     or for some other reason, will elect not to set off each speech in a separate paragraph and instead will run
@@ -81,14 +149,235 @@
 </p>
 
 <p>
-    As a rule, begin each paragraph either with a sentence, that suggests the topic or with a sentence that helps the
+    As a rule, begin each paragraph either with a sentence that suggests the topic or with a sentence that helps the
     transition. If a paragraph forms part of a larger composition, its relation to what precedes, or its function as a
     part of the whole, may need to be expressed. This can sometimes be done by a mere word or phrase (<em>again,
     therefore, for the same reason</em>) in the first sentence. Sometimes, however, it is expedient to get into the
     topic slowly, by way of a sentence or two of introduction or transition.
 </p>
 
+<p>
+    In narration and description, the paragraph sometimes begins with a concise, comprehensive statement serving to hold
+    together the details that follow.
+</p>
+
+<ul>
+    <li>The breeze served us admirably.</li>
+    <li>The campaign opened with a series of reverses.</li>
+    <li>The next ten or twelve pages were filled with a curious set of entries.</li>
+</ul>
+
+<p>
+    But when this device, or any device, is too often used, it becomes a mannerism. More commonly, the opening sentence
+    simply indicates by its subject the direction the paragraph is to take.
+</p>
+
+<ul>
+    <li>At length I thought I might return toward the stockade.</li>
+    <li>He picked up the heavy lamp from the table and began to explore.</li>
+    <li>Another flight of steps, and they emerged on the roof.</li>
+</ul>
+
+<p>
+    In animated narrative, the paragraphs are likely to be short and without any semblance of a topic sentence, the
+    writer rushing headlong, event following event in rapid succession. The break between such paragraphs merely serves
+    the purpose of a rhetorical pause, throwing into prominence some detail of the action.
+</p>
+
+<p>
+    In general, remember that paragraphing calls for a good eye as well as a logical mind. Enormous blocks of print look
+    formidable to readers, who are often reluctant to tackle them. Therefore, breaking long paragraphs in two, even
+    if it is not necessary to do so for sense, meaning, or logical development, is often a visual help. But remember,
+    too, that firing off many short paragraphs in quick succession can be distracting. Paragraph breaks used only for
+    show read like the writing of commerce or of display advertising. Moderation and a sense of order should be the main
+    considerations in paragraphing.
+</p>
+
+<h4 id="rule-14">14. Use the active voice.</h4>
+
+<p>
+    The active voice is usually more direct and vigorous than the passive:
+</p>
+
+<ul>
+    <li>I shall always remember my first visit to Boston.</li>
+</ul>
+
+<p>
+    This is much better than
+</p>
+
+<ul>
+    <li>My first visit to Boston will always be remembered by me.</li>
+</ul>
+
+<p>
+    The latter sentence is less direct, less bold, and less concise. If the writer tries to make it more concise by omitting
+    “by me,”
+</p>
+
+<ul>
+    <li>My first visit to Boston will always be remembered,</li>
+</ul>
+
+<p>
+    it becomes indefinite: is it the writer or some undisclosed person or the world at large that will always remember
+    this visit?
+</p>
+
+<p>
+    This rule does not, of course, mean that the writer should entirely discard the passive voice, which is frequently
+    convenient and sometimes necessary.
+</p>
+
+<ul>
+    <li>The dramatists of the Restoration are little esteemed today.</li>
+    <li>Modern readers have little esteem for the dramatists of the Restoration.</li>
+</ul>
+
+<p>
+    The first would be the preferred form in a paragraph on the dramatists of the Restoration, the second in a paragraph
+    on the tastes of modern readers. The need to make a particular word the subject of the sentence will often, as in
+    these examples, determine which voice is to be used.
+</p>
+
+<p>
+    The habitual use of the active voice, however, makes for forcible writing. This is true not only in narrative
+    concerned principally with action but in writing of any kind. Many a tame sentence of description or exposition can
+    be made lively and emphatic by substituting a transitive in the active voice for some such perfunctory expression as
+    <em>there is</em> or <em>could be heard</em>.
+</p>
+
+<table>
+    <tr>
+        <td>There were a great number of dead leaves lying on the ground.</td>
+        <td>Dead leaves covered the ground.</td>
+    </tr>
+    <tr>
+        <td>At dawn the crowing of a rooster could be heard.</td>
+        <td>The cock’s crow came with dawn.</td>
+    </tr>
+    <tr>
+        <td>The reason he left college was that his health became impaired.</td>
+        <td>Failing health compelled him to leave college.</td>
+    </tr>
+    <tr>
+        <td>It was not long before she was very sorry that she had said what she had.</td>
+        <td>She soon repented her words.</td>
+    </tr>
+</table>
+
+
+<p>
+    Note, in the examples above, that when a sentence is made stronger, it usually becomes shorter. Thus, brevity is a
+    by-product of vigor.
+</p>
+
 <!-- proofread marker -->
+
+<h4 id="rule-15">15. Put statements in positive form.</h4>
+
+<p>
+    Make definite assertions. Avoid tame, colorless, hesitating, noncommittal language. Use the word <em>not</em> as
+    a means of denial or in antithesis, never as a means of evasion.
+</p>
+
+<table>
+    <tr>
+        <td>He was not very often on time.</td>
+        <td>He usually came late.</td>
+    </tr>
+    <tr>
+        <td>She did not think that studying Latin was a sensible way to use one’s time.</td>
+        <td>She thought the study of Latin a waste of time.</td>
+    </tr>
+    <tr>
+        <td><em>The Taming of the Shrew</em> is rather weak in spots. Shakespeare does not portray Katharine as a very
+            admirable character, nor does Bianca remain long in memory as an important character in Shakespeare’s
+            works.</td>
+        <td>The women in <em>The Taming of the Shrew</em> are unattractive. Katharine is disagreeable, Bianca
+            insignificant.</td>
+    </tr>
+</table>
+
+<p>
+    The last example, before correction, is indefinite as well as negative. The corrected version, consequently, is simply
+    a guess at the writer’s intention.
+</p>
+
+<p>
+    All three examples show the weakness inherent in the word <em>not</em>. Consciously or unconsciously, the reader is
+    dissatisfied with being told only what is not; the reader wishes to be told what is. Hence, as a rule, it is better
+    to express even a negative in positive form.
+</p>
+
+<table>
+    <tr>
+        <td>not honest</td>
+        <td>dishonest</td>
+    </tr>
+    <tr>
+        <td>not important</td>
+        <td>trifling</td>
+    </tr>
+    <tr>
+        <td>did not remember</td>
+        <td>forgot</td>
+    </tr>
+    <tr>
+        <td>did not pay any attention to</td>
+        <td>ignored</td>
+    </tr>
+    <tr>
+        <td>did not have much confidence in</td>
+        <td>distrusted</td>
+    </tr>
+</table>
+
+<p>
+    Placing negative and positive in opposition makes for a stronger structure.
+</p>
+
+<ul>
+    <li>Not charity, but simple justice.</li>
+    <li>Not that I loved Caesar less, but that I loved Rome more.</li>
+    <li>Ask not what your country can do for you—ask what you can do for your country.</li>
+</ul>
+
+<p>
+    Negative words other than <em>not</em> are usually strong.
+</p>
+
+<ul>
+    <li>Her loveliness I never knew / Until she smiled on me.</li>
+</ul>
+
+<p>
+    Statements qualified with unnecessary auxiliaries or conditionals sound irresolute.
+</p>
+
+<table>
+    <tr>
+        <td>If you would let us know the time of your arrival, we would be happy to arrange your transportation from the
+        airport.</td>
+        <td>If you will let us know the time of your arrival, we shall be happy to arrange your transportation from the
+        airport.</td>
+    </tr>
+    <tr>
+        <td>Applicants can make a good impression by being neat and punctual.</td>
+        <td>Applicants will make a good impression if they are neat and punctual.</td>
+    </tr>
+    <tr>
+        <td>Plath may be ranked among those modern poets who died young.</td>
+        <td>Plath was one of those modern poets who died young.</td>
+    </tr>
+</table>
+
+<p>
+    If your every sentence admits a doubt, your writing will lack authority. Save the auxiliaries 
+    <em>would, should, could, may, might,</em> and <em>can</em> for situations involving real uncertainty.
+</p>
+
 
         </div> <!-- id="content" -->
     </body>
