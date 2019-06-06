@@ -16,6 +16,14 @@ html {
 
 ul {
     list-style-type: square;
+    list-style-type: none;
+}
+li {
+    padding-top: .4em;
+    padding-bottom: .4em;
+}
+.toc li {
+    padding: initial;
 }
 table {
     width: 100%;
@@ -35,6 +43,7 @@ td {
     /* new stuff */
     padding: .5em 3em;
     padding: 8px 16px;
+    padding: .4em .8em
 }
 
 
@@ -48,14 +57,17 @@ td {
     font-family: "Confluence C3";
     text-transform: uppercase;
     color: #aaa;
-    padding: 8px;
     background: floralwhite;
     border-bottom: solid 4px;
     text-align: left;
+    padding: 8px;
     padding-left: 16px;
+    padding: .4em;
+    padding-left: .8em;
 }
 .bordered td {
     padding: 16px;
+    padding: .8em;
 }
 
 
@@ -69,14 +81,6 @@ td {
 }
 /* END: Bordered Tables */
 
-a[href^="#"] {
-    color: black;
-    border-bottom: dotted;
-}
-.toc a {
-    color: #36c;
-    border-bottom: none;
-}
 
 a {
     text-decoration: none;
@@ -86,7 +90,6 @@ a {
 a:hover {
     border-bottom: solid 2px;
 }
-
 a[href^="http"]:after {
     background-position: center right;
     background-repeat: no-repeat;
@@ -94,9 +97,6 @@ a[href^="http"]:after {
     background-image: url("external_link.svg");
     padding: 0 1em;
 }
-
-
-
 .path a, .path  {
     color: #ccc;
     font-style: italic;
