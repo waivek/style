@@ -12,9 +12,11 @@
 
 
 
+
 <style>
+
+
     body {
-        background: rgb(82, 86, 89);
         font-size: 24px;
     }
     #content, h2 {
@@ -24,10 +26,19 @@
     #content {
         background: white;
         margin: 2em auto;
-        padding: 1.5em 4em;
-        box-shadow: 2px 2px 4px 0px black;
         max-width: 30em;
     }
+
+/* reader mode: START */
+    body {
+        background: rgb(82, 86, 89);
+    }
+    #content {
+        padding: 1.5em 4em;
+        box-shadow: 2px 2px 4px 0px black;
+    }
+/* reader mode: END */
+
     h1 {
         text-align: center;
         font-size: 3em;
@@ -75,6 +86,91 @@
             }
         }
         // window.addEventListener("load" , add_table_headers);
+    </script>
+
+
+    <style>
+        .floating {
+            height: 60px;
+            width: 60px;
+            background: brown;
+            color: white;
+            position: sticky;
+            border-radius: 50%;
+            box-shadow: 1px 1px 2px 0px #444;
+            bottom: 40px;
+            float: right;
+            user-select: none;
+        }
+        .floating:hover {
+            cursor: pointer;
+        }
+
+         .option {
+            position: relative;
+            /* bottom: 80px; */
+            padding: .5em;
+            color: black;
+            background: white;
+            box-shadow: 1px 1px 2px 0px #444;
+            border-radius: 8px;
+            max-width: 30em;
+            /* left: -130px; */
+            top: 0;
+        }
+
+       .floating.display_options > .option {
+            display: block;
+        }
+
+        .floating.hide_options > .option {
+            display: none;
+        }
+
+
+    </style>
+
+    <script>
+        function toggle_option_display(elem) {
+            if (elem.classList.contains("display_options")) {
+                elem.classList.remove("display_options");
+                elem.classList.add("hide_options");
+            } else if (elem.classList.contains("hide_options")) {
+                elem.classList.remove("hide_options");
+                elem.classList.add("display_options");
+            }
+        }
+
+        function add_floating_element() {
+            content = document.querySelector("#content");
+            elem = document.createElement("div");
+            elem.classList.add("floating");
+            elem.classList.add("hide_options");
+            content.appendChild(elem);
+
+            font_size = document.createElement("div");
+            font_size.innerText = "20px -------------------";
+            font_size.classList.add("option");
+            elem.appendChild(font_size);
+
+            font_size = document.createElement("div");
+            font_size.innerText = "20px -------------------";
+            font_size.classList.add("option");
+            elem.appendChild(font_size);
+
+            font_size = document.createElement("div");
+            font_size.innerText = "20px -------------------";
+            font_size.classList.add("option");
+            elem.appendChild(font_size);
+
+            font_size = document.createElement("div");
+            font_size.innerText = "20px -------------------";
+            font_size.classList.add("option");
+            elem.appendChild(font_size);
+
+            elem.addEventListener("click", function () { toggle_option_display(elem); });
+        }
+        // window.addEventListener("load", add_floating_element);
     </script>
 
     <body tabindex=-1>
