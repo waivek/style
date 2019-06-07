@@ -124,7 +124,7 @@ When the subject is the same for both clauses and is expressed only once, a comm
 
 5. Do not join independent clauses with a comma.
 
-If two or more clauses grammatically complete and not joined by a conjunction are to form a single com- pound sentence, the proper mark of punctuation is a semicolon.
+If two or more clauses grammatically complete and not joined by a conjunction are to form a single compound sentence, the proper mark of punctuation is a semicolon.
 
     Mary Shelley’s works are entertaining; they are full of engaging ideas.
     It is nearly half past five; we cannot reach town before dark.
@@ -141,7 +141,7 @@ If a conjunction is inserted, the proper mark is a comma. (Rule 4.)
 
 A comparison of the three forms given above will show clearly the advantage of the first. It is, at least in the examples given, better than the second form because it suggests the close relationship between the two statements in a way that the second does not attempt, and better than the third because it is briefer and therefore more forcible. Indeed, this simple method of indicating relationship between statements is one of the most useful devices of composition. The relationship, as above, is commonly one of cause and consequence.
 
-Note that if the second clause is preceded by an adverb, such as accordingly, besides, then,.therefore, or thus, and not by a conjunction, the semicolon is still required.
+Note that if the second clause is preceded by an adverb, such as accordingly, besides, then, therefore, or thus, and not by a conjunction, the semicolon is still required.
 
     I had never been in the place before; besides, it was dark as a tomb.
 
@@ -151,7 +151,7 @@ A comma is preferable when the clauses are very short and alike in form, or when
 
     Man proposes, God disposes.
     The gates swung apart, the bridge fell, the portcullis was drawn up.
-    I hardly mew him, he was so changed.
+    I hardly knew him, he was so changed.
     Here today, gone tomorrow.
 
 6. Do not break sentences in two.
@@ -159,7 +159,7 @@ A comma is preferable when the clauses are very short and alike in form, or when
 In other words, do not use periods for commas.
 
     I met them on a Cunard liner many years ago. Coming home from Liverpool to New York.
-    She was an interesting talker. A woman who had traveled allover the world and lived in half a dozen countries.
+    She was an interesting talker. A woman who had travelled all over the world and lived in half a dozen countries.
 
 In both these examples, the first period should be replaced by a comma and the following word begun with a small letter.
 
@@ -217,8 +217,8 @@ Use a dash only when a more common mark of punctuation seems inadequate.
 
 Words that intervene between subject and verb do not affect the number of the verb.
 
-    The bittersweet flavor of youth—its trials, its joys, its adventures, its challenges— are not soon forgotten.
-    The bittersweet flavor of its youth—its trials, its joys, its adventures, its challenges —is not soon forgotten.
+    The bittersweet flavor of youth—its trials, its joys, its adventures, its challenges—are not soon forgotten.
+    The bittersweet flavor of youth—its trials, its joys, its adventures, its challenges—is not soon forgotten.
 
 A common blunder is the use of a singular verb form in a relative clause following “one of …” or a similar expression when the relative is the subject.
 
@@ -247,7 +247,7 @@ A compound subject formed of two or more nouns joined by and almost always requi
 
 The walrus and the carpenter were walking close at hand.
 
-But certain compounds, often cliches, are so inseparable they are considered a unit and so take a singular verb, as do compound subjects qualified by each or every.
+But certain compounds, often clichés, are so inseparable they are considered a unit and so take a singular verb, as do compound subjects qualified by each or every.
 
     The long and the short of it is …
     Bread and butter was all she served.
