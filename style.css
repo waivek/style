@@ -94,12 +94,28 @@ a[href^="http"]:after {
     background-image: url("external_link.svg");
     padding: 0 1em;
 }
-.path a, .path  {
+body.light .path a, body.light .path  {
     color: #ccc;
     font-style: italic;
 }
-.path a:hover {
+
+body.sepia .path a, body.sepia .path  {
+    color: #b9ae80;
+    font-style: italic;
+}
+
+body.dark .path a, body.dark .path  {
+    color: #838383;
+    font-style: italic;
+}
+
+body.light .path a:hover ,
+body.sepia .path a:hover {
     color: black;
+}
+
+body.dark .path a:hover {
+    color: #eaeaea;
 }
 
 

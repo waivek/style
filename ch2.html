@@ -18,6 +18,7 @@
 
     body {
         font-size: 24px;
+        background: white;
     }
     #content, h2 {
         padding: 0;
@@ -28,15 +29,49 @@
         margin: 2em auto;
         max-width: 30em;
     }
+    h4 {
+    }
 
 /* reader mode: START */
-    body {
+    body.reader > #content {
+        box-shadow: 2px 2px 4px 0px black;
+        padding: 1.5em 4em;
+    }
+
+
+    body.light {
+        background: white;
+        color: black;
+    }
+    body.light > #content {
+        background: white;
+    }
+    body.reader.light {
+        background: #efebeb;
+    }
+
+    body.sepia {
+        background: cornsilk;
+        color: black;
+    }
+    body.sepia > #content {
+        background: cornsilk;
+    }
+    body.reader.sepia {
+        background: #ffe8ca;
+    }
+
+    body.dark {
+        background: #444;
+        color: #eaeaea;
+    }
+    body.dark > #content {
+        background: #444;
+    }
+    body.reader.dark {
         background: rgb(82, 86, 89);
     }
-    #content {
-        padding: 1.5em 4em;
-        box-shadow: 2px 2px 4px 0px black;
-    }
+
 /* reader mode: END */
 
     h1 {
@@ -55,6 +90,9 @@
             max-width: 900px;
         }
         #content {
+            padding: 1.5em;
+        }
+        body.reader > #content {
             padding: 1.5em;
         }
     }
@@ -93,84 +131,271 @@
         .floating {
             height: 60px;
             width: 60px;
+            font-size: 32px;
+
             background: brown;
             color: white;
-            position: sticky;
-            border-radius: 50%;
+            position: fixed;
+            border-radius: 30%;
             box-shadow: 1px 1px 2px 0px #444;
-            bottom: 40px;
-            float: right;
+            left: 0;
             user-select: none;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: border-radius 0.3s;
+        }
+        .floating_clicked {
+            border-radius: 0%;
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            transition: border-radius 0.3s;
+            box-shadow: none;
+            background: #888;
+            color: white;
         }
         .floating:hover {
             cursor: pointer;
         }
 
-         .option {
-            position: relative;
-            /* bottom: 80px; */
-            padding: .5em;
-            color: black;
-            background: white;
-            box-shadow: 1px 1px 2px 0px #444;
-            border-radius: 8px;
-            max-width: 30em;
-            /* left: -130px; */
+        .option_container {
+            position: fixed;
+            width: 12em;
             top: 0;
+            left: 0;
+            background: white;
+            border-radius: 8px;
+            border-bottom-right-radius: 0px;
+            background: #888;
+            color: white;
         }
 
-       .floating.display_options > .option {
-            display: block;
+        .option {
+            user-select: none;
+            padding: .5em;
+            transition: 0.1s;
+        }
+        .option_first {
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+        }
+        .option_last {
+            border-bottom-left-radius: inherit;
+            border-bottom-right-radius: inherit;
+        }
+        .option:hover {
+            cursor: pointer;
+            background: #eee;
+            color: black;
+            transition: 0.1s;
         }
 
-        .floating.hide_options > .option {
-            display: none;
+        .option_container_shown {
+            transition:visibility 0.3s linear,opacity 0.3s linear;
+        }
+        
+        .option_container_hidden {
+            transition:visibility 0.15s linear,opacity 0.15s linear;
+            visibility: hidden;
+            opacity: 0;
         }
 
+        .option_theme_container {
+            padding: 0;
+        }
+        .option_theme_container:hover {
+            cursor: initial;
+            color: inherit;
+        }
+
+        .option_theme {
+            display: inline-block;
+            width: 3.5em;
+            height: 2em;
+            border: solid .25em black;
+            text-align: center;
+            padding-top: .5em;
+        }
+        .option_theme:hover {
+            cursor: pointer;
+            color: rosybrown;
+        }
+
+        .option_theme_light {
+            background: white;
+            border-color: white;
+            color: white;
+        }
+        .option_theme_sepia {
+            background: cornsilk;
+            border-color: cornsilk;
+            color: cornsilk;
+        }
+        .option_theme_dark {
+            background: #444;
+            border-color: #444;
+            color: #444;
+        }
+
+        body.light a {
+            color: #36c;
+        }
+
+        body.sepia a {
+            color: #5a83d3;
+        }
+
+        body.dark a {
+            color: #67c6d5;
+        }
 
     </style>
 
     <script>
         function toggle_option_display(elem) {
-            if (elem.classList.contains("display_options")) {
-                elem.classList.remove("display_options");
-                elem.classList.add("hide_options");
-            } else if (elem.classList.contains("hide_options")) {
-                elem.classList.remove("hide_options");
-                elem.classList.add("display_options");
+            var container = document.querySelector(".option_container");
+            if (container.classList.contains("option_container_hidden")) {
+                container.classList.remove("option_container_hidden");
+                container.classList.add("option_container_shown");
+                container.style.left = (elem.offsetLeft + elem.offsetWidth - container.offsetWidth);
+                container.style.top = elem.offsetTop - container.offsetHeight + 1;
+                elem.classList.add("floating_clicked");
+            } else if (container.classList.contains("option_container_shown")) {
+                container.classList.remove("option_container_shown");
+                container.classList.add("option_container_hidden");
+                elem.classList.remove("floating_clicked");
             }
         }
 
+        function toggle_reader_mode(elem) {
+            if (document.body.classList.contains("reader")) {
+                document.body.classList.remove("reader");
+                elem.innerText = "Reader Mode: OFF";
+            } else {
+                document.body.classList.add("reader");
+                elem.innerText = "Reader Mode: ON";
+            }
+        }
+
+        function reposition_floating_element_and_options() {
+            var elem = document.querySelector(".floating");
+            var right_padding = 40;
+            elem.style.left = content.offsetLeft + content.offsetWidth - elem.offsetWidth - right_padding + "px";
+            elem.style.bottom =  right_padding;
+
+            var container = document.querySelector(".option_container");
+            container.style.left = (elem.offsetLeft + elem.offsetWidth - container.offsetWidth);
+            container.style.top = elem.offsetTop - container.offsetHeight;
+        }
+
+        function set_theme(theme_string) {
+            document.body.classList.remove("light");
+            document.body.classList.remove("sepia");
+            document.body.classList.remove("dark");
+            
+            document.body.classList.add(theme_string);
+        }
         function add_floating_element() {
+            var right_padding = 40;
             content = document.querySelector("#content");
             elem = document.createElement("div");
             elem.classList.add("floating");
             elem.classList.add("hide_options");
-            content.appendChild(elem);
+            elem.innerText = "+";
+            document.body.appendChild(elem);
+            elem.style.left = content.offsetLeft + content.offsetWidth - elem.offsetWidth - right_padding + "px";
+            elem.style.bottom = 0 + right_padding;
 
-            font_size = document.createElement("div");
-            font_size.innerText = "20px -------------------";
-            font_size.classList.add("option");
-            elem.appendChild(font_size);
+            option_1 = document.createElement("div");
+            if (document.body.classList.contains("reader")) {
+                option_1.innerText = "Reader Mode: ON";
+            } else {
+                option_1.innerText = "Reader Mode: OFF";
+            }
+            option_1.classList.add("option");
+            option_1.classList.add("option_first");
+            option_1.classList.add("reader_mode_button");
+            option_1.addEventListener("click", function () { toggle_reader_mode(option_1); });
 
-            font_size = document.createElement("div");
-            font_size.innerText = "20px -------------------";
-            font_size.classList.add("option");
-            elem.appendChild(font_size);
+            option_2 = document.createElement("div");
 
-            font_size = document.createElement("div");
-            font_size.innerText = "20px -------------------";
-            font_size.classList.add("option");
-            elem.appendChild(font_size);
+            theme_1 = document.createElement("div");
+            theme_1.classList.add("option_theme");
+            theme_1.classList.add("option_theme_light");
+            theme_1.innerText = "Light";
+            theme_1.addEventListener("click", function () { set_theme("light"); })
 
-            font_size = document.createElement("div");
-            font_size.innerText = "20px -------------------";
-            font_size.classList.add("option");
-            elem.appendChild(font_size);
+            theme_2 = document.createElement("div");
+            theme_2.classList.add("option_theme");
+            theme_2.classList.add("option_theme_sepia");
+            theme_2.innerText = "Sepia";
+            theme_2.addEventListener("click", function () { set_theme("sepia"); })
+
+            theme_3 = document.createElement("div");
+            theme_3.classList.add("option_theme");
+            theme_3.classList.add("option_theme_dark");
+            theme_3.innerText = "Dark";
+            theme_3.addEventListener("click", function () { set_theme("dark"); })
+
+            option_2.appendChild(theme_1);
+            option_2.appendChild(theme_2);
+            option_2.appendChild(theme_3);
+
+            option_2.classList.add("option");
+            option_2.classList.add("option_theme_container");
+
+            option_3 = document.createElement("div");
+            option_3.innerText = "Element 3";
+            option_3.classList.add("option");
+
+            option_4 = document.createElement("div");
+            option_4.innerText = "Element 4";
+            option_4.classList.add("option");
+            option_4.classList.add("option_last");
+
+            container = document.createElement("div");
+            container.classList.add("option_container");
+            container.classList.add("option_container_hidden");
+
+            container.appendChild(option_1);
+            container.appendChild(option_2);
+            container.appendChild(option_3);
+            container.appendChild(option_4);
+
+            document.body.appendChild(container);
 
             elem.addEventListener("click", function () { toggle_option_display(elem); });
         }
-        // window.addEventListener("load", add_floating_element);
+
+        this.oldScroll = this.scrollY;
+        var net_y_floating_offset = 0;
+        function make_floating_element_respond_to_scroll (event) {
+            var elem = document.querySelector(".floating");
+            if (this.oldScroll < this.scrollY) {
+                var y_offset = this.scrollY - this.oldScroll;
+                net_y_floating_offset += y_offset / 10;
+                elem.style.transform = "translateY(" + net_y_floating_offset + "px)";
+                
+                var elem_top = parseInt(elem.style.bottom) + (net_y_floating_offset * 10);
+                console.log("elem_top: " + elem_top);
+            } else if (this.oldScroll > this.scrollY) {
+                console.log("up");
+            }
+            this.oldScroll = this.scrollY;
+
+        }
+
+        function initialize() {
+            reader_mode_button = document.querySelector(".reader_mode_button");
+            toggle_reader_mode(reader_mode_button);
+            document.body.classList.add("light");
+        }
+        window.addEventListener("load", add_floating_element);
+        window.addEventListener("load", initialize);
+        window.addEventListener("resize", reposition_floating_element_and_options);
+        // window.addEventListener("scroll", make_floating_element_respond_to_scroll);
     </script>
 
     <body tabindex=-1>
