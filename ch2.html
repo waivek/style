@@ -163,7 +163,6 @@
         .option_container {
             position: fixed;
             width: 12em;
-            top: 0;
             left: 0;
             background: white;
             border-radius: 8px;
@@ -260,7 +259,8 @@
                 container.classList.remove("option_container_hidden");
                 container.classList.add("option_container_shown");
                 container.style.left = (elem.offsetLeft + elem.offsetWidth - container.offsetWidth);
-                container.style.top = elem.offsetTop - container.offsetHeight + 1;
+                container.style.bottom = window.innerHeight - elem.offsetTop;
+                /* /reposition_floating_element_and_options/ */
                 elem.classList.add("floating_clicked");
             } else if (container.classList.contains("option_container_shown")) {
                 container.classList.remove("option_container_shown");
@@ -277,17 +277,29 @@
                 document.body.classList.add("reader");
                 elem.innerText = "Reader Mode: ON";
             }
+            reposition_floating_element_and_options();
         }
 
         function reposition_floating_element_and_options() {
+            var content = document.querySelector("#content");
             var elem = document.querySelector(".floating");
             var right_padding = 40;
             elem.style.left = content.offsetLeft + content.offsetWidth - elem.offsetWidth - right_padding + "px";
             elem.style.bottom =  right_padding;
 
+            /* 
+            var content = document.querySelector("#content");
+            var elem = document.querySelector(".floating");
+            */
+            console.log("=== reposition_floating_element_and_options ===");
+            console.log("content.offsetLeft: " + content.offsetLeft);
+            console.log("content.offsetWidth: " + content.offsetWidth);
+            console.log("elem.offsetWidth: " + elem.offsetWidth);
+
             var container = document.querySelector(".option_container");
             container.style.left = (elem.offsetLeft + elem.offsetWidth - container.offsetWidth);
-            container.style.top = elem.offsetTop - container.offsetHeight;
+            // container.style.top = elem.offsetTop - container.offsetHeight;
+            container.style.bottom = window.innerHeight - elem.offsetTop;
         }
 
         function set_theme(theme_string) {
@@ -306,7 +318,7 @@
             elem.innerText = "+";
             document.body.appendChild(elem);
             elem.style.left = content.offsetLeft + content.offsetWidth - elem.offsetWidth - right_padding + "px";
-            elem.style.bottom = 0 + right_padding;
+            elem.style.bottom = right_padding;
 
             option_1 = document.createElement("div");
             if (document.body.classList.contains("reader")) {
@@ -366,6 +378,10 @@
 
             document.body.appendChild(container);
 
+            console.log("content.offsetLeft: " + content.offsetLeft);
+            console.log("content.offsetWidth: " + content.offsetWidth);
+            console.log("elem.offsetWidth: " + elem.offsetWidth);
+
             elem.addEventListener("click", function () { toggle_option_display(elem); });
         }
 
@@ -388,11 +404,11 @@
         }
 
         function initialize() {
+            add_floating_element();
             reader_mode_button = document.querySelector(".reader_mode_button");
             toggle_reader_mode(reader_mode_button);
             document.body.classList.add("light");
         }
-        window.addEventListener("load", add_floating_element);
         window.addEventListener("load", initialize);
         window.addEventListener("resize", reposition_floating_element_and_options);
         // window.addEventListener("scroll", make_floating_element_respond_to_scroll);
