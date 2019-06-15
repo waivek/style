@@ -20,7 +20,7 @@ li {
     padding-bottom: .4em;
 }
 .toc li {
-    padding: initial;
+    padding: 0;
 }
 table {
     width: 100%;
