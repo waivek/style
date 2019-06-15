@@ -1,0 +1,54 @@
+
+body.light {
+    --content_background: white;
+    --reader_background: #efebeb;
+    --text_color: black;
+    --path_color: #ccc;
+    --link_color: #36c;
+}
+body.sepia {
+    --content_background: cornsilk;
+    --reader_background: #ffe8ca;
+    --text_color: black;
+    --path_color: #b9ae80;
+    --link_color: #5a83d3;
+}
+body.dark {
+    --content_background: #444;
+    --reader_background: rgb(82, 86, 89);
+    --text_color: #eaeaea;
+    --path_color: #838383;
+    --link_color: #67c6d5;
+}
+
+body {
+    color: var(--text_color);
+    background: var(--content_background);
+}
+body > #content {
+    background: var(--content_background);
+}
+
+body.reader > #content {
+    box-shadow: 2px 2px 4px 0px black;
+}
+body.reader {
+    background: var(--reader_background);
+}
+
+body a {
+    color: var(--link_color);
+}
+
+body .path a, body .path  {
+    color: var(--path_color);
+}
+
+body.light .path a:hover ,
+body.sepia .path a:hover {
+    color: var(--text_color);
+}
+body.dark .path a:hover {
+    color: var(--text_color);
+}
+

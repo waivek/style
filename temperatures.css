@@ -1,0 +1,252 @@
+body.temperature_1000.light {
+    --content_background: rgb(255, 56, 0);
+    --reader_background: rgb(239, 51, 0);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 44, 0);
+    --link_color: rgb(51, 22, 0);
+}
+body.temperature_1000.sepia {
+    --content_background: rgb(255, 54, 0);
+    --reader_background: rgb(255, 50, 0);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 38, 0);
+    --link_color: rgb(90, 28, 0);
+}
+body.temperature_1000.dark {
+    --content_background: rgb(68, 14, 0);
+    --reader_background: rgb(82, 18, 0);
+    --text_color: rgb(234, 51, 0);
+    --path_color: rgb(131, 28, 0);
+    --link_color: rgb(103, 43, 0);
+}
+body.temperature_1500.light {
+    --content_background: rgb(255, 109, 0);
+    --reader_background: rgb(239, 100, 0);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 87, 0);
+    --link_color: rgb(51, 43, 0);
+}
+body.temperature_1500.sepia {
+    --content_background: rgb(255, 106, 0);
+    --reader_background: rgb(255, 99, 0);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 74, 0);
+    --link_color: rgb(90, 55, 0);
+}
+body.temperature_1500.dark {
+    --content_background: rgb(68, 29, 0);
+    --reader_background: rgb(82, 36, 0);
+    --text_color: rgb(234, 100, 0);
+    --path_color: rgb(131, 55, 0);
+    --link_color: rgb(103, 84, 0);
+}
+body.temperature_2000.light {
+    --content_background: rgb(255, 137, 18);
+    --reader_background: rgb(239, 126, 16);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 109, 14);
+    --link_color: rgb(51, 54, 14);
+}
+body.temperature_2000.sepia {
+    --content_background: rgb(255, 133, 15);
+    --reader_background: rgb(255, 124, 14);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 93, 9);
+    --link_color: rgb(90, 70, 14);
+}
+body.temperature_2000.dark {
+    --content_background: rgb(68, 36, 4);
+    --reader_background: rgb(82, 46, 6);
+    --text_color: rgb(234, 125, 16);
+    --path_color: rgb(131, 70, 9);
+    --link_color: rgb(103, 106, 15);
+}
+body.temperature_2500.light {
+    --content_background: rgb(255, 161, 72);
+    --reader_background: rgb(239, 148, 66);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 128, 57);
+    --link_color: rgb(51, 64, 57);
+}
+body.temperature_2500.sepia {
+    --content_background: rgb(255, 156, 62);
+    --reader_background: rgb(255, 146, 57);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 109, 36);
+    --link_color: rgb(90, 82, 59);
+}
+body.temperature_2500.dark {
+    --content_background: rgb(68, 42, 19);
+    --reader_background: rgb(82, 54, 25);
+    --text_color: rgb(234, 147, 66);
+    --path_color: rgb(131, 82, 36);
+    --link_color: rgb(103, 125, 60);
+}
+body.temperature_3000.light {
+    --content_background: rgb(255, 180, 107);
+    --reader_background: rgb(239, 165, 98);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 144, 85);
+    --link_color: rgb(51, 72, 85);
+}
+body.temperature_3000.sepia {
+    --content_background: rgb(255, 175, 92);
+    --reader_background: rgb(255, 163, 84);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 122, 53);
+    --link_color: rgb(90, 92, 88);
+}
+body.temperature_3000.dark {
+    --content_background: rgb(68, 48, 28);
+    --reader_background: rgb(82, 60, 37);
+    --text_color: rgb(234, 165, 98);
+    --path_color: rgb(131, 92, 54);
+    --link_color: rgb(103, 139, 89);
+}
+body.temperature_3500.light {
+    --content_background: rgb(255, 196, 137);
+    --reader_background: rgb(239, 180, 126);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 156, 109);
+    --link_color: rgb(51, 78, 109);
+}
+body.temperature_3500.sepia {
+    --content_background: rgb(255, 190, 118);
+    --reader_background: rgb(255, 178, 108);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 133, 68);
+    --link_color: rgb(90, 100, 113);
+}
+body.temperature_3500.dark {
+    --content_background: rgb(68, 52, 36);
+    --reader_background: rgb(82, 66, 47);
+    --text_color: rgb(234, 179, 125);
+    --path_color: rgb(131, 100, 70);
+    --link_color: rgb(103, 152, 114);
+}
+body.temperature_4000.light {
+    --content_background: rgb(255, 209, 163);
+    --reader_background: rgb(239, 192, 150);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 167, 130);
+    --link_color: rgb(51, 83, 130);
+}
+body.temperature_4000.sepia {
+    --content_background: rgb(255, 203, 140);
+    --reader_background: rgb(255, 190, 129);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 142, 81);
+    --link_color: rgb(90, 107, 134);
+}
+body.temperature_4000.dark {
+    --content_background: rgb(68, 55, 43);
+    --reader_background: rgb(82, 70, 56);
+    --text_color: rgb(234, 191, 149);
+    --path_color: rgb(131, 107, 83);
+    --link_color: rgb(103, 162, 136);
+}
+body.temperature_4500.light {
+    --content_background: rgb(255, 219, 186);
+    --reader_background: rgb(239, 201, 171);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 175, 148);
+    --link_color: rgb(51, 87, 148);
+}
+body.temperature_4500.sepia {
+    --content_background: rgb(255, 212, 160);
+    --reader_background: rgb(255, 199, 147);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 149, 93);
+    --link_color: rgb(90, 112, 153);
+}
+body.temperature_4500.dark {
+    --content_background: rgb(68, 58, 49);
+    --reader_background: rgb(82, 73, 64);
+    --text_color: rgb(234, 200, 170);
+    --path_color: rgb(131, 112, 95);
+    --link_color: rgb(103, 170, 155);
+}
+body.temperature_5000.light {
+    --content_background: rgb(255, 228, 206);
+    --reader_background: rgb(239, 210, 189);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 182, 164);
+    --link_color: rgb(51, 91, 164);
+}
+body.temperature_5000.sepia {
+    --content_background: rgb(255, 221, 177);
+    --reader_background: rgb(255, 207, 163);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 155, 103);
+    --link_color: rgb(90, 117, 170);
+}
+body.temperature_5000.dark {
+    --content_background: rgb(68, 60, 54);
+    --reader_background: rgb(82, 76, 71);
+    --text_color: rgb(234, 209, 189);
+    --path_color: rgb(131, 117, 105);
+    --link_color: rgb(103, 177, 172);
+}
+body.temperature_5500.light {
+    --content_background: rgb(255, 236, 224);
+    --reader_background: rgb(239, 217, 206);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 188, 179);
+    --link_color: rgb(51, 94, 179);
+}
+body.temperature_5500.sepia {
+    --content_background: rgb(255, 229, 193);
+    --reader_background: rgb(255, 214, 177);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 161, 112);
+    --link_color: rgb(90, 121, 185);
+}
+body.temperature_5500.dark {
+    --content_background: rgb(68, 62, 59);
+    --reader_background: rgb(82, 79, 78);
+    --text_color: rgb(234, 216, 205);
+    --path_color: rgb(131, 121, 115);
+    --link_color: rgb(103, 183, 187);
+}
+body.temperature_6000.light {
+    --content_background: rgb(255, 243, 239);
+    --reader_background: rgb(239, 223, 220);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 194, 191);
+    --link_color: rgb(51, 97, 191);
+}
+body.temperature_6000.sepia {
+    --content_background: rgb(255, 236, 206);
+    --reader_background: rgb(255, 221, 189);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 165, 119);
+    --link_color: rgb(90, 124, 197);
+}
+body.temperature_6000.dark {
+    --content_background: rgb(68, 64, 63);
+    --reader_background: rgb(82, 81, 83);
+    --text_color: rgb(234, 222, 219);
+    --path_color: rgb(131, 124, 122);
+    --link_color: rgb(103, 188, 199);
+}
+body.temperature_6500.light {
+    --content_background: rgb(255, 249, 253);
+    --reader_background: rgb(239, 229, 233);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 199, 202);
+    --link_color: rgb(51, 99, 202);
+}
+body.temperature_6500.sepia {
+    --content_background: rgb(255, 242, 218);
+    --reader_background: rgb(255, 226, 200);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 169, 126);
+    --link_color: rgb(90, 127, 209);
+}
+body.temperature_6500.dark {
+    --content_background: rgb(68, 66, 67);
+    --reader_background: rgb(82, 83, 88);
+    --text_color: rgb(234, 228, 232);
+    --path_color: rgb(131, 127, 129);
+    --link_color: rgb(103, 193, 211);
+}
