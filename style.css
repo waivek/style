@@ -81,7 +81,6 @@ td {
 
 a {
     text-decoration: none;
-    color: #36c;
     padding-bottom: 1px;
 }
 a:hover {
@@ -94,30 +93,10 @@ a[href^="http"]:after {
     background-image: url("external_link.svg");
     padding: 0 1em;
 }
-body.light .path a, body.light .path  {
-    color: #ccc;
+
+body .path a, body .path {
     font-style: italic;
 }
-
-body.sepia .path a, body.sepia .path  {
-    color: #b9ae80;
-    font-style: italic;
-}
-
-body.dark .path a, body.dark .path  {
-    color: #838383;
-    font-style: italic;
-}
-
-body.light .path a:hover ,
-body.sepia .path a:hover {
-    color: black;
-}
-
-body.dark .path a:hover {
-    color: #eaeaea;
-}
-
 
 h2 {
     margin: 1.5em auto;

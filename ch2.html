@@ -8,6 +8,8 @@
         <link href="fonts/confluence.css" type="text/css" rel="stylesheet" />
         <link href="fonts/fairplay.css" type="text/css" rel="stylesheet" />
         <link href="style.css" type="text/css" rel="stylesheet" />
+        <link href="colors.css" type="text/css" rel="stylesheet" />
+        <link href="temperatures.css" type="text/css" rel="stylesheet" />
    </head>
 
 
@@ -18,70 +20,29 @@
 
     body {
         font-size: 24px;
-        background: white;
     }
     #content, h2 {
         padding: 0;
         margin: 0;
     }
     #content {
-        background: white;
         margin: 2em auto;
         max-width: 30em;
 
         /* 
-         Without horizontal padding, toggling reader mode changes the position
-         of the floating element on desktop.
+         Without horizontal padding, toggling reader mode changes the position of the floating element on desktop.
          
-         This doesn’t affect mobile view because padding gets overridden via a
-         media query.
+         This doesn’t affect mobile view because padding gets overridden via a media query.
          
-         The 4em value comes from the horizontal padding in `body.reader >
-         #content {`
+         The 4em value comes from the horizontal padding in `body.reader > #content {`
          */
         padding: 0 4em;
     }
 
 /* reader mode: START */
     body.reader > #content {
-        box-shadow: 2px 2px 4px 0px black;
         padding: 1.5em 4em;
     }
-
-
-    body.light {
-        background: white;
-        color: black;
-    }
-    body.light > #content {
-        background: white;
-    }
-    body.reader.light {
-        background: #efebeb;
-    }
-
-    body.sepia {
-        background: cornsilk;
-        color: black;
-    }
-    body.sepia > #content {
-        background: cornsilk;
-    }
-    body.reader.sepia {
-        background: #ffe8ca;
-    }
-
-    body.dark {
-        background: #444;
-        color: #eaeaea;
-    }
-    body.dark > #content {
-        background: #444;
-    }
-    body.reader.dark {
-        background: rgb(82, 86, 89);
-    }
-
 /* reader mode: END */
 
     h1 {
@@ -147,6 +108,7 @@
             color: white;
             position: fixed;
             border-radius: 30%;
+            border-radius: 50%;
             box-shadow: 1px 1px 2px 0px #444;
             left: 0;
             user-select: none;
@@ -248,17 +210,6 @@
             color: #444;
         }
 
-        body.light a {
-            color: #36c;
-        }
-
-        body.sepia a {
-            color: #5a83d3;
-        }
-
-        body.dark a {
-            color: #67c6d5;
-        }
 
     </style>
 
@@ -270,12 +221,14 @@
                 container.classList.add("option_container_shown");
                 container.style.left = (elem.offsetLeft + elem.offsetWidth - container.offsetWidth);
                 container.style.bottom = window.innerHeight - elem.offsetTop;
+                elem.innerText = "-";
                 /* /reposition_floating_element_and_options/ */
                 elem.classList.add("floating_clicked");
             } else if (container.classList.contains("option_container_shown")) {
                 container.classList.remove("option_container_shown");
                 container.classList.add("option_container_hidden");
                 elem.classList.remove("floating_clicked");
+                elem.innerText = "+";
             }
         }
 
@@ -295,15 +248,6 @@
             var right_padding = 40;
             elem.style.left = content.offsetLeft + content.offsetWidth - elem.offsetWidth - right_padding + "px";
             elem.style.bottom =  right_padding;
-
-            /* 
-            var content = document.querySelector("#content");
-            var elem = document.querySelector(".floating");
-            */
-            console.log("=== reposition_floating_element_and_options ===");
-            console.log("content.offsetLeft: " + content.offsetLeft);
-            console.log("content.offsetWidth: " + content.offsetWidth);
-            console.log("elem.offsetWidth: " + elem.offsetWidth);
 
             var container = document.querySelector(".option_container");
             container.style.left = (elem.offsetLeft + elem.offsetWidth - container.offsetWidth);
@@ -368,8 +312,33 @@
             option_2.classList.add("option_theme_container");
 
             option_3 = document.createElement("div");
-            option_3.innerText = "Element 3";
             option_3.classList.add("option");
+
+            slider = document.createElement("input");
+            slider.setAttribute("type", "range");
+            slider.setAttribute("min", 1000);
+            slider.setAttribute("max", 6500);
+            slider.setAttribute("step", 500);
+            slider.setAttribute("value", 6500);
+
+            slider_value = document.createElement("span");
+            slider_value.innerText = 6500;
+
+            slider.addEventListener("input", function() { 
+                slider_value.innerText = this.value; 
+                var classes = document.body.classList;
+
+                for (var i = 0; i < classes.length; i++) {
+                    if (classes[i].startsWith("temperature_")) {
+                        document.body.classList.remove(classes[i]);
+                    }
+                }
+                document.body.classList.add("temperature_" + this.value);
+            });
+
+            option_3.appendChild(slider);
+            option_3.appendChild(slider_value);
+
 
             option_4 = document.createElement("div");
             option_4.innerText = "Element 4";
@@ -386,10 +355,6 @@
             container.appendChild(option_4);
 
             document.body.appendChild(container);
-
-            console.log("content.offsetLeft: " + content.offsetLeft);
-            console.log("content.offsetWidth: " + content.offsetWidth);
-            console.log("elem.offsetWidth: " + elem.offsetWidth);
 
             elem.addEventListener("click", function () { toggle_option_display(elem); });
         }
@@ -417,6 +382,8 @@
             reader_mode_button = document.querySelector(".reader_mode_button");
             toggle_reader_mode(reader_mode_button);
             document.body.classList.add("light");
+            document.body.classList.add("temperature_6500");
+
         }
 
         window.addEventListener("load", initialize);
