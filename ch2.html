@@ -18,9 +18,6 @@
 <style>
 
 
-    body {
-        font-size: 24px;
-    }
     #content, h2 {
         padding: 0;
         margin: 0;
@@ -67,12 +64,6 @@
             padding: 1.5em;
         }
     }
-
-    @media screen and (max-width: 900px) { body { font-size: 24px; } }
-    @media screen and (max-width: 850px) { body { font-size: 23px; } }
-    @media screen and (max-width: 800px) { body { font-size: 22px; } }
-    @media screen and (max-width: 750px) { body { font-size: 21px; } }
-    @media screen and (max-width: 700px) { body { font-size: 20px; } }
 
 </style>
 
@@ -211,6 +202,10 @@
         }
 
 
+        .slider_value {
+            font-family: "Consolas", monospace;
+            padding: 0 1em;
+        }
     </style>
 
     <script>
@@ -316,13 +311,15 @@
 
             slider = document.createElement("input");
             slider.setAttribute("type", "range");
-            slider.setAttribute("min", 1000);
+            slider.setAttribute("min", 2000);
             slider.setAttribute("max", 6500);
             slider.setAttribute("step", 500);
             slider.setAttribute("value", 6500);
+            slider.classList.add("slider");
 
             slider_value = document.createElement("span");
             slider_value.innerText = 6500;
+            slider_value.classList.add("slider_value");
 
             slider.addEventListener("input", function() { 
                 slider_value.innerText = this.value; 
