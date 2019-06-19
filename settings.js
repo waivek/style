@@ -23,11 +23,11 @@ function toggle_reader_mode(elem) {
     if (document.body.classList.contains("reader")) {
         document.body.classList.remove("reader");
         elem.innerText = "Reader Mode: OFF";
-        Cookies.set("reader_mode", "off");
+        Cookies.set("reader_mode", "off", {domain: "/style/"});
     } else {
         document.body.classList.add("reader");
         elem.innerText = "Reader Mode: ON";
-        Cookies.set("reader_mode", "on");
+        Cookies.set("reader_mode", "on", {domain: "/style/"});
     }
 }
 
@@ -50,7 +50,7 @@ function set_theme(theme_string) {
     document.body.classList.remove("dark");
     
     document.body.classList.add(theme_string);
-    Cookies.set("theme", theme_string);
+    Cookies.set("theme", theme_string, {domain: "/style/"});
 }
 
 
@@ -65,7 +65,7 @@ function set_temperature(temperature_value) {
         }
     }
     document.body.classList.add("temperature_" + temperature_value);
-    Cookies.set("temperature", String(temperature_value));
+    Cookies.set("temperature", String(temperature_value), {domain: "/style/"});
 }
 
 function add_floating_element() {
@@ -211,7 +211,7 @@ function default_settings() {
         toggle_reader_mode(reader_mode_button);
     }
 
-    Cookies.set("cookies_exist", "true");
+    Cookies.set("cookies_exist", "true", {domain: "/style/"});
 }
 function cookie_settings() {
     set_theme(Cookies.get("theme"));
