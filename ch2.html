@@ -450,6 +450,7 @@
             set_temperature(v);
 
             var r = Cookies.get("reader_mode");
+            reader_mode_button = document.querySelector(".reader_mode_button");
             if (r === "on") {
                 toggle_reader_mode(reader_mode_button);
             } else if (r === "off") {
