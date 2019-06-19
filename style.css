@@ -10,11 +10,45 @@ body {
 
 @media screen and (min-width: 851px) { body { font-size: 20px; } }
 
+/* reader mode: START */
 #content {
-    margin: 1em auto;
     max-width: 40em;
-    padding: 0 1em;
+
+    padding: 0;
+    margin: 0;
+
+    margin: 2em auto;
+
+    /* 
+     Without horizontal padding, toggling reader mode changes the position of the floating element on desktop.
+     
+     This doesn’t affect mobile view because padding gets overridden via a media query.
+     
+     The 4em value comes from the horizontal padding in `body.reader > #content {`
+     */
+    padding: 0 4em;
 }
+
+body.reader > #content {
+    padding: 1.5em 4em;
+}
+@media screen and (max-width: 900px) {
+    #content, body { 
+        margin: 0;
+        max-width: 900px;
+    }
+    #content {
+        padding: 1.5em;
+    }
+    body.reader > #content {
+        padding: 1.5em;
+    }
+    .reader_mode_button {
+        display: none;
+    }
+}
+/* reader mode: END */
+
 
 ul {
     list-style-type: square;
@@ -104,8 +138,9 @@ body .path a, body .path {
 }
 
 h2 {
-    margin: 1.5em auto;
     text-align: center;
+    margin: 0;
+    padding-bottom: 1.5em;
 }
 h4 {
     font-family: "Confluence C3", sans-serif;
@@ -189,3 +224,12 @@ h4 {
     color: white;
     border-radius: 8px;
 }
+
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-top: 0;
+    font-family: "Fairplay Caps A subset", "Georgia", serif;
+}
+

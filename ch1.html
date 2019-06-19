@@ -4,9 +4,16 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Elementary rules of usage</title>
+
         <link href="fonts/confluence.css" type="text/css" rel="stylesheet" />
         <link href="fonts/fairplay.css" type="text/css" rel="stylesheet" />
+
         <link href="style.css" type="text/css" rel="stylesheet" />
+        <link href="colors.css" type="text/css" rel="stylesheet" />
+        <link href="temperatures.css" type="text/css" rel="stylesheet" />
+        <link href="settings.css" type="text/css" rel="stylesheet" />
+        <script src="settings.js"></script>
+
    </head>
 
     <script>
@@ -257,29 +264,6 @@ function load_mobile_hovercards(anchor_links) {
 
     </script>
 
-<style>
-.rule_text {
-    color: #ccc;
-    padding-right: 12px;
-    font-weight: 400;
-}
-</style>
-<script>
-    function modify_headers() {
-        var headers = document.querySelectorAll("h4");
-        for (var i = 0; i < headers.length; i++) {
-            var header = headers[i];
-            var span = document.createElement("span");
-            span.classList.add("rule_text");
-            header_id = header.getAttribute("id");
-            header_numstr = header_id.replace("rule-", "");
-            span.innerText = "" + header_numstr + ".   ";
-            header.insertAdjacentElement('afterBegin', span);
-        }
-    }
-    window.addEventListener("load" , modify_headers);
-</script>
-
  <style>
 .required_reading {
     box-shadow: 0px 0px 4px 0px #cca;
@@ -326,6 +310,7 @@ function load_mobile_hovercards(anchor_links) {
     <body tabindex=-1>
         <div id="content">
 
+            <h1>I</h1>
             <h2>Elementary rules of usage</h2>
 <div class="path">
     <a href="index.html">The Elements of Style</a> → 
@@ -349,7 +334,7 @@ function load_mobile_hovercards(anchor_links) {
             </div>
 
 
-<h4 id="rule-1">Form the possessive singular of nouns by adding ’s.</h4>
+<h4 id="rule-1">1. Form the possessive singular of nouns by adding ’s.</h4>
 
 <p>
     Follow this rule whatever the final consonant. Thus write,
@@ -395,7 +380,7 @@ function load_mobile_hovercards(anchor_links) {
         <li>It’s a wise dog that scratches its own fleas.</li>
     </ul>
 
-<h4 id="rule-2">In a series of three or more terms with a single conjunction, use a comma after each term except the last.</h4>
+<h4 id="rule-2">2. In a series of three or more terms with a single conjunction, use a comma after each term except the last.</h4>
 
 <p>
     Thus write,
@@ -421,7 +406,7 @@ function load_mobile_hovercards(anchor_links) {
         <li>Little, Brown and Company</li>
         <li>Donaldson, Lufkin & Jenrette</li>
     </ul>
-<h4 id="rule-3">Enclose parenthetic expressions between commas.</h4>
+<h4 id="rule-3">3. Enclose parenthetic expressions between commas.</h4>
     <ul> 
         <li>The best way to see a country, unless you are pressed for time, is to travel on foot.</li> 
     </ul>
@@ -577,7 +562,7 @@ function load_mobile_hovercards(anchor_links) {
         <li>Partly by hard fighting, partly by diplomatic skill, they enlarged their dominions to the east and rose to royal rank with the possession of Sicily.</li>
     </ul>
 
-<h4 id="rule-4">Place a comma before a conjunction introducing an independent clause.</h4>
+<h4 id="rule-4">4. Place a comma before a conjunction introducing an independent clause.</h4>
     <ul>
         <li>The early records of the city have disappeared, and the story of its first years can  no longer be reconstructed.</li>
         <li>The situation is perilous, but there is still one chance of escape.</li>
@@ -613,7 +598,7 @@ function load_mobile_hovercards(anchor_links) {
         <li>He has had several years’ experience and is thoroughly competent.</li> 
     </ul>
 
-<h4 id="rule-5">Do not join independent clauses with a comma.</h4> 
+<h4 id="rule-5">5. Do not join independent clauses with a comma.</h4> 
 
 <p>
     If two or more clauses grammatically complete and not joined by a conjunction are
@@ -682,7 +667,7 @@ function load_mobile_hovercards(anchor_links) {
         <li>Here today, gone tomorrow.</li>
     </ul>
 
-<h4 id="rule-6">Do not break sentences in two.</h4>
+<h4 id="rule-6">6. Do not break sentences in two.</h4>
 
 <p>
     In other words, do not use periods for commas.
@@ -724,7 +709,7 @@ function load_mobile_hovercards(anchor_links) {
 </p>
  
 
-<h4 id="rule-7">Use a colon after an independent clause to introduce a list of particulars, an appositive, an amplification, or an illustrative
+<h4 id="rule-7">7. Use a colon after an independent clause to introduce a list of particulars, an appositive, an amplification, or an illustrative
     quotation.</h4>
 
 <p>
@@ -778,7 +763,7 @@ function load_mobile_hovercards(anchor_links) {
         <li><em>Practical Calligraphy: An Introduction to Italic Script</em></li>
         <li>Nehemiah 11:7</li>
     </ul>
-<h4 id="rule-8">Use a dash to set off an abrupt break or interruption and to announce a long appositive or summary.</h4>
+<h4 id="rule-8">8. Use a dash to set off an abrupt break or interruption and to announce a long appositive or summary.</h4>
 
 <p>
     A dash is a mark of separation stronger than a comma, less formal than a colon,
@@ -807,7 +792,7 @@ function load_mobile_hovercards(anchor_links) {
     </tr>
     </tr>
 </table>
-<h4 id="rule-9">The number of the subject determines the number of the verb.</h4>
+<h4 id="rule-9">9. The number of the subject determines the number of the verb.</h4>
 
 <p>
     Words that intervene between subject and verb do not affect the number of the
@@ -933,7 +918,7 @@ function load_mobile_hovercards(anchor_links) {
 </p>
 
 
-<h4 id="rule-10">Use the proper case of pronoun.</h4>
+<h4 id="rule-10">10. Use the proper case of pronoun.</h4>
 
 
 <p>
@@ -1086,7 +1071,7 @@ function load_mobile_hovercards(anchor_links) {
 </p>
 
 
-<h4 id="rule-11">A participial phrase at the beginning of a sentence must refer to the grammatical subject.</h4>
+<h4 id="rule-11">11. A participial phrase at the beginning of a sentence must refer to the grammatical subject.</h4>
     <ul>
         <li>Walking slowly down the road, he saw a woman accompanied by two children.</li>
     </ul>

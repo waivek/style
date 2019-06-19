@@ -1,5 +1,5 @@
 
-body.light {
+body, body.light {
     --content_background: white;
     --reader_background: #efebeb;
     --text_color: black;
