@@ -1,0 +1,130 @@
+.floating {
+    height: 60px;
+    width: 60px;
+    font-size: 32px;
+
+    background: brown;
+    color: white;
+    position: fixed;
+    border-radius: 30%;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px 0px #444;
+    left: 0;
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: border-radius 0.3s;
+}
+.floating_clicked {
+    border-radius: 0%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    transition: border-radius 0.3s;
+    box-shadow: none;
+    background: #888;
+    color: white;
+}
+.floating:hover {
+    cursor: pointer;
+}
+
+.option_container {
+    position: fixed;
+    width: 12em;
+    left: 0;
+    background: white;
+    border-radius: 8px;
+    border-bottom-right-radius: 0px;
+    background: #888;
+    color: white;
+}
+
+.option {
+    user-select: none;
+    padding: .5em;
+    transition: 0.1s;
+
+    font-family: "Confluence C3";
+    text-transform: lowercase;
+}
+.option_first {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+.option_last {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+.option:hover {
+    cursor: pointer;
+    background: #eee;
+    color: black;
+    transition: 0.1s;
+}
+
+.option_container_shown {
+    transition:visibility 0.3s linear,opacity 0.3s linear;
+}
+
+.option_container_hidden {
+    transition:visibility 0.15s linear,opacity 0.15s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.option_theme_container {
+    padding: 0;
+}
+.option_theme_container:hover {
+    cursor: initial;
+    color: inherit;
+}
+
+.option_theme {
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    border: solid .25em black;
+    text-align: center;
+    padding-top: .5em;
+}
+.option_theme:hover {
+    cursor: pointer;
+    color: rosybrown;
+}
+
+.option_theme_light {
+    background: white;
+    border-color: white;
+    color: white;
+}
+.option_theme_sepia {
+    background: cornsilk;
+    border-color: cornsilk;
+    color: cornsilk;
+}
+.option_theme_dark {
+    background: #444;
+    border-color: #444;
+    color: #444;
+}
+
+
+.slider_value {
+    font-family: "Confluence C3";
+    text-transform: none;
+    padding: 0 1em;
+    /* text-align: center; */
+}
+
+.option_header {
+    background: brown;
+    color: white;
+    font-family: "Confluence C3";
+    text-transform: lowercase;
+    padding: .1em .5em;
+    text-align: center;
+}
