@@ -28,14 +28,27 @@ blockquote {
 
     text-align: justify;
 
-
+}
+.show_footnote {
+    text-transform: lowercase;
+    /* font-family: "Confluence C3"; */
+    color: var(--path_color);
+    user-select: none;
+}
+.show_footnote:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 cite {
     display: block;
+    display: none;
     font-style: normal;
     font-size: .75em;
     border-top: solid 1px;
     padding-top: 0.5em;
+}
+cite.show {
+    display: block;
 }
 
 
@@ -50,6 +63,12 @@ body.reader.dark > #content {
 }
 </style>
 
+    <script>
+        function show_footnote(elem) {
+            var cite = elem.parentElement.parentElement.querySelector("cite");
+            cite.classList.toggle("show");
+        }
+    </script>
 
 
 
@@ -426,7 +445,8 @@ body.reader.dark > #content {
         when he came home. His vice was not a matter of guesswork; it was an established fact that he was half-seas over
         from dawn till midnight. “With the black Irish,” said Gran, “the taste for drink is taken in with the mother’s
         milk and is never mastered. Oh, I know all about those promises to join the temperance movement and not to touch
-        another drop. The way to Hell is paved with good intentions.”
+        another drop. The way to Hell is paved with good intentions.” 
+        <span class="show_footnote" onclick="show_footnote(this)"><sup>[footnote]</sup></span>
     </p>
 
     <cite>
