@@ -21,6 +21,29 @@ body.dark {
     --link_color: #67c6d5;
 }
 
+/* body { */
+/*     color: black; */
+/*     background: white; */
+/* } */
+/* body > #content { */
+/*     background: white; */
+/* } */
+/* body.reader > #content { */
+/*     box-shadow: 0px 0px 5px 0px #aeaeae; */
+/* } */
+/* body.reader { */
+/*     background: #efebeb; */
+/* } */
+/* a { */
+/*     color: #36c; */
+/* } */
+/* .path, .path a { */
+/*     color: #ccc; */
+/* } */
+/* .path a:hover { */
+/*     color: black; */
+/* } */
+
 body {
     color: var(--text_color);
     background: var(--content_background);
@@ -44,11 +67,7 @@ body .path a, body .path  {
     color: var(--path_color);
 }
 
-body.light .path a:hover ,
-body.sepia .path a:hover {
-    color: var(--text_color);
-}
-body.dark .path a:hover {
+body .path a:hover {
     color: var(--text_color);
 }
 
