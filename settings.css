@@ -17,6 +17,10 @@
     justify-content: center;
 
     transition: border-radius 0.3s;
+    background-image: url(baseline-settings-20px.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .floating_clicked {
     border-radius: 0%;

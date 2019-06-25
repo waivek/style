@@ -1,5 +1,4 @@
-
-body, body.light {
+body.light {
     --content_background: white;
     --reader_background: #efebeb;
     --text_color: black;
@@ -20,29 +19,6 @@ body.dark {
     --path_color: #838383;
     --link_color: #67c6d5;
 }
-
-/* body { */
-/*     color: black; */
-/*     background: white; */
-/* } */
-/* body > #content { */
-/*     background: white; */
-/* } */
-/* body.reader > #content { */
-/*     box-shadow: 0px 0px 5px 0px #aeaeae; */
-/* } */
-/* body.reader { */
-/*     background: #efebeb; */
-/* } */
-/* a { */
-/*     color: #36c; */
-/* } */
-/* .path, .path a { */
-/*     color: #ccc; */
-/* } */
-/* .path a:hover { */
-/*     color: black; */
-/* } */
 
 body {
     color: var(--text_color);

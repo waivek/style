@@ -1,14 +1,14 @@
 body {
     line-height: 1.35;
-    font-family: "Fairplay Text A", "Georgia", serif;
+    font-family:  "Fairplay Text A", "Georgia", serif;
 }
 
+@media screen and (min-width: 850px) { body { font-size: 20px; } }
 @media screen and (max-width: 850px) { body { font-size: 19px; } }
 @media screen and (max-width: 800px) { body { font-size: 18px; } }
 @media screen and (max-width: 750px) { body { font-size: 17px; } }
 @media screen and (max-width: 700px) { body { font-size: 16px; } }
 
-@media screen and (min-width: 851px) { body { font-size: 20px; } }
 
 /* reader mode: START */
 #content {
@@ -32,6 +32,7 @@ body {
 body.reader > #content {
     padding: 1.5em 4em;
 }
+
 @media screen and (max-width: 900px) {
     #content, body { 
         margin: 0;

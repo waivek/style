@@ -15,7 +15,7 @@ function toggle_option_display(elem) {
         container.classList.remove("option_container_shown");
         container.classList.add("option_container_hidden");
         elem.classList.remove("floating_clicked");
-        elem.innerText = "+";
+        elem.innerText = "";
     }
 }
 
@@ -74,7 +74,7 @@ function add_floating_element() {
     elem = document.createElement("div");
     elem.classList.add("floating");
     elem.classList.add("hide_options");
-    elem.innerText = "+";
+    elem.innerText = "";
     document.body.appendChild(elem);
     elem.style.left = content.offsetLeft + content.offsetWidth - elem.offsetWidth - right_padding + "px";
     elem.style.bottom = right_padding;
