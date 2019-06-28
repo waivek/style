@@ -44,7 +44,7 @@ body.reader > #content {
     }
     body.reader > #content {
         padding: 1.5em;
-        border-radius: none;
+        border-radius: 0px;
     }
     .reader_mode_button {
         display: none;
