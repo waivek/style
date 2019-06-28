@@ -127,6 +127,7 @@ a {
 }
 a:hover {
     border-bottom: solid 2px;
+    outline: none;
 }
 a[href^="http"]:after {
     background-position: center right;

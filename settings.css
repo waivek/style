@@ -23,6 +23,9 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+button.floating {
+    border: inherit;
+}
 .floating_clicked {
     border-radius: 0%;
     border-bottom-left-radius: 20%;
@@ -35,6 +38,7 @@
 .floating:hover {
     cursor: pointer;
 }
+
 
 .option_container {
     position: fixed;
@@ -51,9 +55,20 @@
     user-select: none;
     padding: .5em;
     transition: 0.1s;
+    background: inherit;
 
     font-family: "Confluence C3";
     text-transform: lowercase;
+
+}
+button.option {
+    background: #888;
+    color: inherit;
+    border: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    width: 100%;
+    text-align: left;
 }
 .option_first {
     border-top-left-radius: inherit;
@@ -63,7 +78,7 @@
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
 }
-.option:hover {
+.option:hover, .option:focus {
     cursor: pointer;
     background: #eee;
     color: black;
@@ -88,32 +103,31 @@
     color: inherit;
 }
 
-.option_theme {
-    display: inline-block;
-    width: 3.5em;
-    height: 2em;
-    border: solid .25em black;
-    text-align: center;
-    padding-top: .5em;
+button.option_theme {
+    border: none;
+
+    font-size: inherit;
+    font-family: "Confluence C3";
+    text-transform: inherit;
+    width: 4em;
+    height: 3em;
+    line-height: inherit;
 }
-.option_theme:hover {
+.option_theme:hover, .option_theme:focus {
     cursor: pointer;
     color: rosybrown;
 }
 
 .option_theme_light {
     background: white;
-    border-color: white;
     color: white;
 }
 .option_theme_sepia {
     background: cornsilk;
-    border-color: cornsilk;
     color: cornsilk;
 }
 .option_theme_dark {
     background: #444;
-    border-color: #444;
     color: #444;
 }
 
@@ -133,3 +147,4 @@
     padding: .1em .5em;
     text-align: center;
 }
+

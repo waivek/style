@@ -70,7 +70,8 @@ function set_temperature(temperature_value) {
 function add_floating_element() {
     var right_padding = 40;
     var content = document.querySelector("#content");
-    elem = document.createElement("div");
+    // elem = document.createElement("div");
+    elem = document.createElement("button");
     elem.classList.add("floating");
     elem.classList.add("hide_options");
     elem.innerText = "";
@@ -85,7 +86,7 @@ function add_floating_element() {
     option_header.classList.add("option_first");
     option_header.classList.add("option_header");
 
-    option_1 = document.createElement("div");
+    option_1 = document.createElement("button");
     if (document.body.classList.contains("reader")) {
         option_1.innerText = "Reader Mode: ON";
     } else {
@@ -98,19 +99,19 @@ function add_floating_element() {
 
     option_2 = document.createElement("div");
 
-    theme_1 = document.createElement("div");
+    theme_1 = document.createElement("button");
     theme_1.classList.add("option_theme");
     theme_1.classList.add("option_theme_light");
     theme_1.innerText = "Light";
     theme_1.addEventListener("click", function () { set_theme("light"); })
 
-    theme_2 = document.createElement("div");
+    theme_2 = document.createElement("button");
     theme_2.classList.add("option_theme");
     theme_2.classList.add("option_theme_sepia");
     theme_2.innerText = "Sepia";
     theme_2.addEventListener("click", function () { set_theme("sepia"); })
 
-    theme_3 = document.createElement("div");
+    theme_3 = document.createElement("button");
     theme_3.classList.add("option_theme");
     theme_3.classList.add("option_theme_dark");
     theme_3.innerText = "Dark";
@@ -152,7 +153,7 @@ function add_floating_element() {
     option_3.appendChild(slider_value);
 
 
-    option_4 = document.createElement("div");
+    option_4 = document.createElement("button");
     option_4.innerText = "Reset Settings";
     option_4.classList.add("option");
     option_4.classList.add("option_last");
@@ -246,6 +247,9 @@ function initialize() {
         default_settings();
     }
     window.addEventListener("resize", reposition_floating_element_and_options);
+
+    // var floating = document.querySelector(".floating");
+    // toggle_option_display(elem);
 }
 
 if (!window.addEventListener) {
