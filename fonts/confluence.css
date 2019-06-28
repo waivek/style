@@ -1,8 +1,8 @@
 @font-face { font-family: "Confluence C2" ; src: url("confluence_c2_regular.woff") format("woff")     ; font-weight:normal ; }
 @font-face { font-family: "Confluence C2" ; src: url("confluence_c2_bold.woff") format("woff")        ; font-weight:bold   ; }
 
-@font-face { font-family: "Confluence C3" ; src: url("confluence_c3_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence C3" ; src: url("confluence_c3_bold.woff") format("woff")        ; font-weight:bold   ; }
+@font-face { font-family: "Confluence C3" ; src: url("subset/confluence_c3_regular.subset.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C3" ; src: url("subset/confluence_c3_bold.subset.woff") format("woff")        ; font-weight:bold   ; }
 
 @font-face { font-family: "Confluence C4" ; src: url("confluence_c4_regular.woff") format("woff")     ; font-weight:normal ; }
 @font-face { font-family: "Confluence C4" ; src: url("confluence_c4_bold.woff") format("woff")        ; font-weight:bold   ; }

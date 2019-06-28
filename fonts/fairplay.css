@@ -4,10 +4,10 @@
 @font-face { font-family: "Fairplay Caps B" ; src: url("fairplay_caps_b_bold.woff") format("woff")        ; font-weight:bold   ; }
 @font-face { font-family: "Fairplay Caps B" ; src: url("fairplay_caps_b_regular.woff") format("woff")     ; font-weight:normal ; }
 
-@font-face { font-family: "Fairplay Text A" ; src: url("fairplay_text_a_bold.woff") format("woff")        ; font-weight:bold   ; }
+@font-face { font-family: "Fairplay Text A" ; src: url("subset/fairplay_text_a_bold.subset.woff") format("woff")        ; font-weight:bold   ; }
 @font-face { font-family: "Fairplay Text A" ; src: url("fairplay_text_a_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
-@font-face { font-family: "Fairplay Text A" ; src: url("fairplay_text_a_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
-@font-face { font-family: "Fairplay Text A" ; src: url("fairplay_text_a_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Fairplay Text A" ; src: url("subset/fairplay_text_a_italic.subset.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Fairplay Text A" ; src: url("subset/fairplay_text_a_regular.subset.woff") format("woff")     ; font-weight:normal ; }
 
 @font-face { font-family: "Fairplay Text B" ; src: url("fairplay_text_b_bold.woff") format("woff")        ; font-weight:bold   ; }
 @font-face { font-family: "Fairplay Text B" ; src: url("fairplay_text_b_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }

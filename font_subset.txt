@@ -1,0 +1,7 @@
+fairplay_text_a_regular.woff
+
+fairplay_text_a_italic.woff - A-Z a-z 0-9
+fairplay_text_a_bold.woff - A-Z a-z 0-9 .
+
+confluence_c3_bold.woff    - A-Z 0-9 .
+confluence_c3_regular.woff - a-z 0-9
