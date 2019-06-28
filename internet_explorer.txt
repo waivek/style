@@ -1,0 +1,6 @@
+
+1. `startsWith` polyfill in initialize() [IE 10+]
+2. dynamically loading stylesheet: `colors.no_variables.css` [IE 10+]
+3. adding additional `onchange` listener to `input.slider` [IE 10+]
+4. created `settings.no_classList.js` for IE 9 because `classList` is IE 10+
+5. additional stylesheet which contains 4 fonts for IE6-8

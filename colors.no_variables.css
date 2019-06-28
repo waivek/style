@@ -1,0 +1,900 @@
+body.light.temperature_1000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 56, 0);
+}
+
+body.light.temperature_1000 > #content {
+    background: rgb(255, 56, 0);
+}
+
+body.light.temperature_1000.reader {
+    background: rgb(239, 51, 0);
+}
+
+body.light.temperature_1000 a {
+    color: rgb(51, 22, 0);
+}
+
+body.light.temperature_1000 .path a, body.light.temperature_1000 .path {
+    color: rgb(204, 44, 0);
+}
+
+body.light.temperature_1000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_1000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 54, 0);
+}
+
+body.sepia.temperature_1000 > #content {
+    background: rgb(255, 54, 0);
+}
+
+body.sepia.temperature_1000.reader {
+    background: rgb(255, 50, 0);
+}
+
+body.sepia.temperature_1000 a {
+    color: rgb(90, 28, 0);
+}
+
+body.sepia.temperature_1000 .path a, body.sepia.temperature_1000 .path {
+    color: rgb(185, 38, 0);
+}
+
+body.sepia.temperature_1000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_1000 {
+    color: rgb(234, 51, 0);
+    background: rgb(68, 14, 0);
+}
+
+body.dark.temperature_1000 > #content {
+    background: rgb(68, 14, 0);
+}
+
+body.dark.temperature_1000.reader {
+    background: rgb(82, 18, 0);
+}
+
+body.dark.temperature_1000 a {
+    color: rgb(103, 43, 0);
+}
+
+body.dark.temperature_1000 .path a, body.dark.temperature_1000 .path {
+    color: rgb(131, 28, 0);
+}
+
+body.dark.temperature_1000 .path a:hover {
+    color: rgb(234, 51, 0);
+}
+
+body.light.temperature_1500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 109, 0);
+}
+
+body.light.temperature_1500 > #content {
+    background: rgb(255, 109, 0);
+}
+
+body.light.temperature_1500.reader {
+    background: rgb(239, 100, 0);
+}
+
+body.light.temperature_1500 a {
+    color: rgb(51, 43, 0);
+}
+
+body.light.temperature_1500 .path a, body.light.temperature_1500 .path {
+    color: rgb(204, 87, 0);
+}
+
+body.light.temperature_1500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_1500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 106, 0);
+}
+
+body.sepia.temperature_1500 > #content {
+    background: rgb(255, 106, 0);
+}
+
+body.sepia.temperature_1500.reader {
+    background: rgb(255, 99, 0);
+}
+
+body.sepia.temperature_1500 a {
+    color: rgb(90, 55, 0);
+}
+
+body.sepia.temperature_1500 .path a, body.sepia.temperature_1500 .path {
+    color: rgb(185, 74, 0);
+}
+
+body.sepia.temperature_1500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_1500 {
+    color: rgb(234, 100, 0);
+    background: rgb(68, 29, 0);
+}
+
+body.dark.temperature_1500 > #content {
+    background: rgb(68, 29, 0);
+}
+
+body.dark.temperature_1500.reader {
+    background: rgb(82, 36, 0);
+}
+
+body.dark.temperature_1500 a {
+    color: rgb(103, 84, 0);
+}
+
+body.dark.temperature_1500 .path a, body.dark.temperature_1500 .path {
+    color: rgb(131, 55, 0);
+}
+
+body.dark.temperature_1500 .path a:hover {
+    color: rgb(234, 100, 0);
+}
+
+body.light.temperature_2000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 137, 18);
+}
+
+body.light.temperature_2000 > #content {
+    background: rgb(255, 137, 18);
+}
+
+body.light.temperature_2000.reader {
+    background: rgb(239, 126, 16);
+}
+
+body.light.temperature_2000 a {
+    color: rgb(51, 54, 14);
+}
+
+body.light.temperature_2000 .path a, body.light.temperature_2000 .path {
+    color: rgb(204, 109, 14);
+}
+
+body.light.temperature_2000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_2000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 133, 15);
+}
+
+body.sepia.temperature_2000 > #content {
+    background: rgb(255, 133, 15);
+}
+
+body.sepia.temperature_2000.reader {
+    background: rgb(255, 124, 14);
+}
+
+body.sepia.temperature_2000 a {
+    color: rgb(90, 70, 14);
+}
+
+body.sepia.temperature_2000 .path a, body.sepia.temperature_2000 .path {
+    color: rgb(185, 93, 9);
+}
+
+body.sepia.temperature_2000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_2000 {
+    color: rgb(234, 125, 16);
+    background: rgb(68, 36, 4);
+}
+
+body.dark.temperature_2000 > #content {
+    background: rgb(68, 36, 4);
+}
+
+body.dark.temperature_2000.reader {
+    background: rgb(82, 46, 6);
+}
+
+body.dark.temperature_2000 a {
+    color: rgb(103, 106, 15);
+}
+
+body.dark.temperature_2000 .path a, body.dark.temperature_2000 .path {
+    color: rgb(131, 70, 9);
+}
+
+body.dark.temperature_2000 .path a:hover {
+    color: rgb(234, 125, 16);
+}
+
+body.light.temperature_2500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 161, 72);
+}
+
+body.light.temperature_2500 > #content {
+    background: rgb(255, 161, 72);
+}
+
+body.light.temperature_2500.reader {
+    background: rgb(239, 148, 66);
+}
+
+body.light.temperature_2500 a {
+    color: rgb(51, 64, 57);
+}
+
+body.light.temperature_2500 .path a, body.light.temperature_2500 .path {
+    color: rgb(204, 128, 57);
+}
+
+body.light.temperature_2500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_2500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 156, 62);
+}
+
+body.sepia.temperature_2500 > #content {
+    background: rgb(255, 156, 62);
+}
+
+body.sepia.temperature_2500.reader {
+    background: rgb(255, 146, 57);
+}
+
+body.sepia.temperature_2500 a {
+    color: rgb(90, 82, 59);
+}
+
+body.sepia.temperature_2500 .path a, body.sepia.temperature_2500 .path {
+    color: rgb(185, 109, 36);
+}
+
+body.sepia.temperature_2500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_2500 {
+    color: rgb(234, 147, 66);
+    background: rgb(68, 42, 19);
+}
+
+body.dark.temperature_2500 > #content {
+    background: rgb(68, 42, 19);
+}
+
+body.dark.temperature_2500.reader {
+    background: rgb(82, 54, 25);
+}
+
+body.dark.temperature_2500 a {
+    color: rgb(103, 125, 60);
+}
+
+body.dark.temperature_2500 .path a, body.dark.temperature_2500 .path {
+    color: rgb(131, 82, 36);
+}
+
+body.dark.temperature_2500 .path a:hover {
+    color: rgb(234, 147, 66);
+}
+
+body.light.temperature_3000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 180, 107);
+}
+
+body.light.temperature_3000 > #content {
+    background: rgb(255, 180, 107);
+}
+
+body.light.temperature_3000.reader {
+    background: rgb(239, 165, 98);
+}
+
+body.light.temperature_3000 a {
+    color: rgb(51, 72, 85);
+}
+
+body.light.temperature_3000 .path a, body.light.temperature_3000 .path {
+    color: rgb(204, 144, 85);
+}
+
+body.light.temperature_3000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_3000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 175, 92);
+}
+
+body.sepia.temperature_3000 > #content {
+    background: rgb(255, 175, 92);
+}
+
+body.sepia.temperature_3000.reader {
+    background: rgb(255, 163, 84);
+}
+
+body.sepia.temperature_3000 a {
+    color: rgb(90, 92, 88);
+}
+
+body.sepia.temperature_3000 .path a, body.sepia.temperature_3000 .path {
+    color: rgb(185, 122, 53);
+}
+
+body.sepia.temperature_3000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_3000 {
+    color: rgb(234, 165, 98);
+    background: rgb(68, 48, 28);
+}
+
+body.dark.temperature_3000 > #content {
+    background: rgb(68, 48, 28);
+}
+
+body.dark.temperature_3000.reader {
+    background: rgb(82, 60, 37);
+}
+
+body.dark.temperature_3000 a {
+    color: rgb(103, 139, 89);
+}
+
+body.dark.temperature_3000 .path a, body.dark.temperature_3000 .path {
+    color: rgb(131, 92, 54);
+}
+
+body.dark.temperature_3000 .path a:hover {
+    color: rgb(234, 165, 98);
+}
+
+body.light.temperature_3500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 196, 137);
+}
+
+body.light.temperature_3500 > #content {
+    background: rgb(255, 196, 137);
+}
+
+body.light.temperature_3500.reader {
+    background: rgb(239, 180, 126);
+}
+
+body.light.temperature_3500 a {
+    color: rgb(51, 78, 109);
+}
+
+body.light.temperature_3500 .path a, body.light.temperature_3500 .path {
+    color: rgb(204, 156, 109);
+}
+
+body.light.temperature_3500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_3500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 190, 118);
+}
+
+body.sepia.temperature_3500 > #content {
+    background: rgb(255, 190, 118);
+}
+
+body.sepia.temperature_3500.reader {
+    background: rgb(255, 178, 108);
+}
+
+body.sepia.temperature_3500 a {
+    color: rgb(90, 100, 113);
+}
+
+body.sepia.temperature_3500 .path a, body.sepia.temperature_3500 .path {
+    color: rgb(185, 133, 68);
+}
+
+body.sepia.temperature_3500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_3500 {
+    color: rgb(234, 179, 125);
+    background: rgb(68, 52, 36);
+}
+
+body.dark.temperature_3500 > #content {
+    background: rgb(68, 52, 36);
+}
+
+body.dark.temperature_3500.reader {
+    background: rgb(82, 66, 47);
+}
+
+body.dark.temperature_3500 a {
+    color: rgb(103, 152, 114);
+}
+
+body.dark.temperature_3500 .path a, body.dark.temperature_3500 .path {
+    color: rgb(131, 100, 70);
+}
+
+body.dark.temperature_3500 .path a:hover {
+    color: rgb(234, 179, 125);
+}
+
+body.light.temperature_4000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 209, 163);
+}
+
+body.light.temperature_4000 > #content {
+    background: rgb(255, 209, 163);
+}
+
+body.light.temperature_4000.reader {
+    background: rgb(239, 192, 150);
+}
+
+body.light.temperature_4000 a {
+    color: rgb(51, 83, 130);
+}
+
+body.light.temperature_4000 .path a, body.light.temperature_4000 .path {
+    color: rgb(204, 167, 130);
+}
+
+body.light.temperature_4000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_4000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 203, 140);
+}
+
+body.sepia.temperature_4000 > #content {
+    background: rgb(255, 203, 140);
+}
+
+body.sepia.temperature_4000.reader {
+    background: rgb(255, 190, 129);
+}
+
+body.sepia.temperature_4000 a {
+    color: rgb(90, 107, 134);
+}
+
+body.sepia.temperature_4000 .path a, body.sepia.temperature_4000 .path {
+    color: rgb(185, 142, 81);
+}
+
+body.sepia.temperature_4000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_4000 {
+    color: rgb(234, 191, 149);
+    background: rgb(68, 55, 43);
+}
+
+body.dark.temperature_4000 > #content {
+    background: rgb(68, 55, 43);
+}
+
+body.dark.temperature_4000.reader {
+    background: rgb(82, 70, 56);
+}
+
+body.dark.temperature_4000 a {
+    color: rgb(103, 162, 136);
+}
+
+body.dark.temperature_4000 .path a, body.dark.temperature_4000 .path {
+    color: rgb(131, 107, 83);
+}
+
+body.dark.temperature_4000 .path a:hover {
+    color: rgb(234, 191, 149);
+}
+
+body.light.temperature_4500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 219, 186);
+}
+
+body.light.temperature_4500 > #content {
+    background: rgb(255, 219, 186);
+}
+
+body.light.temperature_4500.reader {
+    background: rgb(239, 201, 171);
+}
+
+body.light.temperature_4500 a {
+    color: rgb(51, 87, 148);
+}
+
+body.light.temperature_4500 .path a, body.light.temperature_4500 .path {
+    color: rgb(204, 175, 148);
+}
+
+body.light.temperature_4500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_4500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 212, 160);
+}
+
+body.sepia.temperature_4500 > #content {
+    background: rgb(255, 212, 160);
+}
+
+body.sepia.temperature_4500.reader {
+    background: rgb(255, 199, 147);
+}
+
+body.sepia.temperature_4500 a {
+    color: rgb(90, 112, 153);
+}
+
+body.sepia.temperature_4500 .path a, body.sepia.temperature_4500 .path {
+    color: rgb(185, 149, 93);
+}
+
+body.sepia.temperature_4500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_4500 {
+    color: rgb(234, 200, 170);
+    background: rgb(68, 58, 49);
+}
+
+body.dark.temperature_4500 > #content {
+    background: rgb(68, 58, 49);
+}
+
+body.dark.temperature_4500.reader {
+    background: rgb(82, 73, 64);
+}
+
+body.dark.temperature_4500 a {
+    color: rgb(103, 170, 155);
+}
+
+body.dark.temperature_4500 .path a, body.dark.temperature_4500 .path {
+    color: rgb(131, 112, 95);
+}
+
+body.dark.temperature_4500 .path a:hover {
+    color: rgb(234, 200, 170);
+}
+
+body.light.temperature_5000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 228, 206);
+}
+
+body.light.temperature_5000 > #content {
+    background: rgb(255, 228, 206);
+}
+
+body.light.temperature_5000.reader {
+    background: rgb(239, 210, 189);
+}
+
+body.light.temperature_5000 a {
+    color: rgb(51, 91, 164);
+}
+
+body.light.temperature_5000 .path a, body.light.temperature_5000 .path {
+    color: rgb(204, 182, 164);
+}
+
+body.light.temperature_5000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_5000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 221, 177);
+}
+
+body.sepia.temperature_5000 > #content {
+    background: rgb(255, 221, 177);
+}
+
+body.sepia.temperature_5000.reader {
+    background: rgb(255, 207, 163);
+}
+
+body.sepia.temperature_5000 a {
+    color: rgb(90, 117, 170);
+}
+
+body.sepia.temperature_5000 .path a, body.sepia.temperature_5000 .path {
+    color: rgb(185, 155, 103);
+}
+
+body.sepia.temperature_5000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_5000 {
+    color: rgb(234, 209, 189);
+    background: rgb(68, 60, 54);
+}
+
+body.dark.temperature_5000 > #content {
+    background: rgb(68, 60, 54);
+}
+
+body.dark.temperature_5000.reader {
+    background: rgb(82, 76, 71);
+}
+
+body.dark.temperature_5000 a {
+    color: rgb(103, 177, 172);
+}
+
+body.dark.temperature_5000 .path a, body.dark.temperature_5000 .path {
+    color: rgb(131, 117, 105);
+}
+
+body.dark.temperature_5000 .path a:hover {
+    color: rgb(234, 209, 189);
+}
+
+body.light.temperature_5500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 236, 224);
+}
+
+body.light.temperature_5500 > #content {
+    background: rgb(255, 236, 224);
+}
+
+body.light.temperature_5500.reader {
+    background: rgb(239, 217, 206);
+}
+
+body.light.temperature_5500 a {
+    color: rgb(51, 94, 179);
+}
+
+body.light.temperature_5500 .path a, body.light.temperature_5500 .path {
+    color: rgb(204, 188, 179);
+}
+
+body.light.temperature_5500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_5500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 229, 193);
+}
+
+body.sepia.temperature_5500 > #content {
+    background: rgb(255, 229, 193);
+}
+
+body.sepia.temperature_5500.reader {
+    background: rgb(255, 214, 177);
+}
+
+body.sepia.temperature_5500 a {
+    color: rgb(90, 121, 185);
+}
+
+body.sepia.temperature_5500 .path a, body.sepia.temperature_5500 .path {
+    color: rgb(185, 161, 112);
+}
+
+body.sepia.temperature_5500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_5500 {
+    color: rgb(234, 216, 205);
+    background: rgb(68, 62, 59);
+}
+
+body.dark.temperature_5500 > #content {
+    background: rgb(68, 62, 59);
+}
+
+body.dark.temperature_5500.reader {
+    background: rgb(82, 79, 78);
+}
+
+body.dark.temperature_5500 a {
+    color: rgb(103, 183, 187);
+}
+
+body.dark.temperature_5500 .path a, body.dark.temperature_5500 .path {
+    color: rgb(131, 121, 115);
+}
+
+body.dark.temperature_5500 .path a:hover {
+    color: rgb(234, 216, 205);
+}
+
+body.light.temperature_6000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 243, 239);
+}
+
+body.light.temperature_6000 > #content {
+    background: rgb(255, 243, 239);
+}
+
+body.light.temperature_6000.reader {
+    background: rgb(239, 223, 220);
+}
+
+body.light.temperature_6000 a {
+    color: rgb(51, 97, 191);
+}
+
+body.light.temperature_6000 .path a, body.light.temperature_6000 .path {
+    color: rgb(204, 194, 191);
+}
+
+body.light.temperature_6000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_6000 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 236, 206);
+}
+
+body.sepia.temperature_6000 > #content {
+    background: rgb(255, 236, 206);
+}
+
+body.sepia.temperature_6000.reader {
+    background: rgb(255, 221, 189);
+}
+
+body.sepia.temperature_6000 a {
+    color: rgb(90, 124, 197);
+}
+
+body.sepia.temperature_6000 .path a, body.sepia.temperature_6000 .path {
+    color: rgb(185, 165, 119);
+}
+
+body.sepia.temperature_6000 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_6000 {
+    color: rgb(234, 222, 219);
+    background: rgb(68, 64, 63);
+}
+
+body.dark.temperature_6000 > #content {
+    background: rgb(68, 64, 63);
+}
+
+body.dark.temperature_6000.reader {
+    background: rgb(82, 81, 83);
+}
+
+body.dark.temperature_6000 a {
+    color: rgb(103, 188, 199);
+}
+
+body.dark.temperature_6000 .path a, body.dark.temperature_6000 .path {
+    color: rgb(131, 124, 122);
+}
+
+body.dark.temperature_6000 .path a:hover {
+    color: rgb(234, 222, 219);
+}
+
+body.light.temperature_6500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+}
+
+body.light.temperature_6500 > #content {
+    background: rgb(255, 255, 255);
+}
+
+body.light.temperature_6500.reader {
+    background: rgb(239, 235, 235);
+}
+
+body.light.temperature_6500 a {
+    color: rgb(51, 102, 204);
+}
+
+body.light.temperature_6500 .path a, body.light.temperature_6500 .path {
+    color: rgb(204, 204, 204);
+}
+
+body.light.temperature_6500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.sepia.temperature_6500 {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 248, 220);
+}
+
+body.sepia.temperature_6500 > #content {
+    background: rgb(255, 248, 220);
+}
+
+body.sepia.temperature_6500.reader {
+    background: rgb(255, 232, 202);
+}
+
+body.sepia.temperature_6500 a {
+    color: rgb(90, 131, 211);
+}
+
+body.sepia.temperature_6500 .path a, body.sepia.temperature_6500 .path {
+    color: rgb(185, 174, 128);
+}
+
+body.sepia.temperature_6500 .path a:hover {
+    color: rgb(0, 0, 0);
+}
+
+body.dark.temperature_6500 {
+    color: rgb(234, 234, 234);
+    background: rgb(68, 68, 68);
+}
+
+body.dark.temperature_6500 > #content {
+    background: rgb(68, 68, 68);
+}
+
+body.dark.temperature_6500.reader {
+    background: rgb(82, 86, 89);
+}
+
+body.dark.temperature_6500 a {
+    color: rgb(103, 198, 213);
+}
+
+body.dark.temperature_6500 .path a, body.dark.temperature_6500 .path {
+    color: rgb(131, 131, 131);
+}
+
+body.dark.temperature_6500 .path a:hover {
+    color: rgb(234, 234, 234);
+}
+
