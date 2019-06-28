@@ -31,6 +31,32 @@ body.dark {
     --link_color: #67c6d5;
 }
 """
+rules = """
+body {
+    color: var(--text_color);
+    background: var(--content_background);
+}
+body > #content {
+    background: var(--content_background);
+}
+
+body.reader {
+    background: var(--reader_background);
+}
+
+body a {
+    color: var(--link_color);
+}
+
+body .path a, body .path  {
+    color: var(--path_color);
+}
+
+body .path a:hover {
+    color: var(--text_color);
+}
+"""
+
 temperatures = [int(key) for key in kelvin_table.keys() if int(key) <= 6500 and int(key) >= 2000]
 temperatures.sort()
 for temperature in temperatures:
@@ -63,3 +89,4 @@ for temperature in temperatures:
             b_final = (b / 255) * b_init
 
             print("%s: rgb(%d, %d, %d);" % (variable_name, r_final, g_final, b_final))
+

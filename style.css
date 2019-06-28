@@ -31,6 +31,7 @@ body {
 
 body.reader > #content {
     padding: 1.5em 4em;
+    border-radius: 6px;
 }
 
 @media screen and (max-width: 900px) {
@@ -43,6 +44,7 @@ body.reader > #content {
     }
     body.reader > #content {
         padding: 1.5em;
+        border-radius: none;
     }
     .reader_mode_button {
         display: none;
@@ -231,6 +233,7 @@ h1 {
     text-align: center;
     font-size: 3em;
     margin-top: 0;
-    font-family: "Fairplay Caps A subset", "Georgia", serif;
+    /* font-family: "Fairplay Caps A subset", "Fairplay Caps A", "Fairplay Text A", "Georgia", serif; */
+    font-family: "Fairplay Caps A subset", "Arial";
 }
 

@@ -1,4 +1,14 @@
-body.light {
+
+/* experimental */
+body.pink {
+    --content_background: #FFDFDF;
+    --reader_background: rgb(255, 208, 208);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(255, 223, 223);
+    --link_color: rgb(102, 131, 188);
+}
+/* experimental */
+body, body.light {
     --content_background: white;
     --reader_background: #efebeb;
     --text_color: black;
@@ -20,6 +30,10 @@ body.dark {
     --link_color: #67c6d5;
 }
 
+body.reader > #content {
+    box-shadow: 2px 2px 4px 0px black;
+}
+
 body {
     color: var(--text_color);
     background: var(--content_background);
@@ -28,9 +42,6 @@ body > #content {
     background: var(--content_background);
 }
 
-body.reader > #content {
-    box-shadow: 2px 2px 4px 0px black;
-}
 body.reader {
     background: var(--reader_background);
 }

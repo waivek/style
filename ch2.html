@@ -1,5 +1,4 @@
-
-
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8" />
@@ -7,14 +6,11 @@
         <title>Elementary Principles of Composition</title>
         <link href="fonts/confluence.css" type="text/css" rel="stylesheet" />
         <link href="fonts/fairplay.css" type="text/css" rel="stylesheet" />
-
         <link href="style.css" type="text/css" rel="stylesheet" />
         <link href="colors.css" type="text/css" rel="stylesheet" />
         <link href="temperatures.css" type="text/css" rel="stylesheet" />
         <link href="settings.css" type="text/css" rel="stylesheet" />
         <script src="settings.js"></script>
-   </head>
-
 <style>
 input[type="range"] {
     width: 7.5em;
@@ -73,14 +69,6 @@ body.reader.dark > #content {
     box-shadow: 8px 8px 32px 0px #444;
 }
 </style>
-<style>
-@media screen and (min-width: 900px) {
-    .reader > #content {
-        border-radius: 6px;
-    }
-}
-</style>
-
     <script>
         function show_footnote(elem) {
             var cite = elem.parentElement.parentElement.querySelector("cite");
@@ -110,15 +98,34 @@ body.reader.dark > #content {
         // window.addEventListener("load" , add_table_headers);
     </script>
 
+    <script>
+        function load_hardcoded_stylesheet() {
+            if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
+                // console.log("CSS Variables supported");
+            } else {
+                // console.log("CSS Variables unavailable");
+                var styles = document.createElement('link');
+                styles.rel = 'stylesheet';
+                styles.type = 'text/css';
+                styles.media = 'screen';
+                styles.href = 'colors.no_variables.css';
+                document.getElementsByTagName('head')[0].appendChild(styles);
+            }
+        }
+        window.addEventListener("load", load_hardcoded_stylesheet);
+
+    </script>
 
 
+    </head>
 
+    <!-- <body class="body dark temperature_6500 reader" tabindex=&#45;1> -->
     <body tabindex=-1>
         <div id="content">
 
-                            <h1>II</h1>
+                                                       <h1>II</h1>
 
-            <h2>Elementary Principles of Composition</h2>
+                                    <h2>Elementary Principles of Composition</h2>
 
 <div class="path">
     <a href="index.html">The Elements of Style</a> → 
