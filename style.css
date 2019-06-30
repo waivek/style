@@ -1,3 +1,4 @@
+
 /* style.css: {{{ */
 body {
     line-height: 1.35;
@@ -520,10 +521,10 @@ body.temperature_6500.dark {
     font-size: 32px;
     background: brown;
     color: white;
-    position: fixed;
+    /* position: fixed; */
     border-radius: 50%;
     box-shadow: 1px 1px 2px 0px #444;
-    left: 0;
+    /* left: 0; */
     user-select: none;
     display: flex;
     align-items: center;
