@@ -1,17 +1,14 @@
 function toggle_option_display(elem) {
-    var container = document.querySelector(".option_container");
-    if (container.classList.contains("option_container_hidden")) {
-        container.classList.remove("option_container_hidden");
-        container.classList.add("option_container_shown");
-        // container.style.left = (elem.offsetLeft + elem.offsetWidth - container.offsetWidth) + "px";
-        // container.style.bottom = window.innerHeight - elem.offsetTop + "px";
+    var container = document.querySelector(".floating_options");
+    if (container.classList.contains("floating_options_hidden")) {
+        container.classList.remove("floating_options_hidden");
+        container.classList.add("floating_options_shown");
         elem.innerText = "-";
-        /* /reposition_floating_element_and_options/ */
-        elem.classList.add("floating_clicked");
-    } else if (container.classList.contains("option_container_shown")) {
-        container.classList.remove("option_container_shown");
-        container.classList.add("option_container_hidden");
-        elem.classList.remove("floating_clicked");
+        elem.classList.add("floating_button_clicked");
+    } else if (container.classList.contains("floating_options_shown")) {
+        container.classList.remove("floating_options_shown");
+        container.classList.add("floating_options_hidden");
+        elem.classList.remove("floating_button_clicked");
         elem.innerText = "";
     }
 }
@@ -30,8 +27,8 @@ function toggle_reader_mode(elem) {
 
 function reposition_floating_element_and_options() {
     var content = document.querySelector("#content");
-    var button_and_option_container = document.querySelector(".button_and_option_container");
-    button_and_option_container.style.right = content.offsetLeft + "px";
+    var floating_container = document.querySelector(".floating_container");
+    floating_container.style.right = content.offsetLeft + "px";
 }
 
 function set_theme(theme_string) {
@@ -63,12 +60,9 @@ function add_floating_element() {
     var content = document.querySelector("#content");
     // elem = document.createElement("div");
     elem = document.createElement("button");
-    elem.classList.add("floating");
+    elem.classList.add("floating_button");
     elem.classList.add("hide_options");
     elem.innerText = "";
-    // elem.style.left = content.offsetLeft + content.offsetWidth - elem.offsetWidth - right_padding + "px";
-    // elem.style.bottom = right_padding + "px";
-
 
     option_header = document.createElement("div");
 
@@ -148,8 +142,8 @@ function add_floating_element() {
     option_4.addEventListener("click", default_settings);
 
     container = document.createElement("div");
-    container.classList.add("option_container");
-    container.classList.add("option_container_hidden");
+    container.classList.add("floating_options");
+    container.classList.add("floating_options_hidden");
 
     container.appendChild(option_header);
     container.appendChild(option_1);
@@ -157,15 +151,14 @@ function add_floating_element() {
     container.appendChild(option_3);
     container.appendChild(option_4);
 
-    button_and_option_container = document.createElement("div");
-    button_and_option_container.classList.add("button_and_option_container");
-    button_and_option_container.appendChild(container);
-    button_and_option_container.appendChild(elem);
+    floating_container = document.createElement("div");
+    floating_container.classList.add("floating_container");
+    floating_container.appendChild(container);
+    floating_container.appendChild(elem);
 
-    // elem.style.left = content.offsetLeft + content.offsetWidth - elem.offsetWidth - right_padding + "px";
-    button_and_option_container.style.right = content.offsetLeft + "px";
-    //
-    document.body.appendChild(button_and_option_container);
+    floating_container.style.right = content.offsetLeft + "px";
+
+    document.body.appendChild(floating_container);
 
     elem.addEventListener("click", function () { toggle_option_display(elem); });
 }
@@ -173,7 +166,7 @@ function add_floating_element() {
 this.oldScroll = this.scrollY;
 var net_y_floating_offset = 0;
 function make_floating_element_respond_to_scroll (event) {
-    var elem = document.querySelector(".floating");
+    var elem = document.querySelector(".floating_button");
     if (this.oldScroll < this.scrollY) {
         var y_offset = this.scrollY - this.oldScroll;
         net_y_floating_offset += y_offset / 10;
@@ -251,7 +244,7 @@ function initialize() {
         document.body.classList.remove("using-mouse");
     });
 
-    // var floating = document.querySelector(".floating");
+    // var floating_button = document.querySelector(".floating_button");
     // toggle_option_display(elem);
 }
 
