@@ -58,11 +58,10 @@ function set_temperature(temperature_value) {
 function add_floating_element() {
     var right_padding = 40;
     var content = document.querySelector("#content");
-    // elem = document.createElement("div");
-    elem = document.createElement("button");
-    elem.classList.add("floating_button");
-    elem.classList.add("hide_options");
-    elem.innerText = "";
+    floating_button = document.createElement("button");
+    floating_button.classList.add("floating_button");
+    floating_button.classList.add("hide_options");
+    floating_button.innerText = "";
 
     option_header = document.createElement("div");
 
@@ -154,25 +153,25 @@ function add_floating_element() {
     floating_container = document.createElement("div");
     floating_container.classList.add("floating_container");
     floating_container.appendChild(container);
-    floating_container.appendChild(elem);
+    floating_container.appendChild(floating_button);
 
     floating_container.style.right = content.offsetLeft + "px";
 
     document.body.appendChild(floating_container);
 
-    elem.addEventListener("click", function () { toggle_option_display(elem); });
+    floating_button.addEventListener("click", function () { toggle_option_display(floating_button); });
 }
 
 this.oldScroll = this.scrollY;
 var net_y_floating_offset = 0;
 function make_floating_element_respond_to_scroll (event) {
-    var elem = document.querySelector(".floating_button");
+    var floating_button = document.querySelector(".floating_button");
     if (this.oldScroll < this.scrollY) {
         var y_offset = this.scrollY - this.oldScroll;
         net_y_floating_offset += y_offset / 10;
-        elem.style.transform = "translateY(" + net_y_floating_offset + "px)";
+        floating_button.style.transform = "translateY(" + net_y_floating_offset + "px)";
         
-        var elem_top = parseInt(elem.style.bottom) + (net_y_floating_offset * 10);
+        var elem_top = parseInt(floating_button.style.bottom) + (net_y_floating_offset * 10);
         console.log("elem_top: " + elem_top);
     } else if (this.oldScroll > this.scrollY) {
         console.log("up");
@@ -245,7 +244,7 @@ function initialize() {
     });
 
     // var floating_button = document.querySelector(".floating_button");
-    // toggle_option_display(elem);
+    // toggle_option_display(floating_button);
 }
 
 if (!window.addEventListener) {
