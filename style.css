@@ -1,3 +1,4 @@
+/* style.css: {{{ */
 body {
     line-height: 1.35;
     font-family:  "Fairplay Text A", "Georgia", serif;
@@ -13,17 +14,17 @@ body {
 /* reader mode: START */
 #content {
     max-width: 40em;
-
+    
     padding: 0;
+    
     margin: 0;
-
     margin: 2em auto;
 
     /* 
      Without horizontal padding, toggling reader mode changes the position of the floating element on desktop.
-     
+
      This doesn’t affect mobile view because padding gets overridden via a media query.
-     
+
      The 4em value comes from the horizontal padding in `body.reader > #content {`
      */
     padding: 0 4em;
@@ -149,9 +150,7 @@ h2 {
 h4 {
     font-family: "Confluence C3", sans-serif;
     text-transform: uppercase;
-
 }
-
 
 .hovercard {
 
@@ -237,4 +236,413 @@ h1 {
     /* font-family: "Fairplay Caps A subset", "Fairplay Caps A", "Fairplay Text A", "Georgia", serif; */
     font-family: "Fairplay Caps A subset", "Arial";
 }
+/* style.css: }}} */
 
+/* colors.css {{{ */
+/* experimental */
+body.pink {
+    --content_background: #FFDFDF;
+    --reader_background: rgb(255, 208, 208);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(255, 223, 223);
+    --link_color: rgb(102, 131, 188);
+}
+/* experimental */
+body, body.light {
+    --content_background: white;
+    --reader_background: #efebeb;
+    --text_color: black;
+    --path_color: #ccc;
+    --link_color: #36c;
+}
+body.sepia {
+    --content_background: cornsilk;
+    --reader_background: #ffe8ca;
+    --text_color: black;
+    --path_color: #b9ae80;
+    --link_color: #5a83d3;
+}
+body.dark {
+    --content_background: #444;
+    --reader_background: rgb(82, 86, 89);
+    --text_color: #eaeaea;
+    --path_color: #838383;
+    --link_color: #67c6d5;
+}
+
+body.reader > #content {
+    box-shadow: 2px 2px 4px 0px black;
+}
+
+body {
+    color: var(--text_color);
+    background: var(--content_background);
+}
+body > #content {
+    background: var(--content_background);
+}
+
+body.reader {
+    background: var(--reader_background);
+}
+
+body a {
+    color: var(--link_color);
+}
+
+body .path a, body .path  {
+    color: var(--path_color);
+}
+
+body .path a:hover {
+    color: var(--text_color);
+}
+
+/* colors.css }}} */
+
+/* temperature.css {{{ */
+body.temperature_2000.light {
+    --content_background: rgb(255, 137, 18);
+    --reader_background: rgb(239, 126, 16);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 109, 14);
+    --link_color: rgb(51, 54, 14);
+}
+body.temperature_2000.sepia {
+    --content_background: rgb(255, 133, 15);
+    --reader_background: rgb(255, 124, 14);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 93, 9);
+    --link_color: rgb(90, 70, 14);
+}
+body.temperature_2000.dark {
+    --content_background: rgb(68, 36, 4);
+    --reader_background: rgb(82, 46, 6);
+    --text_color: rgb(234, 125, 16);
+    --path_color: rgb(131, 70, 9);
+    --link_color: rgb(103, 106, 15);
+}
+body.temperature_2500.light {
+    --content_background: rgb(255, 161, 72);
+    --reader_background: rgb(239, 148, 66);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 128, 57);
+    --link_color: rgb(51, 64, 57);
+}
+body.temperature_2500.sepia {
+    --content_background: rgb(255, 156, 62);
+    --reader_background: rgb(255, 146, 57);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 109, 36);
+    --link_color: rgb(90, 82, 59);
+}
+body.temperature_2500.dark {
+    --content_background: rgb(68, 42, 19);
+    --reader_background: rgb(82, 54, 25);
+    --text_color: rgb(234, 147, 66);
+    --path_color: rgb(131, 82, 36);
+    --link_color: rgb(103, 125, 60);
+}
+body.temperature_3000.light {
+    --content_background: rgb(255, 180, 107);
+    --reader_background: rgb(239, 165, 98);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 144, 85);
+    --link_color: rgb(51, 72, 85);
+}
+body.temperature_3000.sepia {
+    --content_background: rgb(255, 175, 92);
+    --reader_background: rgb(255, 163, 84);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 122, 53);
+    --link_color: rgb(90, 92, 88);
+}
+body.temperature_3000.dark {
+    --content_background: rgb(68, 48, 28);
+    --reader_background: rgb(82, 60, 37);
+    --text_color: rgb(234, 165, 98);
+    --path_color: rgb(131, 92, 54);
+    --link_color: rgb(103, 139, 89);
+}
+body.temperature_3500.light {
+    --content_background: rgb(255, 196, 137);
+    --reader_background: rgb(239, 180, 126);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 156, 109);
+    --link_color: rgb(51, 78, 109);
+}
+body.temperature_3500.sepia {
+    --content_background: rgb(255, 190, 118);
+    --reader_background: rgb(255, 178, 108);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 133, 68);
+    --link_color: rgb(90, 100, 113);
+}
+body.temperature_3500.dark {
+    --content_background: rgb(68, 52, 36);
+    --reader_background: rgb(82, 66, 47);
+    --text_color: rgb(234, 179, 125);
+    --path_color: rgb(131, 100, 70);
+    --link_color: rgb(103, 152, 114);
+}
+body.temperature_4000.light {
+    --content_background: rgb(255, 209, 163);
+    --reader_background: rgb(239, 192, 150);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 167, 130);
+    --link_color: rgb(51, 83, 130);
+}
+body.temperature_4000.sepia {
+    --content_background: rgb(255, 203, 140);
+    --reader_background: rgb(255, 190, 129);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 142, 81);
+    --link_color: rgb(90, 107, 134);
+}
+body.temperature_4000.dark {
+    --content_background: rgb(68, 55, 43);
+    --reader_background: rgb(82, 70, 56);
+    --text_color: rgb(234, 191, 149);
+    --path_color: rgb(131, 107, 83);
+    --link_color: rgb(103, 162, 136);
+}
+body.temperature_4500.light {
+    --content_background: rgb(255, 219, 186);
+    --reader_background: rgb(239, 201, 171);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 175, 148);
+    --link_color: rgb(51, 87, 148);
+}
+body.temperature_4500.sepia {
+    --content_background: rgb(255, 212, 160);
+    --reader_background: rgb(255, 199, 147);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 149, 93);
+    --link_color: rgb(90, 112, 153);
+}
+body.temperature_4500.dark {
+    --content_background: rgb(68, 58, 49);
+    --reader_background: rgb(82, 73, 64);
+    --text_color: rgb(234, 200, 170);
+    --path_color: rgb(131, 112, 95);
+    --link_color: rgb(103, 170, 155);
+}
+body.temperature_5000.light {
+    --content_background: rgb(255, 228, 206);
+    --reader_background: rgb(239, 210, 189);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 182, 164);
+    --link_color: rgb(51, 91, 164);
+}
+body.temperature_5000.sepia {
+    --content_background: rgb(255, 221, 177);
+    --reader_background: rgb(255, 207, 163);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 155, 103);
+    --link_color: rgb(90, 117, 170);
+}
+body.temperature_5000.dark {
+    --content_background: rgb(68, 60, 54);
+    --reader_background: rgb(82, 76, 71);
+    --text_color: rgb(234, 209, 189);
+    --path_color: rgb(131, 117, 105);
+    --link_color: rgb(103, 177, 172);
+}
+body.temperature_5500.light {
+    --content_background: rgb(255, 236, 224);
+    --reader_background: rgb(239, 217, 206);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 188, 179);
+    --link_color: rgb(51, 94, 179);
+}
+body.temperature_5500.sepia {
+    --content_background: rgb(255, 229, 193);
+    --reader_background: rgb(255, 214, 177);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 161, 112);
+    --link_color: rgb(90, 121, 185);
+}
+body.temperature_5500.dark {
+    --content_background: rgb(68, 62, 59);
+    --reader_background: rgb(82, 79, 78);
+    --text_color: rgb(234, 216, 205);
+    --path_color: rgb(131, 121, 115);
+    --link_color: rgb(103, 183, 187);
+}
+body.temperature_6000.light {
+    --content_background: rgb(255, 243, 239);
+    --reader_background: rgb(239, 223, 220);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 194, 191);
+    --link_color: rgb(51, 97, 191);
+}
+body.temperature_6000.sepia {
+    --content_background: rgb(255, 236, 206);
+    --reader_background: rgb(255, 221, 189);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 165, 119);
+    --link_color: rgb(90, 124, 197);
+}
+body.temperature_6000.dark {
+    --content_background: rgb(68, 64, 63);
+    --reader_background: rgb(82, 81, 83);
+    --text_color: rgb(234, 222, 219);
+    --path_color: rgb(131, 124, 122);
+    --link_color: rgb(103, 188, 199);
+}
+body.temperature_6500.light {
+    --content_background: rgb(255, 255, 255);
+    --reader_background: rgb(239, 235, 235);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(204, 204, 204);
+    --link_color: rgb(51, 102, 204);
+}
+body.temperature_6500.sepia {
+    --content_background: rgb(255, 248, 220);
+    --reader_background: rgb(255, 232, 202);
+    --text_color: rgb(0, 0, 0);
+    --path_color: rgb(185, 174, 128);
+    --link_color: rgb(90, 131, 211);
+}
+body.temperature_6500.dark {
+    --content_background: rgb(68, 68, 68);
+    --reader_background: rgb(82, 86, 89);
+    --text_color: rgb(234, 234, 234);
+    --path_color: rgb(131, 131, 131);
+    --link_color: rgb(103, 198, 213);
+}
+/* temperature.css }}} */
+
+/* settings.css {{{ */
+.floating {
+    height: 60px;
+    width: 60px;
+    font-size: 32px;
+    background: brown;
+    color: white;
+    position: fixed;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px 0px #444;
+    left: 0;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: border-radius 0.3s;
+    background-image:  url(baseline_settings_white_48dp.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+.floating_clicked {
+    border-radius: 0%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    transition: border-radius 0.3s;
+    box-shadow: none;
+    background: #888;
+    color: white;
+}
+.floating:hover {
+    cursor: pointer;
+}
+.option_container {
+    position: fixed;
+    width: 12em;
+    left: 0;
+    border-radius: 8px;
+    border-bottom-right-radius: 0px;
+    background: #888;
+    color: white;
+}
+.option {
+    user-select: none;
+    padding: .5em;
+    transition: 0.1s;
+    background: inherit;
+    font-family: "Confluence C3";
+    text-transform: lowercase;
+}
+button.option {
+    background: #888;
+    color: inherit;
+    border: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    width: 100%;
+    text-align: left;
+}
+.option_last {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+.option:hover {
+    cursor: pointer;
+    background: #eee;
+    color: black;
+    transition: 0.1s;
+}
+.option_container_shown {
+    transition:visibility 0.3s linear,opacity 0.3s linear;
+}
+.option_container_hidden {
+    transition:visibility 0.15s linear,opacity 0.15s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+.option_theme_container {
+    padding: 0;
+}
+button.option_theme {
+    border: none;
+    font-size: inherit;
+    font-family: "Confluence C3";
+    text-transform: inherit;
+    width: 4em;
+    height: 3em;
+    line-height: inherit;
+}
+.option_theme:hover {
+    cursor: pointer;
+    color: rosybrown;
+}
+.option_theme_light {
+    background: white;
+    color: white;
+}
+.option_theme_sepia {
+    background: cornsilk;
+    color: cornsilk;
+}
+.option_theme_dark {
+    background: #444;
+    color: #444;
+}
+.slider_value {
+    font-family: "Confluence C3";
+    text-transform: none;
+    padding: 0 1em;
+}
+.option_header {
+    background: brown;
+    color: white;
+    font-family: "Confluence C3";
+    text-transform: lowercase;
+    padding: .1em .5em;
+    text-align: center;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+/* SOURCE: Enable :focus only on keyboard use (or tab press) - https://stackoverflow.com/questions/31402576/enable-focus-only-on-keyboard-use-or-tab-press
+   The default outline styling, for greatest accessibility. You can skip this to just use the browser's defaults. */
+button:focus {
+  outline: #08f auto 2px;
+}
+
+/* When mouse is detected, ALL focused elements have outline removed. You could apply this selector only to buttons, if you wanted. */
+body.using-mouse button:focus {
+  outline: none;
+}
+/* settings.css }}} */

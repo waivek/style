@@ -2,29 +2,23 @@
     height: 60px;
     width: 60px;
     font-size: 32px;
-
     background: brown;
     color: white;
     position: fixed;
-    border-radius: 30%;
     border-radius: 50%;
     box-shadow: 1px 1px 2px 0px #444;
     left: 0;
     user-select: none;
-
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-
     transition: border-radius 0.3s;
     background-image: url(baseline-settings-20px.svg);
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
-}
-button.floating {
-    border: inherit;
+    border: none;
 }
 .floating_clicked {
     border-radius: 0%;
@@ -38,28 +32,22 @@ button.floating {
 .floating:hover {
     cursor: pointer;
 }
-
-
 .option_container {
     position: fixed;
     width: 12em;
     left: 0;
-    background: white;
     border-radius: 8px;
     border-bottom-right-radius: 0px;
     background: #888;
     color: white;
 }
-
 .option {
     user-select: none;
     padding: .5em;
     transition: 0.1s;
     background: inherit;
-
     font-family: "Confluence C3";
     text-transform: lowercase;
-
 }
 button.option {
     background: #888;
@@ -70,42 +58,29 @@ button.option {
     width: 100%;
     text-align: left;
 }
-.option_first {
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-}
 .option_last {
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
 }
-.option:hover, .option:focus {
+.option:hover {
     cursor: pointer;
     background: #eee;
     color: black;
     transition: 0.1s;
 }
-
 .option_container_shown {
     transition:visibility 0.3s linear,opacity 0.3s linear;
 }
-
 .option_container_hidden {
     transition:visibility 0.15s linear,opacity 0.15s linear;
     visibility: hidden;
     opacity: 0;
 }
-
 .option_theme_container {
     padding: 0;
 }
-.option_theme_container:hover {
-    cursor: initial;
-    color: inherit;
-}
-
 button.option_theme {
     border: none;
-
     font-size: inherit;
     font-family: "Confluence C3";
     text-transform: inherit;
@@ -113,11 +88,10 @@ button.option_theme {
     height: 3em;
     line-height: inherit;
 }
-.option_theme:hover, .option_theme:focus {
+.option_theme:hover {
     cursor: pointer;
     color: rosybrown;
 }
-
 .option_theme_light {
     background: white;
     color: white;
@@ -130,15 +104,11 @@ button.option_theme {
     background: #444;
     color: #444;
 }
-
-
 .slider_value {
     font-family: "Confluence C3";
     text-transform: none;
     padding: 0 1em;
-    /* text-align: center; */
 }
-
 .option_header {
     background: brown;
     color: white;
@@ -146,5 +116,6 @@ button.option_theme {
     text-transform: lowercase;
     padding: .1em .5em;
     text-align: center;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
 }
-
