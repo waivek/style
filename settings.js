@@ -42,8 +42,10 @@ function set_theme(theme_string) {
 
 
 function set_temperature(temperature_value) {
-    var slider_value = document.querySelector(".slider_value");
-    slider_value.innerText = temperature_value + "K"; 
+    var temperature_label = document.querySelector(".temperature_label");
+    if (temperature_label) {
+        temperature_label.innerText = temperature_value + "K"; 
+    }
     var classes = document.body.classList;
 
     for (var i = 0; i < classes.length; i++) {
@@ -107,32 +109,43 @@ function add_floating_element() {
 
     option_3 = document.createElement("div");
     option_3.classList.add("option");
+    option_3.classList.add("option_temperature_container");
 
     slider = document.createElement("input");
     slider.setAttribute("type", "range");
-    slider.setAttribute("min", 2000);
-    slider.setAttribute("max", 6500);
-    slider.setAttribute("step", 500);
-    slider.setAttribute("value", 6500);
-    slider.classList.add("slider");
 
-    slider_value = document.createElement("span");
-    slider_value.innerText = 6500;
-    slider_value.classList.add("slider_value");
+    var browser_supports_slider_input = slider.getAttribute("type") == "range";
+    if (browser_supports_slider_input) {
+        slider.setAttribute("min", 2000);
+        slider.setAttribute("max", 6500);
+        slider.setAttribute("step", 500);
+        slider.setAttribute("value", 6500);
+        slider.classList.add("temperature_picker");
+        slider.addEventListener("input", function () { 
+            set_temperature(this.value) ;
+        });
+        slider.addEventListener("change", function () { set_temperature(this.value) ; }); // for IE 10, 11
+        slider.classList.add("slider");
+        option_3.appendChild(slider);
 
-    slider.addEventListener("input", function () { 
-        set_temperature(this.value) ;
-    });
-    /* IE Support: START */
-    slider.addEventListener("change", function () { 
-        set_temperature(this.value) ;
-    });
-    /* IE Support: END */
-    slider.classList.add("slider");
-
-    option_3.appendChild(slider);
-    option_3.appendChild(slider_value);
-
+        temperature_label = document.createElement("span");
+        temperature_label.classList.add("temperature_label");
+        option_3.appendChild(temperature_label);
+    } else {
+        var select = document.createElement("select");
+        for (var i = 2000; i < 6500 + 1; i = i + 500) {
+            var option = document.createElement("option");
+            option.value = i;
+            option.innerText = "Temperature: " + i + "K";
+            select.appendChild(option);
+        }
+        select.lastElementChild.selected = true;
+        select.classList.add("temperature_picker");
+        select.addEventListener("change", function() {
+            set_temperature(this.value);
+        });
+        option_3.appendChild(select);
+    }
 
     option_4 = document.createElement("button");
     option_4.innerText = "Reset Settings";
@@ -182,9 +195,6 @@ function make_floating_element_respond_to_scroll (event) {
 
 function default_settings() {
     set_theme("light");
-
-    var slider = document.querySelector(".slider");
-    slider.value = 6500;
     set_temperature(6500);
 
     reader_mode_button = document.querySelector(".reader_mode_button");
@@ -243,8 +253,8 @@ function initialize() {
         document.body.classList.remove("using-mouse");
     });
 
-    // var floating_button = document.querySelector(".floating_button");
-    // toggle_option_display(floating_button);
+    var floating_button = document.querySelector(".floating_button");
+    toggle_option_display(floating_button);
 }
 
 if (!window.addEventListener) {

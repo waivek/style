@@ -11,7 +11,7 @@
 input[type="range"] {
     width: 7.5em;
 }
-.slider_value {
+.temperature_label {
     padding: 0;
     padding-left: 1em;
 }
@@ -63,6 +63,18 @@ body.reader.sepia > #content {
 }
 body.reader.dark > #content {
     box-shadow: 8px 8px 32px 0px #444;
+}
+
+@media print { 
+    .floating_container { 
+        display: none; 
+    } 
+    body.reader > #content { 
+        box-shadow: none; 
+        border: none;
+        border-radius: 0px;
+        
+    } 
 }
 </style>
     <script>

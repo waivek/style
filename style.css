@@ -37,7 +37,6 @@ body.reader > #content {
         display: none;
     }
 }
-@media print { .floating_container { display: none; } }
 
 
 ul {
@@ -610,7 +609,7 @@ button.option_theme {
     background: #444;
     color: #444;
 }
-.slider_value {
+.temperature_label {
     font-family: "Confluence C3";
     text-transform: none;
     padding: 0 1em;
@@ -634,5 +633,29 @@ button:focus {
 /* When mouse is detected, ALL focused elements have outline removed. You could apply this selector only to buttons, if you wanted. */
 body.using-mouse button:focus {
   outline: none;
+}
+.option_temperature_container {
+    /* padding: 0; */
+}
+.option_temperature_container:hover {
+    background: inherit;
+    color: inherit;
+}
+select.temperature_picker {
+    background: white;
+    font-family: "Confluence C3";
+    font-family: "Concourse C3";
+    text-transform: uppercase;
+    font-size: 0.8em;
+    padding: 20px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: inherit;
+    margin: 0;
+}
+option {
+    color: white;
+    background: #888;
 }
 /* settings.css }}} */
