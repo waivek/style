@@ -208,8 +208,8 @@ function cookie_settings() {
     set_theme(Cookies.get("theme"));
 
     var v = parseInt(Cookies.get("temperature"));
-    var slider = document.querySelector(".slider");
-    slider.value = v;
+    var temperature_picker = document.querySelector(".temperature_picker");
+    temperature_picker.value = v;
     set_temperature(v);
 
     var r = Cookies.get("reader_mode");
