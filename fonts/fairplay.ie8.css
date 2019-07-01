@@ -1,0 +1,24 @@
+@font-face { font-family: "Fairplay Caps A-bold"    ; src: url("fairplay_caps_a_bold.eot?#iefix")    ; font-weight:bold   ; }
+@font-face { font-family: "Fairplay Text A-bold"    ; src: url("fairplay_text_a_bold.eot?#iefix")    ; font-weight:bold   ; }
+@font-face { font-family: "Fairplay Text A-italic"  ; src: url("fairplay_text_a_italic.eot?#iefix")  ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Fairplay Text A-regular" ; src: url("fairplay_text_a_regular.eot?#iefix") ; font-weight:normal ; }
+@font-face { font-family: "Confluence C3-regular"   ; src: url("confluence_c3_regular.eot?#iefix")   ; font-weight:normal ; }
+@font-face { font-family: "Confluence C3-bold"      ; src: url("confluence_c3_bold.eot?#iefix")      ; font-weight:bold   ; }
+h1 {
+    font-family: "Fairplay Caps A-bold";
+}
+h2 {
+    font-family: "Fairplay Text A-bold";
+}
+h4 {
+    font-family: "Confluence C3-bold";
+}
+.path {
+    font-family: "Fairplay Text A-italic";
+}
+body, #content{
+    font-family: "Fairplay Text A-regular";
+}
+.option_container {
+    font-family: "Confluence C3-regular";
+}
