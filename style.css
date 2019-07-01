@@ -1,61 +1,43 @@
 /* style.css: {{{ */
 body {
-    line-height: 1.4;
     font-family:  "Fairplay Text A", "Georgia", serif;
-}
-@media print {
-    .floating_container {
-        display: none;
-    }
-}
-html { font-size: 3vw; }
-@media all and (min-width:900px) { html { font-size: 24px; } }
-@media all and (max-width:600px) { html{ font-size: 18px; } }
-
-p {
-    margin-bottom: 1em;
-}
-/* reader mode: START */
-#content {
-    max-width: 27em;
-    
-    padding: 0;
-    
     margin: 0;
+    line-height: 1.4;
+}
+
+html { font-size: 3vw; }
+@media all and (min-width:800px) { html { font-size: 24px; } }
+@media all and (max-width:600px) { html{ font-size: 18px; } }
+p { margin-bottom: 1em; }
+
+#content {
+    max-width: 32.2em;
+    max-width: 65ch;
+    /* Without horizontal padding, toggling reader mode changes the position of the floating element on desktop.
+    This doesn’t affect mobile view because padding gets overridden via a media query.
+    The 2em value comes from the horizontal padding in `body.reader > #content {` */
+    padding: 0 2em;
     margin: 2em auto;
-
-    /* 
-     Without horizontal padding, toggling reader mode changes the position of the floating element on desktop.
-
-     This doesn’t affect mobile view because padding gets overridden via a media query.
-
-     The 4em value comes from the horizontal padding in `body.reader > #content {`
-     */
-    padding: 0 4em;
 }
 
 body.reader > #content {
-    padding: 1.5em 4em;
+    padding-top: 1.5em;
     border-radius: 6px;
 }
 
+
 @media screen and (max-width: 900px) {
-    #content, body { 
+    #content, body.reader > #content {
         margin: 0;
+        padding-top: 1.5em;
         max-width: 900px;
-    }
-    #content {
-        padding: 1.5em;
-    }
-    body.reader > #content {
-        padding: 1.5em;
         border-radius: 0px;
     }
     .reader_mode_button {
         display: none;
     }
 }
-/* reader mode: END */
+@media print { .floating_container { display: none; } }
 
 
 ul {
