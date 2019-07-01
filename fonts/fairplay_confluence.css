@@ -1,6 +1,7 @@
+
 /* confluence.css {{{ */
-@font-face { font-family: "Confluence C2" ; src: url("confluence_c2_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence C2" ; src: url("confluence_c2_bold.woff") format("woff")        ; font-weight:bold   ; }
+@font-face { font-family: "Confluence C2"; src: url("confluence_c2_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C2"; src: url("confluence_c2_bold.woff") format("woff")        ; font-weight:bold   ; }
 
 @font-face { 
     font-family: "Confluence C3";
@@ -19,44 +20,44 @@
     font-weight:bold; 
 }
 
-@font-face { font-family: "Confluence C4" ; src: url("confluence_c4_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence C4" ; src: url("confluence_c4_bold.woff") format("woff")        ; font-weight:bold   ; }
+@font-face { font-family: "Confluence C4"; src: url("confluence_c4_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C4"; src: url("confluence_c4_bold.woff") format("woff")        ; font-weight:bold   ; }
 
-@font-face { font-family: "Confluence C6" ; src: url("confluence_c6_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence C7" ; src: url("confluence_c7_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence C8" ; src: url("confluence_c8_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C6"; src: url("confluence_c6_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C7"; src: url("confluence_c7_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence C8"; src: url("confluence_c8_regular.woff") format("woff")     ; font-weight:normal ; }
 
-@font-face { font-family: "Confluence T2" ; src: url("confluence_t2_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence T2" ; src: url("confluence_t2_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
-@font-face { font-family: "Confluence T2" ; src: url("confluence_t2_bold.woff") format("woff")        ; font-weight:bold   ; }
-@font-face { font-family: "Confluence T2" ; src: url("confluence_t2_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
+@font-face { font-family: "Confluence T2"; src: url("confluence_t2_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T2"; src: url("confluence_t2_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Confluence T2"; src: url("confluence_t2_bold.woff") format("woff")        ; font-weight:bold   ; }
+@font-face { font-family: "Confluence T2"; src: url("confluence_t2_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
 
-@font-face { font-family: "Confluence T3" ; src: url("confluence_t3_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence T3" ; src: url("confluence_t3_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
-@font-face { font-family: "Confluence T3" ; src: url("confluence_t3_bold.woff") format("woff")        ; font-weight:bold   ; }
-@font-face { font-family: "Confluence T3" ; src: url("confluence_t3_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
+@font-face { font-family: "Confluence T3"; src: url("confluence_t3_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T3"; src: url("confluence_t3_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Confluence T3"; src: url("confluence_t3_bold.woff") format("woff")        ; font-weight:bold   ; }
+@font-face { font-family: "Confluence T3"; src: url("confluence_t3_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
 
-@font-face { font-family: "Confluence T4" ; src: url("confluence_t4_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence T4" ; src: url("confluence_t4_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
-@font-face { font-family: "Confluence T4" ; src: url("confluence_t4_bold.woff") format("woff")        ; font-weight:bold   ; }
-@font-face { font-family: "Confluence T4" ; src: url("confluence_t4_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
+@font-face { font-family: "Confluence T4"; src: url("confluence_t4_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T4"; src: url("confluence_t4_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Confluence T4"; src: url("confluence_t4_bold.woff") format("woff")        ; font-weight:bold   ; }
+@font-face { font-family: "Confluence T4"; src: url("confluence_t4_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
 
-@font-face { font-family: "Confluence T6" ; src: url("confluence_t6_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence T6" ; src: url("confluence_t6_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Confluence T6"; src: url("confluence_t6_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T6"; src: url("confluence_t6_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
 
-@font-face { font-family: "Confluence T7" ; src: url("confluence_t7_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence T7" ; src: url("confluence_t7_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Confluence T7"; src: url("confluence_t7_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T7"; src: url("confluence_t7_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
 
-@font-face { font-family: "Confluence T8" ; src: url("confluence_t8_regular.woff") format("woff")     ; font-weight:normal ; }
-@font-face { font-family: "Confluence T8" ; src: url("confluence_t8_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Confluence T8"; src: url("confluence_t8_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Confluence T8"; src: url("confluence_t8_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
 /* confluence.css }}} */
 
 /* fairplay.css {{{ */
-@font-face { font-family: "Fairplay Caps A" ; src: url("fairplay_caps_a_bold.woff") format("woff")        ; font-weight:bold   ; }
-@font-face { font-family: "Fairplay Caps A" ; src: url("fairplay_caps_a_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Fairplay Caps A"; src: url("fairplay_caps_a_bold.woff") format("woff")        ; font-weight:bold   ; }
+@font-face { font-family: "Fairplay Caps A"; src: url("fairplay_caps_a_regular.woff") format("woff")     ; font-weight:normal ; }
 
-@font-face { font-family: "Fairplay Caps B" ; src: url("fairplay_caps_b_bold.woff") format("woff")        ; font-weight:bold   ; }
-@font-face { font-family: "Fairplay Caps B" ; src: url("fairplay_caps_b_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Fairplay Caps B"; src: url("fairplay_caps_b_bold.woff") format("woff")        ; font-weight:bold   ; }
+@font-face { font-family: "Fairplay Caps B"; src: url("fairplay_caps_b_regular.woff") format("woff")     ; font-weight:normal ; }
 
 @font-face { 
     font-family: "Fairplay Text A";
@@ -66,28 +67,28 @@
          url("subset/fairplay_text_a_bold.subset.woff") format("woff");
     font-weight:bold;
 }
-@font-face { font-family: "Fairplay Text A" ; src: url("fairplay_text_a_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
+@font-face { font-family: "Fairplay Text A"; src: url("fairplay_text_a_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
 @font-face { 
     font-family: "Fairplay Text A"; 
     src: 
          url(data:font/woff2;base64,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) format("woff2"),
          url("subset/fairplay_text_a_italic.subset.woff2") format("woff2"),
          url("subset/fairplay_text_a_italic.subset.woff") format("woff");
-    font-weight:normal ; 
+    font-weight:normal; 
     font-style:italic; 
 }
 @font-face { 
-    font-family: "Fairplay Text A" ; 
+    font-family: "Fairplay Text A"; 
     src: 
         url(data:font/woff2;base64,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) format("woff2"),
         url("subset/fairplay_text_a_regular.subset.woff2") format("woff2"),
         url("subset/fairplay_text_a_regular.subset.woff") format("woff");
-    font-weight:normal ; 
+    font-weight:normal; 
 }
-@font-face { font-family: "Fairplay Text B" ; src: url("fairplay_text_b_bold.woff") format("woff")        ; font-weight:bold   ; }
-@font-face { font-family: "Fairplay Text B" ; src: url("fairplay_text_b_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
-@font-face { font-family: "Fairplay Text B" ; src: url("fairplay_text_b_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
-@font-face { font-family: "Fairplay Text B" ; src: url("fairplay_text_b_regular.woff") format("woff")     ; font-weight:normal ; }
+@font-face { font-family: "Fairplay Text B"; src: url("fairplay_text_b_bold.woff") format("woff")        ; font-weight:bold   ; }
+@font-face { font-family: "Fairplay Text B"; src: url("fairplay_text_b_bold_italic.woff") format("woff") ; font-weight:bold   ; font-style:italic ; }
+@font-face { font-family: "Fairplay Text B"; src: url("fairplay_text_b_italic.woff") format("woff")      ; font-weight:normal ; font-style:italic ; }
+@font-face { font-family: "Fairplay Text B"; src: url("fairplay_text_b_regular.woff") format("woff")     ; font-weight:normal ; }
 
 @font-face {
     font-family: "Fairplay Caps A subset";
