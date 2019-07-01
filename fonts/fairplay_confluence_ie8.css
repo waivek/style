@@ -19,6 +19,44 @@ h4 {
 body, #content{
     font-family: "Fairplay Text A-regular";
 }
-.floating_container *{
+.floating_container *, select {
     font-family: "Confluence C3-regular";
+}
+
+
+#content {
+    behavior: url(PIE.htc);
+}
+.floating_button {
+    behavior: url(PIE.htc);
+    position: relative;
+}
+.floating_button_clicked {
+    border: solid 2px #888;
+    border-radius: 0% 0% 20% 20%;
+    background-color: #888;
+    behavior: url(PIE.htc);
+}
+.floating_options {
+    border: solid 0px #888;
+    border-radius: 6px 6px 0px 6px ;
+    behavior: url(PIE.htc);
+    position: relative;
+
+}
+.option_temperature_container, .option_temperature_container * {
+    margin: 0;
+}
+.option_header {
+    border: solid 2px #888;
+    border-radius: 6px;
+    behavior: url(PIE.htc);
+    position: relative;
+    -pie-background: brown;
+}
+.option_last {
+    border: solid 2px #888;
+    border-radius: 0px 0px 0px 6px;
+    behavior: url(PIE.htc);
+
 }

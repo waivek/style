@@ -4,10 +4,27 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Elementary Principles of Composition</title>
-        <!-- <link rel="stylesheet" type="text/css" href="fonts/fairplay_confluence.css"> -->
+        <link rel="stylesheet" type="text/css" href="fonts/fairplay_confluence.css">
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <link rel="stylesheet" type="text/css" href="fonts/fairplay_confluence_ie8.css" />
         <script src="settings.js"></script>
+    <script>
+        /* TODO: split stylesheet and load via feature detection */
+        /* put fonts into main font file */
+        /* put font rules as fallbacks */
+        /* use feature dection on border-radius and box-shadow */
+        /* fix disgusting background image */
+        function load_ie8_stylesheet() {
+            if (navigator.userAgent.indexOf("IE 8") > -1) {
+                var styles = document.createElement('link');
+                styles.rel = 'stylesheet';
+                styles.type = 'text/css';
+                styles.media = 'screen';
+                styles.href = 'fonts/fairplay_confluence_ie8.css';
+                document.getElementsByTagName('head')[0].appendChild(styles);
+            }
+        }
+        window.addEventListener("load", load_ie8_stylesheet);
+    </script>
 <style>
 
 input[type="range"] {
