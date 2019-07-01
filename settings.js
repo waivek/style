@@ -253,8 +253,8 @@ function initialize() {
         document.body.classList.remove("using-mouse");
     });
 
-    var floating_button = document.querySelector(".floating_button");
-    toggle_option_display(floating_button);
+    // var floating_button = document.querySelector(".floating_button");
+    // toggle_option_display(floating_button);
 }
 
 if (!window.addEventListener) {
