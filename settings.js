@@ -139,7 +139,7 @@ function add_floating_element() {
             option.innerText = "Temperature: " + i + "K";
             select.appendChild(option);
         }
-        select.lastElementChild.selected = true;
+        select.lastChild.selected = true;
         select.classList.add("temperature_picker");
         select.addEventListener("change", function() {
             set_temperature(this.value);
