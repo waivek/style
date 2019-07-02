@@ -19,6 +19,9 @@ h4 {
 body, #content{
     font-family: "Fairplay Text A-regular";
 }
+em {
+    font-family: "Fairplay Text A-italic";
+}
 .floating_container *, select {
     font-family: "Confluence C3-regular";
 }

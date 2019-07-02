@@ -1,6 +1,9 @@
 function toggle_option_display(elem) {
     var container = document.querySelector(".floating_options");
     if (container.classList.contains("floating_options_hidden")) {
+        if (window.getComputedStyle) {
+            container.classList.remove("zero_dimensions");
+        }
         container.classList.remove("floating_options_hidden");
         container.classList.add("floating_options_shown");
         elem.innerText = "-";
@@ -8,6 +11,13 @@ function toggle_option_display(elem) {
     } else if (container.classList.contains("floating_options_shown")) {
         container.classList.remove("floating_options_shown");
         container.classList.add("floating_options_hidden");
+        if (window.getComputedStyle) {
+            var transition_seconds = parseFloat(window.getComputedStyle(container).transitionDuration);
+            var transition_milliseconds = transition_seconds * 1000;
+            setTimeout(function () {
+                container.classList.add("zero_dimensions");
+            }, transition_milliseconds);
+        }
         elem.classList.remove("floating_button_clicked");
         elem.innerText = "";
     }
@@ -156,6 +166,9 @@ function add_floating_element() {
     container = document.createElement("div");
     container.classList.add("floating_options");
     container.classList.add("floating_options_hidden");
+    if (window.getComputedStyle) {
+        container.classList.add("zero_dimensions");
+    }
 
     container.appendChild(option_header);
     container.appendChild(option_1);

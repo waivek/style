@@ -8,11 +8,13 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script src="settings.js"></script>
     <script>
+
         /* TODO: split stylesheet and load via feature detection */
         /* put fonts into main font file */
         /* put font rules as fallbacks */
         /* use feature dection on border-radius and box-shadow */
         /* fix disgusting background image */
+
         function load_ie8_stylesheet() {
             if (navigator.userAgent.indexOf("IE 8") > -1) {
                 var styles = document.createElement('link');
@@ -27,8 +29,12 @@
     </script>
 <style>
 
+.option_temperature_container {
+    text-align: center;
+}
+
 input[type="range"] {
-    width: 7.5em;
+    width: 100px;
 }
 .temperature_label {
     padding: 0;

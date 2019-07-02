@@ -1,3 +1,4 @@
+
 /* style.css: {{{ */
 body {
     font-family:  "Fairplay Text A", "Georgia", serif;
@@ -11,8 +12,9 @@ html { font-size: 3vw; }
 p { margin-bottom: 1em; }
 
 #content {
-    max-width: 32.2em;
-    max-width: 65ch;
+    /* max-width: 32.2em; */
+    /* max-width: 65ch; */
+    max-width: 820px;
     /* Without horizontal padding, toggling reader mode changes the position of the floating element on desktop.
     This doesn’t affect mobile view because padding gets overridden via a media query.
     The 2em value comes from the horizontal padding in `body.reader > #content {` */
@@ -22,6 +24,7 @@ p { margin-bottom: 1em; }
 
 body.reader > #content {
     padding-top: 1.5em;
+    padding-bottom: 1.5em;
     border-radius: 6px;
 }
 
@@ -504,7 +507,30 @@ body.temperature_6500.dark {
     bottom: 0;
     margin-bottom: 40px;
     margin-right: 40px;
+    /* border: solid 2px black; */
 }
+.floating_options {
+    width: 12em;
+    left: 0;
+    border-radius: 8px;
+    border-bottom-right-radius: 0px;
+    background: #888;
+    color: white;
+}
+.floating_options_shown {
+    transition: visibility 0.3s linear,opacity 0.3s linear;
+}
+.floating_options_hidden {
+    transition: visibility 0.15s linear,opacity 0.15s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+.zero_dimensions {
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+}
+
 .floating_button {
     float: right;
     height: 60px;
@@ -538,14 +564,7 @@ body.temperature_6500.dark {
 .floating_button:hover {
     cursor: pointer;
 }
-.floating_options {
-    width: 12em;
-    left: 0;
-    border-radius: 8px;
-    border-bottom-right-radius: 0px;
-    background: #888;
-    color: white;
-}
+
 .option {
     user-select: none;
     padding: .5em;
@@ -572,14 +591,6 @@ button.option {
     background: #eee;
     color: black;
     transition: 0.1s;
-}
-.floating_options_shown {
-    transition:visibility 0.3s linear,opacity 0.3s linear;
-}
-.floating_options_hidden {
-    transition:visibility 0.15s linear,opacity 0.15s linear;
-    visibility: hidden;
-    opacity: 0;
 }
 .option_theme_container {
     padding: 0;
