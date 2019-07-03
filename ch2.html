@@ -57,11 +57,16 @@
         //     cite.classList.toggle("show");
         // }
         function load_footnotes_in_blockquotes() {
+            console.log("load_footnotes_in_blockquotes");
             var cites = document.querySelectorAll("cite");
             for (var i = 0; i < cites.length; i++) {
                 var cite = cites[i];
                 cite.classList.add("cite_hide");
-                var previous_element = cite.previousElementSibling;
+                if (cite.previousElementSibling) {
+                    var previous_element = cite.previousElementSibling;
+                } else {
+                    var previous_element = cite.previousSibling;
+                }
                 var footnote_span = document.createElement("span");
                 var superscript_tag = document.createElement("sup");
                 footnote_span.classList.add("show_footnote");
@@ -70,9 +75,9 @@
                 (function (s, c) {
                     s.addEventListener("click", function () { 
                         if (c.classList.contains("cite_hide")) {
-                            c.classList.replace("cite_hide", "cite_show"); 
+                            c.className = "cite_show";
                         } else if (c.classList.contains("cite_show")) {
-                            c.classList.replace("cite_show", "cite_hide"); 
+                            c.className = "cite_hide";
                         }
                     
                     });
@@ -80,7 +85,14 @@
                 previous_element.appendChild(footnote_span);
             }
         }
-        window.addEventListener("load", load_footnotes_in_blockquotes);
+
+        window.addEventListener("load", function () {
+            if (!document.body.classList) {
+                setTimeout(load_footnotes_in_blockquotes, 1000);
+            } else {
+                load_footnotes_in_blockquotes();
+            }
+        });
     </script>
     <!-- }}} -->
     <script>
