@@ -23,25 +23,26 @@ function toggle_option_display(elem) {
     }
 }
 
-function reader_mode_on() {
+function set_reader(reader_string) {
     var reader_mode_button = document.querySelector(".reader_mode_button");
-    document.body.classList.add("reader");
-    reader_mode_button.innerText = "Reader Mode: ON";
-    Cookies.set("reader_mode", "on", { path : "/style/"});
-}
+    if (reader_string === "reader") {
+        reader_mode_button.innerText = "Reader Mode: ON";
+    } else if (reader_string === "no_reader") {
+        reader_mode_button.innerText = "Reader Mode: OFF";
+    }
 
-function reader_mode_off() {
-    var reader_mode_button = document.querySelector(".reader_mode_button");
     document.body.classList.remove("reader");
-    reader_mode_button.innerText = "Reader Mode: OFF";
-    Cookies.set("reader_mode", "off", { path : "/style/"});
+    document.body.classList.remove("no_reader");
+
+    document.body.classList.add(reader_string);
+    Cookies.set("reader_mode",reader_string, { path : "/style/"});
 }
 
 function toggle_reader_mode(elem) {
     if (document.body.classList.contains("reader")) {
-        reader_mode_off();
+        set_reader("no_reader");
     } else {
-        reader_mode_on();
+        set_reader("reader");
     }
 }
 
@@ -218,8 +219,12 @@ function make_floating_element_respond_to_scroll (event) {
 
 function default_settings() {
     set_theme("light");
+
+    var temperature_picker = document.querySelector(".temperature_picker");
+    temperature_picker.value = v;
     set_temperature(6500);
-    reader_mode_on();
+
+    set_reader("reader");
 
     Cookies.set("cookies_exist", "true", { path : "/style/"});
 }
@@ -231,12 +236,13 @@ function cookie_settings() {
     temperature_picker.value = v;
     set_temperature(v);
 
-    var r = Cookies.get("reader_mode");
-    if (r === "on") {
-        reader_mode_on();
-    } else if (r === "off") {
-        reader_mode_off();
-    }
+    set_reader(Cookies.get("reader_mode"));
+    // var r = Cookies.get("reader_mode");
+    // if (r === "on") {
+    //     reader_mode_on();
+    // } else if (r === "off") {
+    //     reader_mode_off();
+    // }
 
 }
 

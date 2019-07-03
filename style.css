@@ -18,23 +18,25 @@ p { margin-bottom: 1em; }
     /* Without horizontal padding, toggling reader mode changes the position of the floating element on desktop.
     This doesn’t affect mobile view because padding gets overridden via a media query.
     The 2em value comes from the horizontal padding in `body.reader > #content {` */
-    padding: 0 2em;
     margin: 2em auto;
 }
 
+body.no_reader > #content {
+    padding: 0 2em;
+    border-radius: 0px;
+}
 body.reader > #content {
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
+    padding: 1.5em 2em;
     border-radius: 6px;
 }
-
-
 @media screen and (max-width: 900px) {
-    #content, body.reader > #content {
-        margin: 0;
-        padding-top: 1.5em;
-        max-width: 900px;
+    body.no_reader > #content, body.reader > #content {
+        padding: 1em 1.5em;
         border-radius: 0px;
+    }
+    #content {
+        margin: 0;
+        max-width: 900px;
     }
     .reader_mode_button {
         display: none;
@@ -183,18 +185,19 @@ body.dark {
     --link_color: #67c6d5;
 }
 
-body.reader > #content {
-    box-shadow: 2px 2px 4px 0px black;
-}
 
 body {
     color: var(--text_color);
-    background: var(--content_background);
+    /* background: var(--content_background); */
 }
+
 body > #content {
     background: var(--content_background);
 }
 
+body.no_reader {
+    background: var(--content_background);
+}
 body.reader {
     background: var(--reader_background);
 }
