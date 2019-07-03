@@ -7,6 +7,86 @@
         <link rel="stylesheet" type="text/css" href="fonts/fairplay_confluence.css">
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script src="settings.js"></script>
+<style>
+
+.hovercard {
+
+    box-shadow: 2px 2px 8px 0px ;
+    border-radius: 4px;
+    position: fixed;
+    max-width: 20em;
+
+    background: brown;
+    font-family: "Confluence T3";
+    text-align: center;
+
+    z-index: 3;
+    padding: .5em 1em;
+    margin-top: 2em;
+}
+.hovercard * {
+    color: white;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+.hidden, .hovercard {
+    transition:visibility 0.15s linear,opacity 0.15s linear;
+}
+
+.mobile_hovercard {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0 0 40px;
+    padding: 1em 1em;
+    width: -moz-available;          
+    width: -webkit-fill-available; 
+    font-family: "Confluence T4";
+    background-color: brown;
+    font-size: 16px;
+    z-index: 3;
+}
+.mobile_hovercard span {
+    color: white;
+}
+.mobile_hovercard a {
+    color: #ffffff;
+    display: block;
+    max-width: 25%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.8em;
+    border-radius: 1em;
+    border: solid;
+}
+.mobile_hidden {
+    transform: translateY(110%);
+    box-shadow: none;
+}
+.mobile_hovercard {
+    transition: transform 0.3s ease-out;
+    -webkit-transform 0.3s ease-out;
+}
+
+.right {
+    position: relative;
+    right: auto;
+    float: right;
+    color: #ccc;
+    padding: 6px;
+}
+.right:hover {
+    cursor: pointer;
+    background: #df8787;
+    color: white;
+    border-radius: 8px;
+}
+</style>
     <script>
 
 
@@ -36,18 +116,18 @@ function load_desktop_hovercards(anchor_links) {
 
                 card.classList.remove("hidden");
 
-                card.style.top = element.offsetTop  - window.pageYOffset ;
+                card.style.top = element.offsetTop  - window.pageYOffset + "px";
 
                 var mid_point = document.body.offsetWidth / 2;
                 card.style.right = "";
                 card.style.left = "";
                 var element_left = element.getBoundingClientRect().x;
                 if (mid_point >= element.offsetLeft) {
-                    card.style.left = element_left;
+                    card.style.left = element_left + "px";
                 } else {
                     var left_offset = element_left + element.offsetWidth;
                     var right_offset = document.body.offsetWidth - left_offset;
-                    card.style.right = right_offset;
+                    card.style.right = right_offset + "px";
                 }
             }
 

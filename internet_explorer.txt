@@ -1,11 +1,13 @@
 
 Fallbacks for Internet Explorer
 
-1. `startsWith` polyfill in initialize()                                           [IE 10+]
-2. dynamically loading stylesheet: `colors.no_variables.css`                       [IE 10+]
-3. adding additional `onchange` listener to `input.slider`                         [IE 10+]
-4. created `settings.no_classList.js` for IE 9 because `classList` is IE 10+       [IE 9]
-5. `option` fallback incase `input[type=range]` is not available                   [IE 9]
-6. additional stylesheet which contains 4 EOT fonts for IE6-8                      [IE 8]
-7. CSS Pie for `box-shadows` and `border-radius` in IE 6-8                         [IE 8]
-8. check for `getComputedStyle` for zero_dimensions transition on floating_options [IE 8]
+ 1. `startsWith` polyfill in initialize()                                           [IE 10+]
+ 2. dynamically loading stylesheet: `colors.no_variables.css`                       [IE 10+]
+ 3. adding additional `onchange` listener to `input.slider`                         [IE 10+]
+ 4. created `settings.no_classList.js` for IE 9 because `classList` is IE 10+       [IE 9]
+ 5. `option` fallback incase `input[type=range]` is not available                   [IE 9]
+ 6. additional stylesheet which contains 4 EOT fonts for IE6-8                      [IE 8]
+ 7. CSS Pie for `box-shadows` and `border-radius` in IE 6-8                         [IE 8]
+ 8. check for `getComputedStyle` for zero_dimensions transition on floating_options [IE 8]
+ 9. `window.innerHeight` polyfill for IE8                                           [IE 8]
+10. `window.addEventListener` pollyfill for IE8                                     [IE 8]

@@ -23,15 +23,25 @@ function toggle_option_display(elem) {
     }
 }
 
+function reader_mode_on() {
+    var reader_mode_button = document.querySelector(".reader_mode_button");
+    document.body.classList.add("reader");
+    reader_mode_button.innerText = "Reader Mode: ON";
+    Cookies.set("reader_mode", "on", { path : "/style/"});
+}
+
+function reader_mode_off() {
+    var reader_mode_button = document.querySelector(".reader_mode_button");
+    document.body.classList.remove("reader");
+    reader_mode_button.innerText = "Reader Mode: OFF";
+    Cookies.set("reader_mode", "off", { path : "/style/"});
+}
+
 function toggle_reader_mode(elem) {
     if (document.body.classList.contains("reader")) {
-        document.body.classList.remove("reader");
-        elem.innerText = "Reader Mode: OFF";
-        Cookies.set("reader_mode", "off", { path : "/style/"});
+        reader_mode_off();
     } else {
-        document.body.classList.add("reader");
-        elem.innerText = "Reader Mode: ON";
-        Cookies.set("reader_mode", "on", { path : "/style/"});
+        reader_mode_on();
     }
 }
 
@@ -209,11 +219,7 @@ function make_floating_element_respond_to_scroll (event) {
 function default_settings() {
     set_theme("light");
     set_temperature(6500);
-
-    reader_mode_button = document.querySelector(".reader_mode_button");
-    if (!document.body.classList.contains("reader")) {
-        toggle_reader_mode(reader_mode_button);
-    }
+    reader_mode_on();
 
     Cookies.set("cookies_exist", "true", { path : "/style/"});
 }
@@ -226,12 +232,10 @@ function cookie_settings() {
     set_temperature(v);
 
     var r = Cookies.get("reader_mode");
-    reader_mode_button = document.querySelector(".reader_mode_button");
     if (r === "on") {
-        toggle_reader_mode(reader_mode_button);
+        reader_mode_on();
     } else if (r === "off") {
-        toggle_reader_mode(reader_mode_button);
-        toggle_reader_mode(reader_mode_button);
+        reader_mode_off();
     }
 
 }
