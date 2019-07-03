@@ -221,7 +221,7 @@ function default_settings() {
     set_theme("light");
 
     var temperature_picker = document.querySelector(".temperature_picker");
-    temperature_picker.value = v;
+    temperature_picker.value = 6500;
     set_temperature(6500);
 
     set_reader("reader");
